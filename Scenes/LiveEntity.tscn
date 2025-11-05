@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjhg06llu2tm"]
+
+[ext_resource type="PackedScene" uid="uid://k7y7gfsv5acc" path="res://Scenes/Entity.tscn" id="1_si41t"]
+[ext_resource type="Script" uid="uid://by5r2h38ycrjm" path="res://Scripts/Entity/live_entity.gd" id="2_c4lev"]
+
+[node name="LiveEntity" instance=ExtResource("1_si41t")]
+script = ExtResource("2_c4lev")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]

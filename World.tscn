@@ -1,9 +1,150 @@
-[gd_scene load_steps=2 format=3 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=15 format=3 uid="uid://diq6ejgh7kdaw"]
+
+[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://scripts/main.gd" id="1_2dftf"]
+[ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://scripts/pause_screen.gd" id="1_c6gwx"]
+[ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://scripts/player.gd" id="2_js7pq"]
+[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
 
 [sub_resource type="TileSet" id="TileSet_cmany"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1v5b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dftf"]
+bg_color = Color(0.16470589, 0.22745098, 0.3529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2901961, 0.41568628, 0.6039216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcbcq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js7pq"]
+bg_color = Color(0.101960786, 0.16470589, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2901961, 0.41568628, 0.6039216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu7l1"]
+bg_color = Color(0.3137255, 0.11764706, 0.11764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.19607843, 0.19607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1v5b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wygdx"]
+bg_color = Color(0.23529412, 0.078431375, 0.078431375, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.54901963, 0.19607843, 0.19607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_js7pq"]
+size = Vector2(200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu7l1"]
+size = Vector2(200, 50)
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_2dftf")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cmany")
 format = 2
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_js7pq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_eu7l1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_p1v5b")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseScreen" type="ColorRect" parent="CanvasLayer"]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+script = ExtResource("1_c6gwx")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PauseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseScreen/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="PAUSED" type="Label" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 56
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_2dftf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bcbcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eu7l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p1v5b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wygdx")
+text = "Quit"
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+position = Vector2(-176, 158)
+texture = SubResource("PlaceholderTexture2D_js7pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-178, 159)
+shape = SubResource("RectangleShape2D_eu7l1")

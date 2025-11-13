@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0hbqywlhcimq"]
+
+[ext_resource type="Script" uid="uid://8t7vpgs76xt" path="res://Scripts/Entity/Bullet/bullet.gd" id="1_vlxeq"]
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_vlxeq")
+
+[node name="BulletArea" type="Area2D" parent="."]

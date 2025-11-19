@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=19 format=3 uid="uid://diq6ejgh7kdaw"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_2dftf"]
-[ext_resource type="Script" path="res://scripts/pause_screen.gd" id="1_c6gwx"]
+[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/main.gd" id="1_2dftf"]
+[ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_js7pq"]
+[ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -376,6 +377,9 @@ texture_region_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_p1v5b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1v5b"]
+size = Vector2(128, 130)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p1v5b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dftf"]
 bg_color = Color(0.16470589, 0.22745098, 0.3529412, 1)
@@ -455,6 +459,12 @@ shape = SubResource("RectangleShape2D_p1v5b")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="Flashlight" type="Node2D" parent="Player"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Player/Flashlight"]
+color = Color(1, 0.9019608, 0.76862746, 1)
+texture = SubResource("NoiseTexture2D_p1v5b")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseScreen" type="ColorRect" parent="CanvasLayer"]
@@ -509,6 +519,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p1v5b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wygdx")
 text = "Quit"
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Cursor" type="Node2D" parent="CanvasLayer2"]
+script = ExtResource("6_p1v5b")
+
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall"]
@@ -516,5 +531,5 @@ position = Vector2(-176, 158)
 texture = SubResource("PlaceholderTexture2D_js7pq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-178, 159)
+position = Vector2(-175, 159)
 shape = SubResource("RectangleShape2D_eu7l1")

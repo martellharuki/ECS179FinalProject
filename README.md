@@ -1,6 +1,6 @@
 [Initial Plan](https://docs.google.com/document/d/1SG45SkCJg-_YqTW3saoH2T0eArfKZdetLfeUSvTiIBg/edit?usp=sharing)
 
-[Progress Report](https://docs.google.com/document/d/1YXV_GWw7T98oAkQwvuKcRwK89yx2p7GfNbyfJsWlGd4/edit?usp=sharing)
+[Progress Report](https://docs.google.com/document/d/1YXV_GWw7T98oAkQwvuKcRwK89yx2p7GfNbyfJsWlGd4/edit?usp=sharing) due Wed Nov 26, 2025
 
 Joseph 
 

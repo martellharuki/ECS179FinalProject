@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0hbqywlhcimq"]
+[gd_scene load_steps=5 format=3 uid="uid://d0hbqywlhcimq"]
 
-[ext_resource type="Script" uid="uid://8t7vpgs76xt" path="res://Scripts/Entity/Bullet/bullet.gd" id="1_vlxeq"]
+[ext_resource type="Script" uid="uid://8t7vpgs76xt" path="res://Scripts/Entity/WeaponAndBullet/bullet.gd" id="1_vlxeq"]
+[ext_resource type="Texture2D" uid="uid://usco4setyj4d" path="res://Assets/placeholder_bullet/placeholder_bullet.png" id="2_14k46"]
+[ext_resource type="Script" uid="uid://b5jtp24kqaxyn" path="res://Scripts/Entity/WeaponAndBullet/bullet_area.gd" id="3_qvus8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvus8"]
+size = Vector2(64, 98)
 
 [node name="Bullet" type="Node2D"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_vlxeq")
 
+[node name="VisualSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_14k46")
+
 [node name="BulletArea" type="Area2D" parent="."]
+script = ExtResource("3_qvus8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletArea"]
+shape = SubResource("RectangleShape2D_qvus8")

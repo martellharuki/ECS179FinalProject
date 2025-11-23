@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=22 format=3 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/main.gd" id="1_2dftf"]
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
-[ext_resource type="Script" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Script" uid="uid://dk12lkwgwyuh7" path="res://Scripts/inventory.gd" id="7_fv4w7"]
+[ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -382,6 +384,30 @@ size = Vector2(128, 130)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p1v5b"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bah7m"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv4w7"]
+bg_color = Color(0.00021206182, 0.00021206182, 0.00026772422, 0.98039216)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23529412, 0.23529412, 0.27450982, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dftf"]
 bg_color = Color(0.16470589, 0.22745098, 0.3529412, 1)
 border_width_left = 2
@@ -434,12 +460,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_js7pq"]
-size = Vector2(200, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu7l1"]
-size = Vector2(200, 50)
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_2dftf")
 
@@ -471,9 +491,163 @@ script = ExtResource("5_wygdx")
 
 [node name="BulletHolder" type="Node2D" parent="Player/Weapon"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="PauseScreen" type="ColorRect" parent="CanvasLayer"]
+[node name="Hp Bar" type="MarginContainer" parent="HUD"]
+offset_right = 300.0
+offset_bottom = 70.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+script = ExtResource("8_bah7m")
+
+[node name="HealthBarContainer" type="Control" parent="HUD/Hp Bar"]
+custom_minimum_size = Vector2(200, 28)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="HUD/Hp Bar/HealthBarContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fill" type="Panel" parent="HUD/Hp Bar/HealthBarContainer/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shine" type="Panel" parent="HUD/Hp Bar/HealthBarContainer/Background/Fill"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+
+[node name="Hotbar" type="HBoxContainer" parent="HUD"]
+offset_left = 972.0
+offset_top = 558.0
+offset_right = 1142.0
+offset_bottom = 638.0
+theme_override_constants/separation = 10
+
+[node name="WeaponSlot1" type="Panel" parent="HUD/Hotbar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bah7m")
+
+[node name="Label" type="Label" parent="HUD/Hotbar/WeaponSlot1"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 55.0
+offset_right = 106.0
+offset_bottom = 78.0
+text = "1"
+
+[node name="WeaponSlot2" type="Panel" parent="HUD/Hotbar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bah7m")
+
+[node name="Label" type="Label" parent="HUD/Hotbar/WeaponSlot2"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 55.0
+offset_right = 105.0
+offset_bottom = 104.0
+text = "2
+"
+
+[node name="Inventory" type="CanvasLayer" parent="HUD"]
+script = ExtResource("7_fv4w7")
+
+[node name="InventoryPanel" type="Panel" parent="HUD/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv4w7")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Inventory/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="MainContainer" type="HBoxContainer" parent="HUD/Inventory/InventoryPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="StorageContainer" type="VBoxContainer" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StorageLabel" type="Label" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/StorageContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7058824, 0.7058824, 0.74509805, 1)
+theme_override_font_sizes/font_size = 18
+text = "Storage"
+horizontal_alignment = 1
+
+[node name="StorageGrid" type="GridContainer" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/StorageContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="CraftingContainer" type="VBoxContainer" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CraftingLabel" type="Label" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/CraftingContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7058824, 0.7058824, 0.74509805, 1)
+theme_override_font_sizes/font_size = 18
+text = "Crafting"
+horizontal_alignment = 1
+
+[node name="CraftingGrid" type="GridContainer" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/CraftingContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="ArrowLabel" type="Label" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/CraftingContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "↓"
+horizontal_alignment = 1
+
+[node name="ResultSlot" type="Panel" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/CraftingContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="HUD/Inventory/InventoryPanel/MarginContainer/MainContainer/CraftingContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Craft
+"
+
+[node name="PauseScreen" type="ColorRect" parent="HUD"]
 process_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -483,7 +657,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.78431374)
 script = ExtResource("1_c6gwx")
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PauseScreen"]
+[node name="CenterContainer" type="CenterContainer" parent="HUD/PauseScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -491,11 +665,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseScreen/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseScreen/CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="PAUSED" type="Label" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+[node name="PAUSED" type="Label" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -505,7 +679,7 @@ text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -515,7 +689,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bcbcq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
 text = "Resume"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -529,13 +703,3 @@ text = "Quit"
 
 [node name="Cursor" type="Node2D" parent="CanvasLayer2"]
 script = ExtResource("6_p1v5b")
-
-[node name="Wall" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall"]
-position = Vector2(-176, 158)
-texture = SubResource("PlaceholderTexture2D_js7pq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-175, 159)
-shape = SubResource("RectangleShape2D_eu7l1")

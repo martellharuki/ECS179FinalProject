@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/main.gd" id="1_2dftf"]
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
-[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
+[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]

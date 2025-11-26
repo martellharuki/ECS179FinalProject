@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
+[ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://dk12lkwgwyuh7" path="res://Scripts/inventory.gd" id="7_fv4w7"]
@@ -382,8 +383,6 @@ sources/0 = SubResource("TileSetAtlasSource_p1v5b")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1v5b"]
 size = Vector2(128, 130)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p1v5b"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bah7m"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
 border_width_left = 2
@@ -483,8 +482,12 @@ shape = SubResource("RectangleShape2D_p1v5b")
 [node name="Flashlight" type="Node2D" parent="Player"]
 
 [node name="PointLight2D" type="PointLight2D" parent="Player/Flashlight"]
+position = Vector2(-139, -112)
+scale = Vector2(5.0943565, 5.880405)
 color = Color(1, 0.9019608, 0.76862746, 1)
-texture = SubResource("NoiseTexture2D_p1v5b")
+offset = Vector2(12, 0)
+texture_scale = 0.5
+script = ExtResource("5_fvag4")
 
 [node name="Weapon" type="Node2D" parent="Player"]
 script = ExtResource("5_wygdx")

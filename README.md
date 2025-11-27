@@ -4,6 +4,8 @@
 
 [Progress Report Spreadsheet](https://docs.google.com/spreadsheets/d/1OUz9atsn2HAFm9Wa97dMX5Q5Pg5Whuir-C6jLmuWleM/edit?usp=sharing)
 
+[Progress Report Google Folder](https://drive.google.com/drive/folders/1nV05JwJcu0elXaeLXta9yHkY237-38bC)
+
 Joseph 
 
 Role: Animation and Visuals

@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=29 format=3 uid="uid://diq6ejgh7kdaw"]
 
-[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/main.gd" id="1_2dftf"]
+[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="1_2dftf"]
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
-[ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
+[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="5_fvag4"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://dk12lkwgwyuh7" path="res://Scripts/inventory.gd" id="7_fv4w7"]
 [ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
+[ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -395,18 +396,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv4w7"]
-bg_color = Color(0.00021206182, 0.00021206182, 0.00026772422, 0.98039216)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.23529412, 0.23529412, 0.27450982, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dftf"]
 bg_color = Color(0.16470589, 0.22745098, 0.3529412, 1)
 border_width_left = 2
@@ -459,8 +448,82 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv4w7"]
+bg_color = Color(0.00021206182, 0.00021206182, 0.00026772422, 0.98039216)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23529412, 0.23529412, 0.27450982, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee7l0"]
+bg_color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23137255, 0.50980395, 0.9647059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn8l5"]
+bg_color = Color(0.11764706, 0.22745098, 0.5411765, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.23137255, 0.50980395, 0.9647059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w02q"]
+bg_color = Color(0.14509805, 0.3882353, 0.92156863, 1)
+border_color = Color(0.3764706, 0.64705884, 0.98039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kva58"]
+bg_color = Color(0.08627451, 0.12941177, 0.24313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.05882353, 0.29803923, 0.45882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5c0m"]
+bg_color = Color(0.039215688, 0.22745098, 0.36078432, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2ar6"]
+bg_color = Color(0.05882353, 0.29803923, 0.45882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22745098, 0.5254902, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="World" type="Node2D"]
-script = ExtResource("1_2dftf")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(8, 8)
@@ -494,7 +557,13 @@ script = ExtResource("5_wygdx")
 
 [node name="BulletHolder" type="Node2D" parent="Player/Weapon"]
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Cursor" type="Node2D" parent="CanvasLayer2"]
+script = ExtResource("6_p1v5b")
+
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("1_2dftf")
 
 [node name="Hp Bar" type="MarginContainer" parent="HUD"]
 offset_right = 300.0
@@ -531,6 +600,17 @@ anchor_right = 1.0
 offset_bottom = 10.0
 grow_horizontal = 2
 
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 21.0
+offset_top = 73.0
+offset_right = 112.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
 [node name="Hotbar" type="HBoxContainer" parent="HUD"]
 offset_left = 972.0
 offset_top = 558.0
@@ -564,6 +644,58 @@ offset_right = 105.0
 offset_bottom = 104.0
 text = "2
 "
+
+[node name="PauseScreen" type="ColorRect" parent="HUD"]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+script = ExtResource("1_c6gwx")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/PauseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseScreen/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="PAUSED" type="Label" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 56
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_2dftf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bcbcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eu7l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p1v5b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wygdx")
+text = "Return to menu"
 
 [node name="Inventory" type="CanvasLayer" parent="HUD"]
 script = ExtResource("7_fv4w7")
@@ -650,17 +782,35 @@ layout_mode = 2
 text = "Craft
 "
 
-[node name="PauseScreen" type="ColorRect" parent="HUD"]
-process_mode = 2
+[node name="TitleScreen" type="Control" parent="HUD"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.78431374)
-script = ExtResource("1_c6gwx")
+script = ExtResource("10_kva58")
 
-[node name="CenterContainer" type="CenterContainer" parent="HUD/PauseScreen"]
+[node name="Background" type="ColorRect" parent="HUD/TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.06666667, 0.09019608, 1)
+
+[node name="TitleLabel" type="Label" parent="HUD/TitleScreen"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 94.5
+offset_right = 786.0
+offset_bottom = 161.5
+theme_override_font_sizes/font_size = 48
+text = "Top-Down Zombie"
+vertical_alignment = 1
+
+[node name="HowToPlayPanel" type="Control" parent="HUD/TitleScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -668,41 +818,127 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseScreen/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 25
+[node name="PanelBackground" type="ColorRect" parent="HUD/TitleScreen/HowToPlayPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
 
-[node name="PAUSED" type="Label" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
+[node name="ContentContainer" type="VBoxContainer" parent="HUD/TitleScreen/HowToPlayPanel"]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="HowToPlayTitle" type="Label" parent="HUD/TitleScreen/HowToPlayPanel/ContentContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 56
-text = "PAUSED"
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+text = "HOW TO PLAY
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 50)
+[node name="InstructionsLabel" type="RichTextLabel" parent="HUD/TitleScreen/HowToPlayPanel/ContentContainer"]
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ee7l0")
+bbcode_enabled = true
+text = "[center][b]CONTROLS[/b][/center]
+
+[b]MOVEMENT[/b]
+- WASD or Arrow Keys - Move around
+
+[b]COMBAT[/b]
+- Left Click - Shoot
+- 1 / 2 - Switch weapons
+
+[b]INVENTORY[/b]
+- E - Open/Close inventory
+
+[b]SYSTEM[/b]
+- ESC - Pause/Unpause game
+
+[center]Good luck, soldier![/center]"
+
+[node name="BackButton" type="Button" parent="HUD/TitleScreen/HowToPlayPanel/ContentContainer"]
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3764706, 0.64705884, 0.98039216, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_2dftf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bcbcq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_js7pq")
-text = "Resume"
+theme_override_styles/normal = SubResource("StyleBoxFlat_gn8l5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6w02q")
+text = "Back
+"
 
-[node name="QuitButton" type="Button" parent="HUD/PauseScreen/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 50)
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/TitleScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -110.0
+offset_right = 130.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="HUD/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_eu7l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_p1v5b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wygdx")
-text = "Quit"
+theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_kva58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5c0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b2ar6")
+text = "Start"
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="HowToPlayButton" type="Button" parent="HUD/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_kva58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5c0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b2ar6")
+text = "How to play
+"
 
-[node name="Cursor" type="Node2D" parent="CanvasLayer2"]
-script = ExtResource("6_p1v5b")
+[node name="QuitButton" type="Button" parent="HUD/TitleScreen/VBoxContainer"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_kva58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5c0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b2ar6")
+text = "Quit
+"

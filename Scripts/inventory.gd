@@ -25,15 +25,16 @@ func _ready():
 		
 		
 func _input(event):
-	var pause_screen = get_parent().get_node_or_null("PauseScreen")
+	if is_inventory_open and event.is_action_pressed("pause"):  # "pause" is your Escape key
+		toggle_inventory()
+		return
 	
-	# Don't let inventory to open if pause screen is visible
-	if pause_screen != null and pause_screen.visible:
+	# Don't let inventory open if paused
+	if get_tree().paused:
 		return
 	
 	if event.is_action_pressed("inventory"): 
-		toggle_inventory()		
-		
+		toggle_inventory()
 
 func setup_ui():
 	# storage slots, a 2x2 grid

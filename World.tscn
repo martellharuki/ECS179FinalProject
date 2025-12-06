@@ -1,16 +1,16 @@
 [gd_scene load_steps=31 format=3 uid="uid://diq6ejgh7kdaw"]
 
-[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://scripts/hud.gd" id="1_2dftf"]
-[ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://scripts/pause_screen.gd" id="1_c6gwx"]
+[ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="1_2dftf"]
+[ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
-[ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://scripts/player/player.gd" id="2_js7pq"]
-[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="3_eu7l1"]
+[ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
+[ext_resource type="Texture2D" uid="uid://bqs6ch6dlrvew" path="res://assets/basic_assets/players/player.png" id="3_kva58"]
 [ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
-[ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://scripts/player/weapon_handler.gd" id="5_wygdx"]
-[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://scripts/mouse_cursor.gd" id="6_p1v5b"]
-[ext_resource type="Script" uid="uid://dk12lkwgwyuh7" path="res://scripts/inventory.gd" id="7_fv4w7"]
-[ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://scripts/health_bar.gd" id="8_bah7m"]
-[ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://scripts/title_screen.gd" id="10_kva58"]
+[ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Script" uid="uid://dk12lkwgwyuh7" path="res://Scripts/inventory.gd" id="7_fv4w7"]
+[ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
+[ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -966,7 +966,8 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("2_js7pq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_eu7l1")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_kva58")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_p1v5b")

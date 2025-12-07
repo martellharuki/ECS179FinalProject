@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=50 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="10_kva58"]
-[ext_resource type="PackedScene" uid="uid://hgf7bojvhr53" path="res://Scenes/Items/Scrap.tscn" id="14_ee7l0"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
 
@@ -2711,14 +2710,6 @@ tile_set = SubResource("TileSet_1fphk")
 [node name="details 16x16" type="TileMapLayer" parent="TileMap"]
 scale = Vector2(13, 13)
 tile_set = SubResource("TileSet_cvq6i")
-
-[node name="ItemContainer" type="Node" parent="."]
-
-[node name="Scrap" parent="ItemContainer" instance=ExtResource("14_ee7l0")]
-position = Vector2(-315, -229.99998)
-
-[node name="Scrap2" parent="ItemContainer" instance=ExtResource("14_ee7l0")]
-position = Vector2(-169.00002, -244.99998)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true

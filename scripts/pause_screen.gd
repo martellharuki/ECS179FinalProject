@@ -1,7 +1,6 @@
 extends Control
-
 @onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
-@onready var main_menu_button = $CenterContainer/VBoxContainer/QuitButton  # Still named QuitButton in the scene
+@onready var main_menu_button = $CenterContainer/VBoxContainer/QuitButton  
 
 func _ready():
 	# Connect button signals
@@ -12,9 +11,11 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	
 func _on_resume_pressed():
-	# Get the HUD (parent of this PauseScreen) and call toggle_pause
 	get_parent().toggle_pause()
 
 func _on_main_menu_pressed():
-	# Return to title screen
-	get_parent().return_to_title_screen()
+	# Unpause the game first
+	get_tree().paused = false
+	
+	# Reload the entire scene (this resets everything)
+	get_tree().reload_current_scene()

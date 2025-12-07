@@ -6,7 +6,7 @@ extends Control
 @onready var button_container = $VBoxContainer 
 
 func _ready():
-	# HowToPlaypanel is hidden at start
+	# HowToPlay panel is hidden at start
 	if how_to_play_panel:
 		how_to_play_panel.visible = false
 	
@@ -29,7 +29,11 @@ func _ready():
 
 func _on_start_pressed():
 	self.visible = false
-	get_tree().paused = false
+	
+	# Show objective screen right after start is pressed
+	ScreenManager.show_objective_screen()
+	
+	# The objective screen will unpause the game when dismissed
 
 func _on_how_to_play_pressed():
 	# Hide main menu elements

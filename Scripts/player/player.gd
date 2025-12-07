@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 # Movement speed
 @export var speed = 300.0
-
 @onready var _weapon:WeaponHandler = $Weapon
 @onready var _crafting_handler:CraftingHandler = $CraftingHandler
 
@@ -17,7 +16,6 @@ func _ready():
 	var _initial_gun_spec = WeaponSpec.new(10, 6, 300, 0.2)
 	_weapon.set_weapon(_initial_gun_spec)
 	
-
 func _physics_process(delta):
 	# Get input direction
 	var input_direction = Vector2.ZERO
@@ -42,13 +40,13 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0, 0)
 	
-	
 	_face_mouse()
 	
-	
-	
 	move_and_slide()
-
+	
+	# FOR TEST
+	if Input.is_action_just_pressed("win"):
+		ScreenManager.show_win_screen()
 
 func _face_mouse() -> void:
 	# Get mouse global coordinates
@@ -56,7 +54,6 @@ func _face_mouse() -> void:
 	
 	# Rotate the player character to face the mouse.
 	look_at(mouse_global)
-
 	# Rotates the model to the wanted direction
 	rotation += deg_to_rad(90)
 

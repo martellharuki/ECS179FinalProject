@@ -22,25 +22,33 @@ func _ready():
 		crosshair_layer.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	# Connect only Start and Quit buttons (How To Play is handled in TitleScreen script)
+	# Connect buttons
 	$TitleScreen/VBoxContainer/StartButton.pressed.connect(_on_start_game)
 	$TitleScreen/VBoxContainer/QuitButton.pressed.connect(_on_quit)
-
+	
+	# Connect to objective dismissed signal
+	ScreenManager.objective_dismissed.connect(_on_objective_dismissed)
+	
 func _input(event):
 	# Only allow pause if game has started
 	if game_started and event.is_action_pressed("pause"):
 		toggle_pause()
 
 func _on_start_game():
-	# Hide title screen and start game
+	# Hide title screen
 	title_screen.visible = false
-	get_tree().paused = false
+	
+	# DON'T unpause or start spawning yet - objective screen will handle that
 	game_started = true
-	_item_spawner.begin_item_spawning()
-	# Show crosshair and hide system cursor
+	
+	# Show crosshair (will be visible after objective is dismissed)
 	if crosshair_layer:
 		crosshair_layer.visible = true
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+func _on_objective_dismissed():
+	# This is called when player dismisses the objective screen
+	# Now actually start the game
+	_item_spawner.begin_item_spawning()
 
 func _on_quit():
 	get_tree().quit()
@@ -77,4 +85,3 @@ func return_to_title_screen():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if crosshair_layer:
 		crosshair_layer.visible = false
-	

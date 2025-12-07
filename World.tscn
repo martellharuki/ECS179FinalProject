@@ -5,13 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://Assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
 [ext_resource type="Texture2D" uid="uid://bqs6ch6dlrvew" path="res://Assets/basic_assets/players/player.png" id="3_kva58"]
-[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="5_fvag4"]
+[ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Script" uid="uid://d1q0r6xl10wds" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
-[ext_resource type="Script" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://cmav5hl1jsdsp" path="res://Scripts/Item/item_pickup.gd" id="7_b2ar6"]
-[ext_resource type="Script" path="res://Scripts/inventory.gd" id="7_fv4w7"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="8_bah7m"]
+[ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
@@ -2932,7 +2931,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wygdx")
 text = "Return to menu"
 
 [node name="Inventory" type="CanvasLayer" parent="HUD"]
-script = ExtResource("7_fv4w7")
+visible = false
 
 [node name="InventoryPanel" type="Panel" parent="HUD/Inventory"]
 anchors_preset = 8
@@ -3103,10 +3102,10 @@ text = "[center][b]CONTROLS[/b][/center]
 
 [b]COMBAT[/b]
 - Left Click - Shoot
-- 1 / 2 - Switch weapons
 
-[b]INVENTORY[/b]
-- E - Open/Close inventory
+[b]ACTIONS[/b]
+- E - Open crafting menu
+- Q - Use bandage (healing)
 
 [b]SYSTEM[/b]
 - ESC - Pause/Unpause game

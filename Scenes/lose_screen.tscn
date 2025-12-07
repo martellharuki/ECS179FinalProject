@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq2x61qg7c7sm"]
+[gd_scene load_steps=5 format=3 uid="uid://dq2x61qg7c7sm"]
 
 [ext_resource type="Script" uid="uid://jk056khlcfve" path="res://Scripts/lose_screen.gd" id="1_s2rrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2rrh"]
+bg_color = Color(0.1764706, 0.08627451, 0.08627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_488pv"]
+bg_color = Color(0.11372549, 0.023529412, 0.023529412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go37l"]
+bg_color = Color(0.23921569, 0.14901961, 0.14901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.2, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="LoseScreen" type="CanvasLayer"]
 layer = 10
@@ -47,7 +83,12 @@ layout_mode = 2
 [node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_s2rrh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_488pv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_go37l")
 text = "Return To Main Menu"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_pressed"]

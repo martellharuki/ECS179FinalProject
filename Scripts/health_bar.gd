@@ -12,14 +12,6 @@ func _ready():
 	setup_health_bar_style()
 	update_health_bar()
 
-func _input(event):
-	# press R to take damage (for testing)
-	if event.is_action_pressed("take_damage(test)"): 
-		take_damage(100)
-	# T to heal (for testing)
-	if event.is_action_pressed("heal(test)"): 
-		heal(100)
-
 func setup_health_bar_style():
 	# background with border
 	var bg_style = StyleBoxFlat.new()
@@ -42,16 +34,10 @@ func setup_health_bar_style():
 	shine_style.corner_radius_top_right = 3
 	shine.add_theme_stylebox_override("panel", shine_style)
 
-func take_damage(amount: float):
-	current_health = max(0, current_health - amount)
-	update_health_bar()
-	
-	# Check if player died
-	if current_health <= 0:
-		player_died()
-
-func heal(amount: float):
-	current_health = min(max_health, current_health + amount)
+# Called by the player when they take damage
+func update_player_health(new_current: float, new_max: float):
+	current_health = new_current
+	max_health = new_max
 	update_health_bar()
 
 func update_health_bar():
@@ -75,7 +61,3 @@ func update_health_bar():
 	var fill_style = fill.get_theme_stylebox("panel")
 	if fill_style:
 		tween.tween_property(fill_style, "bg_color", target_color, 0.25)
-
-func player_died():
-	# Show the lose screen
-	ScreenManager.show_lose_screen()

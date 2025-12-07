@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var title_screen = $TitleScreen
 @onready var pause_screen = $PauseScreen
-@onready var _item_spawner:ItemSpawner = %ItemSpawner
+#@onready var _item_spawner:ItemSpawner = %ItemSpawner
 @onready var player = get_parent().get_node("Player")
 @onready var crosshair_layer = get_parent().get_node("CanvasLayer2") 
 
@@ -27,7 +27,7 @@ func _ready():
 	$TitleScreen/VBoxContainer/QuitButton.pressed.connect(_on_quit)
 	
 	# Connect to objective dismissed signal
-	ScreenManager.objective_dismissed.connect(_on_objective_dismissed)
+	#ScreenManager.objective_dismissed.connect(_on_objective_dismissed)
 	
 func _input(event):
 	# Only allow pause if game has started
@@ -45,10 +45,10 @@ func _on_start_game():
 	if crosshair_layer:
 		crosshair_layer.visible = true
 
-func _on_objective_dismissed():
+#func _on_objective_dismissed():
 	# This is called when player dismisses the objective screen
 	# Now actually start the game
-	_item_spawner.begin_item_spawning()
+#	_item_spawner.begin_item_spawning()
 
 func _on_quit():
 	get_tree().quit()

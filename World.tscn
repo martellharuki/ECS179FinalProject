@@ -2809,14 +2809,14 @@ script = ExtResource("6_p1v5b")
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("14_sjtuv")
 
-[node name="Hp Bar" type="MarginContainer" parent="HUD"]
+[node name="Hp Bar" type="MarginContainer" parent="HUD" groups=["hp_bar"]]
 offset_right = 300.0
 offset_bottom = 70.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 script = ExtResource("8_bah7m")
 
-[node name="HealthBarContainer" type="Control" parent="HUD/Hp Bar"]
+[node name="HealthBarContainer" type="Control" parent="HUD/Hp Bar" groups=["hp_bar"]]
 custom_minimum_size = Vector2(200, 28)
 layout_mode = 2
 

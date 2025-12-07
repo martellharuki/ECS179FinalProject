@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwk2wjhko2dtx"]
+[gd_scene load_steps=5 format=3 uid="uid://cwk2wjhko2dtx"]
 
 [ext_resource type="Script" uid="uid://busnpkgiv3qqr" path="res://Scripts/win_screen.gd" id="1_l5sol"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5sol"]
+bg_color = Color(0.1764706, 0.14117648, 0.08627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a00f1"]
+bg_color = Color(0.11372549, 0.078431375, 0.023529412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awi1s"]
+bg_color = Color(0.23921569, 0.20392157, 0.14901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="WinScreen" type="CanvasLayer"]
 layer = 10
@@ -46,9 +82,14 @@ layout_mode = 2
 [node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_l5sol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a00f1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_awi1s")
 text = "Return to Main Menu
 "
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]

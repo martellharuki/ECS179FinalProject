@@ -11,6 +11,8 @@ size = Vector2(281, 279)
 
 [node name="basic_zombie" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("2_roy8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,6 +20,8 @@ texture_filter = 1
 texture = ExtResource("1_uiaus")
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D" groups=["zombies"]]
+collision_layer = 4
+collision_mask = 8
 
 [node name="Bullet_CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(0, 15)

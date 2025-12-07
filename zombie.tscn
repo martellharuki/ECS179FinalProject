@@ -17,6 +17,7 @@ script = ExtResource("2_roy8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("1_uiaus")
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D" groups=["zombies"]]

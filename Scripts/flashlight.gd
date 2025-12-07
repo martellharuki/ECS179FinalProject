@@ -12,7 +12,7 @@ extends PointLight2D
 const TEXTURE_SIZE_PX: int = 256           # 64–2048. Larger = smoother edges.
 const FLASHLIGHT_ANGLE_DEG: float = 25.0   # Full spread angle of the cone.
 const EDGE_SOFTNESS_DEG: float = 12.0      # Feather width at the sides of the cone.
-const FALLOFF_POWER: float = 1.8           # >1 = faster fade with distance.
+const FALLOFF_POWER: float = 1           # >1 = faster fade with distance.
 
 # --- ORIGIN PARAMETERS (where the light comes from relative to the player) ---
 const ORIGIN_FORWARD_DISTANCE: float = 16.0   # pixels in front of the player

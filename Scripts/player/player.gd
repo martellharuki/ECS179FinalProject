@@ -58,7 +58,7 @@ func _face_mouse() -> void:
 	look_at(mouse_global)
 
 	# Rotates the model to the wanted direction
-	rotation += deg_to_rad(-90)
+	rotation += deg_to_rad(90)
 
 func _handle_weapon_cmd() -> void:
 	var _mouse_location:Vector2 = get_global_mouse_position() - self.global_position

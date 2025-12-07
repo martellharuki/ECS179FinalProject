@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxo6vmdd470oq"]
+
+[ext_resource type="Texture2D" uid="uid://5cv2wss0p8d7" path="res://assets/basic_assets/zombies/basic_zombie.png" id="1_uiaus"]
+[ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://basic_zombie.gd" id="2_roy8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roy8y"]
+size = Vector2(280, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
+size = Vector2(281, 279)
+
+[node name="basic_zombie" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_roy8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_uiaus")
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D" groups=["zombies"]]
+
+[node name="Bullet_CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_roy8y")
+
+[node name="Stun_Timer" type="Timer" parent="Sprite2D"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Physic_CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -10.5)
+shape = SubResource("RectangleShape2D_jmu02")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="area_entered" from="Sprite2D/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Sprite2D/Stun_Timer" to="." method="_on_stun_timer_timeout"]

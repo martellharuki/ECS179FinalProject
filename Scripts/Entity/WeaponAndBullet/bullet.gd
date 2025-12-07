@@ -14,6 +14,8 @@ func _ready() -> void:
 func set_velocity_range_direction(bullet_spec:BulletSpec, _direction:Vector2, _bloom_offsets:Vector2) -> void:
 	velocity = bullet_spec.velocity
 	
+	damage = bullet_spec.damage
+	
 	var _bullet_duration:float = bullet_spec.range / velocity
 	set_time_lifespan(_bullet_duration)
 	

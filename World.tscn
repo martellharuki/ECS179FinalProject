@@ -1,10 +1,10 @@
-[gd_scene load_steps=50 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=51 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
-[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
-[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://Assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
+[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
+[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
-[ext_resource type="Texture2D" uid="uid://bqs6ch6dlrvew" path="res://Assets/basic_assets/players/player.png" id="3_kva58"]
+[ext_resource type="Texture2D" uid="uid://bqs6ch6dlrvew" path="res://assets/basic_assets/players/player.png" id="3_kva58"]
 [ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Script" uid="uid://d1q0r6xl10wds" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
@@ -14,8 +14,9 @@
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
-[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="10_kva58"]
+[ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
+[ext_resource type="PackedScene" uid="uid://bxo6vmdd470oq" path="res://zombie.tscn" id="18_sjtuv"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
@@ -2679,6 +2680,12 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sjtuv"]
+vertices = PackedVector2Array(18126, -17120, 18126, 7816, 11367.328, -245.0625, 11341.656, -4050.0781, -6708.883, -17120, 5315.3438, -3919.9375, -6629.117, 15894, 5288.6406, -115.921875, 38973, 7816, 38973, 15894)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(1, 8, 9, 6), PackedInt32Array(1, 6, 7, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6759, -17170, -6679, 15944, 39023, 15944, 39023, 7766, 18176, 7766, 18176, -17170)])
+agent_radius = 50.0
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3273,3 +3280,14 @@ position = Vector2(28976, 8783)
 [node name="ItemContainer" type="Node2D" parent="ItemSpawner"]
 
 [node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
+
+[node name="basic_zombie" parent="." instance=ExtResource("18_sjtuv")]
+
+[node name="NevigationRegion" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="NevigationRegion"]
+navigation_polygon = SubResource("NavigationPolygon_sjtuv")
+
+[node name="Table_change_to_node" type="Polygon2D" parent="NevigationRegion/NavigationRegion2D"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(5365, -3871, 11292, -3999, 11317, -294, 5339, -167)

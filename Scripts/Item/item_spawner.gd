@@ -1,7 +1,9 @@
 class_name ItemSpawner
 extends Node2D
+#I change onready to export for testing
+#@onready var _scrap_scene := preload("res://Scenes/Items/Scrap.tscn")
+@export var _scrap_scene : PackedScene
 
-@onready var _scrap_scene := preload("res://Scenes/Items/Scrap.tscn")
 @onready var _item_container:Node2D = $ItemContainer
 @onready var _spawn_timer:Timer = $SpawnTimer
 
@@ -29,6 +31,10 @@ func _get_point_path(index:int) -> String:
 	return SPAWN_POINT_HEADER + str(index)
 
 func _handle_item_spawning() -> void:
+	# this is for muted
+	if _scrap_scene == null:
+		return                         # nothing to spawn yet, but no crash
+	
 	if len(_open_indecies) == 0:
 		return
 	

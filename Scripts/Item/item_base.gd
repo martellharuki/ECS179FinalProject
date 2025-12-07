@@ -4,7 +4,8 @@ extends LiveEntity
 @export var lifetime:float = 30
 enum ItemType {
 	gun,
-	scrap
+	scrap,
+	bandage
 }
 @export var item_type:ItemType
 

@@ -1,11 +1,9 @@
-class_name CraftingHandler
+class_name BandageHandler
 extends Node
 
 @export var _craft_time:float
 @export var _scrap_needed_to_craft:int
 @onready var _action_item:ActionItem = %ActionItem
-
-var locking_player_movement:bool = false
 
 var _scrap_count:int = 0
 var _craft_progress:float = 0
@@ -18,11 +16,11 @@ func _process(delta: float) -> void:
 	if _scrap_count < _scrap_needed_to_craft:
 		return
 	
-	if Input.is_action_pressed("craft"):
+	if Input.is_action_pressed("bandage"):
+		#heal(20)
 		_craft_progress += delta
 		var ratio:float = clampf(_craft_progress / _craft_time, 0, 1)
 		_action_item.set_action_bar(ratio, ActionItem.BarType.crafting)
-		locking_player_movement = true
 	else:
 		_craft_progress = 0
 		_action_item.conclude_action_bar(ActionItem.BarType.crafting)
@@ -34,4 +32,4 @@ func _process(delta: float) -> void:
 		
 		_craft_progress = 0
 		_action_item.conclude_action_bar(ActionItem.BarType.crafting)
-		locking_player_movement = false
+	

@@ -3,31 +3,38 @@ extends CharacterBody2D
 
 @export var speed: float = 80.0
 @export var max_health: int = 30
+@export var damage: float = 10.0
+@export var attack_cooldown: float = 1.0
 
 var health: int
 var stunned: bool = false
+var can_attack: bool = true
 
 @onready var _hitbox: Area2D = $Sprite2D/Hitbox
 @onready var _stun_timer: Timer = $Sprite2D/Stun_Timer
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var _attack_timer: Timer = Timer.new()
 
 var _player: Player
 
 func _ready() -> void:
 	health = max_health
-
+	
 	# Find player via group defined in World.tscn
 	_player = get_tree().get_first_node_in_group("player") as Player
+	
+	# Setup attack cooldown timer
+	add_child(_attack_timer)
+	_attack_timer.wait_time = attack_cooldown
+	_attack_timer.one_shot = true
+	_attack_timer.timeout.connect(_on_attack_timer_timeout)
 
 func _physics_process(delta: float) -> void:
 	if stunned or _player == null:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	
-	# no pathfinding version
-	#var dir: Vector2 = (_player.global_position - global_position).normalized()
 	
 	_nav_agent.target_position = _player.global_position
 	var next_point: Vector2 = _nav_agent.get_next_path_position()
@@ -36,8 +43,23 @@ func _physics_process(delta: float) -> void:
 	velocity = dir * speed
 	move_and_slide()
 	
+	# Check if zombie collided with the player
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is Player and can_attack:
+			_attack_player()
+	
 	if velocity.length() > 0.1:
 		rotation = velocity.angle() + PI / 2.0
+
+func _attack_player() -> void:
+	if _player and can_attack:
+		_player.take_damage(damage)
+		can_attack = false
+		_attack_timer.start()
+
+func _on_attack_timer_timeout() -> void:
+	can_attack = true
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var bullet := area.get_parent() as Bullet
@@ -69,7 +91,6 @@ func _spawn_hit_particles(hit_position: Vector2) -> void:
 	# TODO: instance a particle scene here later
 	pass
 
-#if need to increase hp with time
 func set_stats(new_max_health: int) -> void:
 	max_health = new_max_health
 	health = new_max_health

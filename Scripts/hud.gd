@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var title_screen = $TitleScreen
 @onready var pause_screen = $PauseScreen
+@onready var _item_spawner:ItemSpawner = %ItemSpawner
 @onready var player = get_parent().get_node("Player")
 @onready var crosshair_layer = get_parent().get_node("CanvasLayer2") 
 
@@ -35,7 +36,7 @@ func _on_start_game():
 	title_screen.visible = false
 	get_tree().paused = false
 	game_started = true
-	
+	_item_spawner.begin_item_spawning()
 	# Show crosshair and hide system cursor
 	if crosshair_layer:
 		crosshair_layer.visible = true

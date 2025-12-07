@@ -9,6 +9,7 @@ var _bloom:float
 
 @onready var _bullet_holder:Node2D = $BulletHolder
 @onready var _bullet_scene := preload("res://Scenes/Bullet.tscn")
+@onready var _upgrade_spec:UpgradeSpec = %UpgradeSpec
 
 var _bullet_timer:Timer
 
@@ -27,7 +28,7 @@ func handle_weapon_fire(_direction:Vector2) -> void:
 		
 	if _bullet_timer.is_stopped():
 		_make_bullet(_direction)
-		var timer_duration:float = 1 / UpgradeSpec.upgrade_spec.get_upgraded_fire_rate(_fire_rate)
+		var timer_duration:float = 1 / _upgrade_spec.get_upgraded_fire_rate(_fire_rate)
 		_bullet_timer.start(timer_duration)
 
 func _make_timer() -> void:
@@ -39,10 +40,10 @@ func _make_bullet(_direction:Vector2) -> void:
 	var _bullet_entity:Bullet = _bullet_scene.instantiate()
 	
 	_bullet_holder.add_child(_bullet_entity)
-	var bullet_spec:BulletSpec = UpgradeSpec.upgrade_spec.get_upgraded_bullet_spec(_bullet_damage, _bullet_range, BULLET_LIFETIME)
+	var bullet_spec:BulletSpec = _upgrade_spec.get_upgraded_bullet_spec(_bullet_damage, _bullet_range, BULLET_LIFETIME)
 	_bullet_entity.set_velocity_range_direction(bullet_spec, _direction, _get_bloom_direction())
 	
 func _get_bloom_direction() -> Vector2:
-	var bloom_range:float = UpgradeSpec.upgrade_spec.get_upgraded_bloom_range(_bloom)
+	var bloom_range:float = _upgrade_spec.get_upgraded_bloom_range(_bloom)
 	return Vector2(randf_range(-bloom_range, bloom_range), randf_range(-bloom_range, bloom_range))
 	

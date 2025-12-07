@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blmcxejmeyuj7"
-path="res://.godot/imported/scissor_zombie.png-5aa910ef0f8217e3f4979f255c3ccef6.ctex"
+path="res://.godot/imported/scissor_zombie.png-568e7d6f22111b94c5aa89c455d75ce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/basic_assets/zombies/scissor_zombie.png"
-dest_files=["res://.godot/imported/scissor_zombie.png-5aa910ef0f8217e3f4979f255c3ccef6.ctex"]
+source_file="res://Assets/basic_assets/zombies/scissor_zombie.png"
+dest_files=["res://.godot/imported/scissor_zombie.png-568e7d6f22111b94c5aa89c455d75ce0.ctex"]
 
 [params]
 

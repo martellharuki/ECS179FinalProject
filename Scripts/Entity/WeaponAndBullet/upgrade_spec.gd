@@ -1,8 +1,6 @@
 class_name UpgradeSpec
 extends Node
 
-static var upgrade_spec:UpgradeSpec
-
 @onready var _action_item:ActionItem = %ActionItem
 
 enum UpgradeType {
@@ -39,9 +37,6 @@ var _fire_rate_mult:float = 1
 var _fire_rate_base: float = 0
 
 var _bloom_mult:float = 1
-
-func _ready() -> void:
-	upgrade_spec = self
 	
 func upgrade_random() -> void:
 	var upgrade_type:UpgradeType = UPGRADE_TYPES.pick_random()

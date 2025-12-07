@@ -3,9 +3,9 @@ extends Node
 
 @export var _pick_up_time:float
 @onready var _player:Player = %Player
-@onready var _action_item:ActionItem = %ActionItem
 @onready var _crafting_handler:CraftingHandler = %CraftingHandler
 @onready var _area:ItemCollision = $Area2D
+@onready var _action_item:ActionItem = %ActionItem
 
 var _progress:float
 var _action_type:ActionItem.BarType = ActionItem.BarType.pickup

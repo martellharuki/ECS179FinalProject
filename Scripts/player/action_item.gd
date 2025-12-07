@@ -18,11 +18,15 @@ enum BarType {
 }
 
 func _ready() -> void:
+	z_index = 3
 	_text_timer = Timer.new()
 	_text_timer.one_shot = true
 	add_child(_text_timer)
 		
 func _process(delta: float) -> void:
+	if _player == null:
+		return
+		
 	global_position = _player.global_position
 	
 	if (_text_timer.is_stopped()):
@@ -45,6 +49,7 @@ func conclude_action_bar(bar_type:BarType) -> void:
 		if curr_type == BarType.crafting and bar_type == BarType.pickup:
 			return
 	
+	print("Setting bar type to none!")
 	bar.value = 0
 	curr_type = BarType.none
 	

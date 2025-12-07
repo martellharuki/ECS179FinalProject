@@ -4,12 +4,13 @@ extends LiveEntity
 @onready var collision_box:Area2D = $BulletArea
 
 var velocity:float = -1
+var damage:float
 var direction:Vector2
 
-func set_velocity_range_direction(_velocity:float, _range:float, _direction:Vector2, _bloom_offsets:Vector2) -> void:
-	velocity = _velocity
+func set_velocity_range_direction(bullet_spec:BulletSpec, _direction:Vector2, _bloom_offsets:Vector2) -> void:
+	velocity = bullet_spec.velocity
 	
-	var _bullet_duration:float = _range / _velocity
+	var _bullet_duration:float = bullet_spec.range / velocity
 	set_time_lifespan(_bullet_duration)
 	
 	self.position = Vector2(0, 0)
@@ -28,6 +29,9 @@ func handle_bullet_collision(_body:Node) -> void:
 	print("Handling hit")
 	if _body.is_in_group("player"):
 		return
+	elif _body.is_in_group("item"):
+		return
+		
 	delete_entity()
 
 func _process(_delta) -> void:

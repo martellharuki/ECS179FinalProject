@@ -29,6 +29,7 @@ func set_health_time_lifespan(_health:float, _duration:float):
 	set_health_lifespan(_health)
 	set_time_lifespan(_duration)
 	_life_span = LifeSpan.BOTH
+	
 
 func _process(_delta:float):
 	match _life_span:

@@ -33,8 +33,8 @@ func _input(event):
 	if get_tree().paused:
 		return
 	
-	if event.is_action_pressed("inventory"): 
-		toggle_inventory()
+	#if event.is_action_pressed("inventory"): 
+		#toggle_inventory()
 
 func setup_ui():
 	# storage slots, a 2x2 grid

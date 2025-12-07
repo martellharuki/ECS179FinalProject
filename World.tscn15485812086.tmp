@@ -550,9 +550,6 @@ layer_0/tile_data = PackedInt32Array(1245147, 0, 12, 1310683, 0, 12, 1179611, 0,
 [node name="Scrap" parent="ItemContainer" instance=ExtResource("14_ee7l0")]
 position = Vector2(-315, -229.99998)
 
-[node name="Scrap2" parent="ItemContainer" instance=ExtResource("14_ee7l0")]
-position = Vector2(-169.00002, -244.99998)
-
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
 scale = Vector2(0.4, 0.4)
@@ -995,26 +992,18 @@ text = "Quit
 unique_name_in_owner = true
 scale = Vector2(0.4, 0.4)
 script = ExtResource("6_f5c0m")
+_y_offset = -60
 
 [node name="Bar" type="ProgressBar" parent="ActionItem"]
 offset_left = -100.0
-offset_top = -100.0
 offset_right = 100.0
-offset_bottom = -73.0
+offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_gn8l5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1fphk")
 max_value = 1.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="ActionItem"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -70.0
-offset_right = 700.0
-offset_bottom = 70.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Fire Rate + 10%"
-vertical_alignment = 1
+[node name="TextEdit" type="TextEdit" parent="ActionItem"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Hello!"

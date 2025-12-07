@@ -68,3 +68,8 @@ func _take_damage(amount: int) -> void:
 func _spawn_hit_particles(hit_position: Vector2) -> void:
 	# TODO: instance a particle scene here later
 	pass
+
+#if need to increase hp with time
+func set_stats(new_max_health: int) -> void:
+	max_health = new_max_health
+	health = new_max_health

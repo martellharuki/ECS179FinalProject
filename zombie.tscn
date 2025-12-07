@@ -10,9 +10,9 @@ size = Vector2(280, 130)
 size = Vector2(281, 279)
 
 [node name="basic_zombie" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 9
+collision_mask = 19
 script = ExtResource("2_roy8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

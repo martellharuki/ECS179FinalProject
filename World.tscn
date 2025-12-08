@@ -1,22 +1,22 @@
-[gd_scene load_steps=131 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=133 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
-[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
-[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
+[ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
+[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://Assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
-[ext_resource type="TileSet" uid="uid://cugv87ls0wu6o" path="res://assets/tilemap_and_assets/tilesets/floor.tres" id="3_bun23"]
-[ext_resource type="Texture2D" uid="uid://c7cr7vpllu6rw" path="res://assets/baisc_animation/player_with_weapons/player_pistol.png" id="4_0to5b"]
-[ext_resource type="Script" path="res://animation_handler.gd" id="4_aj1ai"]
-[ext_resource type="TileSet" uid="uid://dlno4hi6ihrxh" path="res://assets/tilemap_and_assets/tilesets/furniture.tres" id="4_gtthi"]
-[ext_resource type="Texture2D" uid="uid://b1ct4j27hvvs8" path="res://assets/baisc_animation/player_with_weapons/player_assault_rifle.png" id="4_ydbc3"]
+[ext_resource type="TileSet" uid="uid://cugv87ls0wu6o" path="res://Assets/tilemap_and_assets/tilesets/floor.tres" id="3_bun23"]
+[ext_resource type="Texture2D" uid="uid://c7cr7vpllu6rw" path="res://Assets/baisc_animation/player_with_weapons/player_pistol.png" id="4_0to5b"]
+[ext_resource type="Script" uid="uid://cc7jgrx58xg2h" path="res://animation_handler.gd" id="4_aj1ai"]
+[ext_resource type="TileSet" uid="uid://dlno4hi6ihrxh" path="res://Assets/tilemap_and_assets/tilesets/furniture.tres" id="4_gtthi"]
+[ext_resource type="Texture2D" uid="uid://b1ct4j27hvvs8" path="res://Assets/baisc_animation/player_with_weapons/player_assault_rifle.png" id="4_ydbc3"]
 [ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
-[ext_resource type="TileSet" uid="uid://bh52o4d1ct3ga" path="res://assets/tilemap_and_assets/tilesets/details.tres" id="5_mnkyj"]
+[ext_resource type="TileSet" uid="uid://bh52o4d1ct3ga" path="res://Assets/tilemap_and_assets/tilesets/details.tres" id="5_mnkyj"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
-[ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
+[ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://Assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
 [ext_resource type="Script" uid="uid://d1q0r6xl10wds" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
 [ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://cmav5hl1jsdsp" path="res://Scripts/Item/item_pickup.gd" id="7_b2ar6"]
-[ext_resource type="Texture2D" uid="uid://borvploikmcoq" path="res://assets/baisc_animation/player_with_weapons/player_sniper_rifle.png" id="7_d7dfr"]
+[ext_resource type="Texture2D" uid="uid://borvploikmcoq" path="res://Assets/baisc_animation/player_with_weapons/player_sniper_rifle.png" id="7_d7dfr"]
 [ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
@@ -28,8 +28,10 @@
 [ext_resource type="PackedScene" uid="uid://bxo6vmdd470oq" path="res://zombie.tscn" id="18_sjtuv"]
 [ext_resource type="Script" uid="uid://dqwcpjv1vku3l" path="res://Scripts/Enemy/zombie_spawner.gd" id="19_6tx0c"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
-[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://assets/utility/bandage.png" id="21_c2gv2"]
+[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
+[ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://Assets/utility/scrap.png" id="25_gtthi"]
+[ext_resource type="Texture2D" uid="uid://c5p3w5qjk7spw" path="res://background_v3.png" id="28_mnkyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -1596,13 +1598,13 @@ region = Rect2(768, 0, 64, 64)
 atlas = ExtResource("4_0to5b")
 region = Rect2(832, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylme8"]
-atlas = ExtResource("4_0to5b")
-region = Rect2(896, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ly4ka"]
 atlas = ExtResource("4_0to5b")
 region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylme8"]
+atlas = ExtResource("4_0to5b")
+region = Rect2(896, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1svi"]
 atlas = ExtResource("4_0to5b")
@@ -1823,9 +1825,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fif40")
 }],
-"loop": true,
+"loop": false,
 "name": &"assault_heal",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1848,7 +1850,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yktx5")
 }],
-"loop": true,
+"loop": false,
 "name": &"assault_shoot",
 "speed": 30.0
 }, {
@@ -1889,14 +1891,14 @@ animations = [{
 "texture": SubResource("AtlasTexture_8jjlf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylme8")
+"texture": SubResource("AtlasTexture_ly4ka")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ly4ka")
+"texture": SubResource("AtlasTexture_ylme8")
 }],
-"loop": true,
+"loop": false,
 "name": &"pistol_heal",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1919,7 +1921,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s3kwu")
 }],
-"loop": true,
+"loop": false,
 "name": &"pistol_shoot",
 "speed": 30.0
 }, {
@@ -1965,9 +1967,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tlk5t")
 }],
-"loop": true,
+"loop": false,
 "name": &"smg_heal",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1990,9 +1992,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i3ffs")
 }],
-"loop": true,
+"loop": false,
 "name": &"smg_shoot",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2036,9 +2038,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0fk6b")
 }],
-"loop": true,
+"loop": false,
 "name": &"sniper_heal",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2073,9 +2075,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s6h7x")
 }],
-"loop": true,
+"loop": false,
 "name": &"sniper_shoot",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2309,6 +2311,7 @@ tile_set = SubResource("TileSet_f5c0m")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
+texture_filter = 1
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("2_js7pq")
@@ -2317,10 +2320,9 @@ script = ExtResource("2_js7pq")
 script = ExtResource("4_aj1ai")
 
 [node name="PlayerAnimations" type="AnimatedSprite2D" parent="Player/AnimationHandler"]
-texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5j71u")
-animation = &"sniper_idle"
+animation = &"pistol_heal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0.5, 6)
@@ -2362,7 +2364,7 @@ shape = SubResource("RectangleShape2D_f5c0m")
 [node name="CraftingHandler" type="Node" parent="Player"]
 unique_name_in_owner = true
 script = ExtResource("9_6w02q")
-_craft_time = 4.0
+_craft_time = 2.0
 _scrap_needed_to_craft = 1
 
 [node name="UpgradeSpec" type="Node" parent="Player/CraftingHandler"]
@@ -2370,6 +2372,7 @@ unique_name_in_owner = true
 script = ExtResource("10_1fphk")
 
 [node name="BandageHandler" type="Node" parent="Player"]
+unique_name_in_owner = true
 script = ExtResource("12_0to5b")
 
 [node name="ActionItem" type="Node2D" parent="."]
@@ -2456,10 +2459,15 @@ theme_override_font_sizes/font_size = 24
 text = "Score: 0"
 
 [node name="Hotbar" type="HBoxContainer" parent="HUD"]
-offset_left = 972.0
-offset_top = 558.0
-offset_right = 1142.0
-offset_bottom = 638.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="WeaponSlot1" type="Panel" parent="HUD/Hotbar"]
@@ -2497,10 +2505,10 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bandage" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
-position = Vector2(37, 34)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("21_c2gv2")
+[node name="Scrap" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
+position = Vector2(41.599976, 37.6)
+scale = Vector2(2.0874984, 2.0249999)
+texture = ExtResource("25_gtthi")
 
 [node name="PauseScreen" type="ColorRect" parent="HUD"]
 process_mode = 2
@@ -2641,7 +2649,6 @@ text = "Craft
 "
 
 [node name="TitleScreen" type="Control" parent="HUD"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2650,7 +2657,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_kva58")
 
+[node name="TextureRect" type="TextureRect" parent="HUD/TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_mnkyj")
+expand_mode = 2
+
 [node name="Background" type="ColorRect" parent="HUD/TitleScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2660,17 +2678,22 @@ grow_vertical = 2
 color = Color(0.050980393, 0.06666667, 0.09019608, 1)
 
 [node name="TitleLabel" type="Label" parent="HUD/TitleScreen"]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 94.5
-offset_right = 786.0
-offset_bottom = 161.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.45
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = 137.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 text = "Revenge of Zissors
 "
 vertical_alignment = 1
 
 [node name="HowToPlayPanel" type="Control" parent="HUD/TitleScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2805,10 +2828,11 @@ text = "Quit
 
 [node name="ItemSpawner" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("19_cvq6i")
-_total_spawn_points = 29
-_gun_spawn_chance = 0.2
-_zombie_scrap_drop = 0.3
+_total_spawn_points = 91
+_gun_spawn_chance = 0.8
+_zombie_scrap_drop = 0.2
 _zombie_bandage_drop = 0.1
 
 [node name="ItemSpawnLocationContainer" type="Node2D" parent="ItemSpawner"]
@@ -2913,13 +2937,13 @@ position = Vector2(82304, 18091)
 position = Vector2(73252, 25876)
 
 [node name="ItemSpawnPoint33" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
-position = Vector2(56959, 29044)
+position = Vector2(80864, 11115)
 
 [node name="ItemSpawnPoint34" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
-position = Vector2(46097, 29135)
+position = Vector2(49299, 18890)
 
 [node name="ItemSpawnPoint35" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
-position = Vector2(22833, 29316)
+position = Vector2(49086, -27885)
 
 [node name="ItemSpawnPoint36" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(2195, 21712)
@@ -2957,53 +2981,53 @@ position = Vector2(57215, -1827)
 [node name="ItemSpawnPoint47" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(74527, -4615)
 
-[node name="ItemSpawnPoint28" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-27266, -18356)
+[node name="ItemSpawnPoint76" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(47261, -22971)
 
-[node name="ItemSpawnPoint29" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-87881, -15869)
+[node name="ItemSpawnPoint77" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-13354, -20484)
 
-[node name="ItemSpawnPoint30" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-100018, 193)
+[node name="ItemSpawnPoint78" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-25491, -4422)
 
-[node name="ItemSpawnPoint31" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-84630, -350)
+[node name="ItemSpawnPoint79" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-10103, -4965)
 
-[node name="ItemSpawnPoint32" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-96248, 15934)
+[node name="ItemSpawnPoint80" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-21721, 11319)
 
-[node name="ItemSpawnPoint33" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-104683, 11405)
+[node name="ItemSpawnPoint81" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-30156, 6790)
 
-[node name="ItemSpawnPoint34" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-92293, -1493)
+[node name="ItemSpawnPoint82" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-17766, -6108)
 
-[node name="ItemSpawnPoint35" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-80919, -5321)
+[node name="ItemSpawnPoint83" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-6392, -9936)
 
-[node name="ItemSpawnPoint36" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-164739, 3271)
+[node name="ItemSpawnPoint84" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-90212, -1344)
 
-[node name="ItemSpawnPoint37" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-188636, 284)
+[node name="ItemSpawnPoint85" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-114109, -4331)
 
-[node name="ItemSpawnPoint38" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-97755, -8315)
+[node name="ItemSpawnPoint86" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-23228, -12930)
 
-[node name="ItemSpawnPoint39" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-102010, -12208)
+[node name="ItemSpawnPoint87" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-27483, -16823)
 
-[node name="ItemSpawnPoint40" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-76606, -6437)
+[node name="ItemSpawnPoint88" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-2079, -11052)
 
-[node name="ItemSpawnPoint41" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-90873, -21930)
+[node name="ItemSpawnPoint89" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-16346, -26545)
 
-[node name="ItemSpawnPoint42" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-85987, 9983)
+[node name="ItemSpawnPoint90" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-11460, 5368)
 
-[node name="ItemSpawnPoint43" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-73500, -18790)
+[node name="ItemSpawnPoint91" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(1027, -23405)
 
 [node name="ItemSpawnPoint48" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(63551, 5415)
@@ -3103,5 +3127,10 @@ navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
 scissor_zombie_scene = ExtResource("22_5j71u")
+spawn_interval_start = 8.0
+spawn_interval_min = 3.0
+spawn_interval_decay = 0.98
+base_zombie_health = 40
+health_increment_per_wave = 3
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]

@@ -19,7 +19,7 @@ extends Node2D
 @export var max_zombies_alive: int = 15
 @export var max_zombies_alive_increment: int = 1
 
-@export var boss_wave: int = 5 
+@export var boss_wave: int = 10 
 @export var boss_spawn_time: float = -1.0 # seconds this method currently disabled
 
 var _current_zombie_health: int

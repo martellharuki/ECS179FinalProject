@@ -4,6 +4,7 @@ extends Node
 @export var _pick_up_time:float
 @onready var _player:Player = %Player
 @onready var _crafting_handler:CraftingHandler = %CraftingHandler
+@onready var _bandage_handler:BandageHandler = %BandageHandler
 @onready var _area:ItemCollision = $Area2D
 @onready var _action_item:ActionItem = %ActionItem
 
@@ -19,6 +20,9 @@ func handle_item_hover(body, delta:float) -> void:
 			_crafting_handler.pick_up_scrap()
 		elif item.item_type == ItemBase.ItemType.gun:
 			_player.pick_up_gun(body.get_parent().get_gun_type())
+		elif item.item_type == ItemBase.ItemType.bandage:
+			_bandage_handler.add_bandage(1)
+			
 		_area.reset(body)
 		item.delete_entity()
 		_progress = 0

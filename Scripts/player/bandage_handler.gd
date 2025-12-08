@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func add_bandage(amount: int = 1) -> void:
 	bandage_count = max(0, bandage_count + amount)
+	_player.set_bandage(bandage_count)
 	bandage_count_changed.emit(bandage_count)
 	print("Bandage picked up. bandage_count = ", bandage_count)
 

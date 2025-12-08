@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgu4lfoqnexvn"]
 
-[ext_resource type="Script" uid="uid://bp62ulfm1fjoj" path="res://scissor_zombie.gd" id="1_rh58c"]
+[ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://scissor_zombie.gd" id="1_rh58c"]
 [ext_resource type="Texture2D" uid="uid://blmcxejmeyuj7" path="res://assets/basic_assets/zombies/scissor_zombie.png" id="2_rh58c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roy8y"]
 size = Vector2(280, 130)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
-size = Vector2(281, 279)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rh58c"]
+radius = 175.0
 
 [node name="scissor_zombie" type="CharacterBody2D" groups=["zombies"]]
 scale = Vector2(0.4, 0.4)
@@ -34,7 +34,7 @@ one_shot = true
 
 [node name="Physic_CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_jmu02")
+shape = SubResource("CircleShape2D_rh58c")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

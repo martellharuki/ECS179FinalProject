@@ -8,9 +8,11 @@ extends CanvasLayer
 @onready var crosshair_layer = get_parent().get_node("CanvasLayer2")
 @onready var _bandage_text:Label = $"Hotbar/WeaponSlot1/Label"
 @onready var _scrap_text:Label = $"Hotbar/WeaponSlot2/Label"
+@onready var score_label = $ScoreLabel
 
 var is_paused = false
 var game_started = false
+var current_score: int = 0
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -29,6 +31,7 @@ func _ready():
 	$TitleScreen/VBoxContainer/StartButton.pressed.connect(_on_start_game)
 	$TitleScreen/VBoxContainer/QuitButton.pressed.connect(_on_quit)
 	
+	update_score_display()
 	# Connect to objective dismissed signal
 	#ScreenManager.objective_dismissed.connect(_on_objective_dismissed)
 	
@@ -40,6 +43,8 @@ func _input(event):
 func _on_start_game():
 	# Hide title screen
 	title_screen.visible = false
+	
+	reset_score()
 	
 	# DON'T unpause or start spawning yet - objective screen will handle that
 	game_started = true
@@ -94,3 +99,18 @@ func set_bandage_count(amount:int) -> void:
 	
 func set_scrap_count(amount:int) -> void:
 	_scrap_text.text = str(amount)
+	
+func add_score(points: int):
+	current_score += points
+	update_score_display()
+
+func update_score_display():
+	if score_label:
+		score_label.text = "Score: " + str(current_score)
+
+func get_current_score() -> int:
+	return current_score
+
+func reset_score():
+	current_score = 0
+	update_score_display()

@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var damage: float = 10.0
 @export var attack_cooldown: float = 1.0
 
+@export var stop_distance: float = 65.0
+@export var attack_range: float = 70.0
+
 var health: int
 var stunned: bool = false
 var can_attack: bool = true
@@ -15,6 +18,7 @@ var can_attack: bool = true
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var _attack_timer: Timer = Timer.new()
+@onready var _item_spawner: ItemSpawner = %ItemSpawner
 
 var _player: Player
 var _item_spawner:ItemSpawner
@@ -22,9 +26,8 @@ var _item_spawner:ItemSpawner
 func _ready() -> void:
 	health = max_health
 	
-	# Find player via group defined in World.tscn
 	_player = get_tree().get_first_node_in_group("player") as Player
-	# Setup attack cooldown timer
+	
 	add_child(_attack_timer)
 	_attack_timer.wait_time = attack_cooldown
 	_attack_timer.one_shot = true
@@ -35,20 +38,33 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	
-	_nav_agent.target_position = _player.global_position
-	var next_point: Vector2 = _nav_agent.get_next_path_position()
-	var dir: Vector2 = (next_point - global_position).normalized()
-	
-	velocity = dir * speed
+
+	var to_player: Vector2 = _player.global_position - global_position
+	var dist: float = to_player.length()
+
+	# --- MOVEMENT: stop before we shove the player around ---
+	if dist > stop_distance:
+		_nav_agent.target_position = _player.global_position
+		var next_point: Vector2 = _nav_agent.get_next_path_position()
+		var dir: Vector2 = (next_point - global_position).normalized()
+		velocity = dir * speed
+	else:
+		# close enough, don't keep ramming into the player
+		velocity = Vector2.ZERO
+
 	move_and_slide()
-	
-	# Check if zombie collided with the player
+
+	# --- ATTACK: distance-based, so we still hit when standing close ---
+	if dist <= attack_range and can_attack:
+		_attack_player()
+
+	# optional: keep old collision-based attack as backup
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is Player and can_attack:
 			_attack_player()
-	
+			break
+
 	if velocity.length() > 0.1:
 		rotation = velocity.angle() + PI / 2.0
 
@@ -67,7 +83,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		return
 	
 	_take_damage(int(bullet.damage))
-	
 	_stun()
 	_spawn_hit_particles(bullet.global_position)
 	
@@ -88,16 +103,20 @@ func _take_damage(amount: int) -> void:
 		if _item_spawner == null:
 			_item_spawner = %ItemSpawner
 			
+		var hud = get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("add_score"):
+			hud.add_score(10)
+		
 		_item_spawner.handle_scrap_spawn(global_position)
 		queue_free()
 
 func _spawn_hit_particles(hit_position: Vector2) -> void:
-	# TODO: instance a particle scene here later
+	# TODO: particles later
 	pass
 
 func set_stats(new_max_health: int) -> void:
 	max_health = new_max_health
 	health = new_max_health
 
-func set_item_spawner(_item_spawner_ref:ItemSpawner) -> void:
+func set_item_spawner(_item_spawner_ref: ItemSpawner) -> void:
 	_item_spawner = _item_spawner_ref

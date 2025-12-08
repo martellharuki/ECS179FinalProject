@@ -15,6 +15,7 @@ var can_attack: bool = true
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var _attack_timer: Timer = Timer.new()
+@onready var _item_spawner:ItemSpawner = %ItemSpawner
 
 var _player: Player
 
@@ -23,7 +24,6 @@ func _ready() -> void:
 	
 	# Find player via group defined in World.tscn
 	_player = get_tree().get_first_node_in_group("player") as Player
-	
 	# Setup attack cooldown timer
 	add_child(_attack_timer)
 	_attack_timer.wait_time = attack_cooldown
@@ -85,6 +85,7 @@ func _take_damage(amount: int) -> void:
 	health -= amount
 	print("Zombie took damage: ", amount, " | health now: ", health)
 	if health <= 0:
+		_item_spawner.handle_scrap_spawn(global_position)
 		queue_free()
 
 func _spawn_hit_particles(hit_position: Vector2) -> void:
@@ -94,3 +95,6 @@ func _spawn_hit_particles(hit_position: Vector2) -> void:
 func set_stats(new_max_health: int) -> void:
 	max_health = new_max_health
 	health = new_max_health
+
+func set_item_spawner(_item_spawner_ref:ItemSpawner) -> void:
+	_item_spawner = _item_spawner_ref

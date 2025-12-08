@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba10ll4go18k3"]
+
+[ext_resource type="Script" uid="uid://b1jk7fb1c3lag" path="res://Scripts/Item/dropped_weapon.gd" id="1_5telf"]
+[ext_resource type="Texture2D" uid="uid://ssln7650yp01" path="res://Assets/weapons/pistol.png" id="2_5telf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1exl5"]
+size = Vector2(51.00001, 38.000008)
+
+[node name="Pistol" type="Node2D" groups=["item"]]
+script = ExtResource("1_5telf")
+
+[node name="VisualSprite" type="Sprite2D" parent="." groups=["item"]]
+scale = Vector2(2, 2)
+texture = ExtResource("2_5telf")
+
+[node name="Area2D" type="Area2D" parent="." groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["item"]]
+position = Vector2(0.50000024, -9.536743e-07)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_1exl5")

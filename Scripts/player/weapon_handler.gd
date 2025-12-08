@@ -13,11 +13,29 @@ var _bloom:float
 
 var _bullet_timer:Timer
 
-func set_weapon(_weapon_spec:WeaponSpec) -> void:
+enum WeaponType {
+	pistol,
+	smg,
+	assault,
+	sniper
+}
+
+const WEAPON_TYPES:Array[WeaponType] = [
+	WeaponType.smg,
+	WeaponType.assault,
+	WeaponType.sniper
+]
+
+var equipted_weapon:WeaponType = WeaponType.pistol
+
+func set_weapon(_weapon_type:WeaponType) -> void:
+	var _weapon_spec = WeaponSpec.get_weapon_spec(_weapon_type)
 	_fire_rate = _weapon_spec.fire_rate
 	_bullet_range = _weapon_spec.bullet_range
 	_bullet_damage = _weapon_spec.bullet_damage
 	_bloom = _weapon_spec.bloom
+	
+	equipted_weapon = _weapon_type
 
 func handle_weapon_fire(_direction:Vector2) -> void:
 	if _fire_rate == 0:

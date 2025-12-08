@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0hbqywlhcimq"]
 
 [ext_resource type="Script" uid="uid://8t7vpgs76xt" path="res://Scripts/Entity/WeaponAndBullet/bullet.gd" id="1_vlxeq"]
-[ext_resource type="Texture2D" uid="uid://usco4setyj4d" path="res://assets/placeholder_bullet/placeholder_bullet.png" id="2_14k46"]
+[ext_resource type="Texture2D" uid="uid://usco4setyj4d" path="res://Assets/placeholder_bullet/placeholder_bullet.png" id="2_14k46"]
 [ext_resource type="Script" uid="uid://b5jtp24kqaxyn" path="res://Scripts/Entity/WeaponAndBullet/bullet_area.gd" id="3_qvus8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvus8"]

@@ -7,9 +7,13 @@ extends CharacterBody2D
 
 @onready var _weapon: WeaponHandler = $Weapon
 @onready var _crafting_handler: CraftingHandler = $CraftingHandler
+@onready var _animation_handler: AnimationHandler = $AnimationHandler
 
 var facing_direction: Vector2
 var current_health: float
+
+func pick_up_gun(weapon_type:WeaponHandler.WeaponType):
+	_weapon.set_weapon(weapon_type)
 
 func _ready():
 	# Make sure player is affected by pause
@@ -20,10 +24,9 @@ func _ready():
 	current_health = max_health
 	
 	# Make it so player has base weapon
-	var _initial_gun_spec = WeaponSpec.new(10, 6, 300, 0.2)
-	_weapon.set_weapon(_initial_gun_spec)
+	_weapon.set_weapon(WeaponHandler.WeaponType.pistol)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get input direction
 	var input_direction = Vector2.ZERO
 	
@@ -36,8 +39,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
 	
+	if input_direction.x != 0 or input_direction.y != 0:
+		_animation_handler.make_player_walk()
+	else:
+		_animation_handler.make_player_idle()
+	
 	if Input.is_action_pressed("left_click"):
 		_handle_weapon_cmd()
+		_animation_handler.make_player_shoot()
 	
 	# Normalize so diagonal movement isn't faster
 	input_direction = input_direction.normalized()

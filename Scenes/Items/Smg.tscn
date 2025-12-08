@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bssg8gijpnxx4"]
+
+[ext_resource type="Script" uid="uid://b1jk7fb1c3lag" path="res://Scripts/Item/dropped_weapon.gd" id="1_a5gco"]
+[ext_resource type="Texture2D" uid="uid://c61w2ksi5kdc3" path="res://Assets/weapons/smg.png" id="2_a5gco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1exl5"]
+size = Vector2(87.500015, 40.25001)
+
+[node name="Smg" type="Node2D" groups=["item"]]
+script = ExtResource("1_a5gco")
+_weapon_type = 1
+
+[node name="VisualSprite" type="Sprite2D" parent="." groups=["item"]]
+scale = Vector2(2, 2)
+texture = ExtResource("2_a5gco")
+
+[node name="Area2D" type="Area2D" parent="." groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["item"]]
+position = Vector2(3.7499964, -2.3749971)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_1exl5")

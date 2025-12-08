@@ -32,7 +32,8 @@ var _current_interval: float
 var _current_zombies_per_wave: int
 
 @onready var _timer: Timer = $SpawnTimer
-@onready var _player: Player = %Player         # uses the % shorthand to find node named "Player"
+@onready var _player: Player = %Player
+@onready var _item_spawner:ItemSpawner = %ItemSpawner
 
 func _ready() -> void:
 	_current_interval = spawn_interval_start
@@ -56,7 +57,7 @@ func _on_spawn_timer_timeout() -> void:
 		var zombie := zombie_scene.instantiate() as BasicZombie
 		get_tree().current_scene.add_child(zombie)
 		zombie.global_position = _get_spawn_position_around_player()
-		
+		zombie.set_item_spawner(_item_spawner)
 		if zombie.has_method("set_stats"):
 			zombie.set_stats(_current_zombie_health)
 

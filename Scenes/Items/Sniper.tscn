@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://2o6pv5f5x0v"]
+
+[ext_resource type="Script" uid="uid://b1jk7fb1c3lag" path="res://Scripts/Item/dropped_weapon.gd" id="1_bmvj3"]
+[ext_resource type="Texture2D" uid="uid://bds48f8rn0rnj" path="res://Assets/weapons/sniper_rifle.png" id="2_wlk1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1exl5"]
+size = Vector2(96.00003, 27.000008)
+
+[node name="Sniper" type="Node2D" groups=["item"]]
+script = ExtResource("1_bmvj3")
+_weapon_type = 3
+
+[node name="VisualSprite" type="Sprite2D" parent="." groups=["item"]]
+texture = ExtResource("2_wlk1u")
+
+[node name="Area2D" type="Area2D" parent="." groups=["item"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["item"]]
+position = Vector2(2.000002, -0.49999952)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_1exl5")

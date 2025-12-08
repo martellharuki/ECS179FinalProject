@@ -17,8 +17,9 @@ func handle_item_hover(body, delta:float) -> void:
 		var item:ItemBase = body.get_parent()
 		if item.item_type == ItemBase.ItemType.scrap:
 			_crafting_handler.pick_up_scrap()
+		elif item.item_type == ItemBase.ItemType.gun:
+			_player.pick_up_gun(body.get_parent().get_gun_type())
 		_area.reset()
-		
 		item.delete_entity()
 	else:
 		var _ratio:float = _progress / _pick_up_time

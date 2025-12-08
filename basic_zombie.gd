@@ -15,9 +15,9 @@ var can_attack: bool = true
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var _attack_timer: Timer = Timer.new()
-@onready var _item_spawner:ItemSpawner = %ItemSpawner
 
 var _player: Player
+var _item_spawner:ItemSpawner
 
 func _ready() -> void:
 	health = max_health
@@ -85,6 +85,9 @@ func _take_damage(amount: int) -> void:
 	health -= amount
 	print("Zombie took damage: ", amount, " | health now: ", health)
 	if health <= 0:
+		if _item_spawner == null:
+			_item_spawner = %ItemSpawner
+			
 		_item_spawner.handle_scrap_spawn(global_position)
 		queue_free()
 

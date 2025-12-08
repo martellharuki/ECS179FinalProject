@@ -82,7 +82,7 @@ func _handle_weapon_cmd() -> void:
 
 func heal(amount: float):
 	current_health = min(max_health, current_health + amount)
-	
+	_animation_handler.make_player_heal()
 	# Find HP bar and update it
 	var hp_bar = get_tree().get_first_node_in_group("hp_bar")
 	if hp_bar and hp_bar.has_method("update_player_health"):

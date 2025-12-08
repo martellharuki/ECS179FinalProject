@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0sysws5va2px"]
 
 [ext_resource type="Script" uid="uid://bjeo0x60qfv4s" path="res://Scripts/Item/item_base.gd" id="1_lu6u3"]
-[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="2_kxx7o"]
+[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="2_lu6u3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1exl5"]
 size = Vector2(128, 129)
 
-[node name="Scrap" type="Node2D" groups=["item"]]
+[node name="Bandage" type="Node2D" groups=["item"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_lu6u3")
-item_type = 1
+item_type = 2
 
 [node name="VisualSprite" type="Sprite2D" parent="." groups=["item"]]
-texture = ExtResource("2_kxx7o")
+scale = Vector2(4, 4)
+texture = ExtResource("2_lu6u3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["item"]]
 collision_layer = 2

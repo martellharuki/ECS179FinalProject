@@ -36,7 +36,7 @@ func make_player_heal() -> void:
 func _play_animation(action:ActionType) -> void:
 	var should_loop:bool = _get_loop_stauts(action)
 	var animation_name:String = _get_animation_weapon() + "_" + _get_animation_action(action)
-	_animated_sprite.play(animation_name, 1, should_loop)
+	_animated_sprite.play(animation_name, should_loop)
 
 func _get_animation_action(action:ActionType) -> String:
 	match (action):

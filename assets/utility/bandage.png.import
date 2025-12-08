@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr6l2f6t6ycmx"
-path="res://.godot/imported/player_animated.png-a33764161f7d42aec9aafa7433c6203e.ctex"
+uid="uid://4s4a18yyuusp"
+path="res://.godot/imported/bandage.png-42af9c260b6787461e41644871640cfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baisc_animation/player/player_animated.png"
-dest_files=["res://.godot/imported/player_animated.png-a33764161f7d42aec9aafa7433c6203e.ctex"]
+source_file="res://assets/utility/bandage.png"
+dest_files=["res://.godot/imported/bandage.png-42af9c260b6787461e41644871640cfb.ctex"]
 
 [params]
 

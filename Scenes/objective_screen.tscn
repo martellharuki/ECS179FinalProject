@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5la7ywxri557"]
 
-[ext_resource type="Script" path="res://Scripts/objective_screen.gd" id="1_70csk"]
+[ext_resource type="Script" uid="uid://cjij0elfmyy86" path="res://Scripts/objective_screen.gd" id="1_70csk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m2c8"]
 bg_color = Color(0.101960786, 0.101960786, 0.18039216, 1)
@@ -71,11 +71,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Survive the waves of enemies!
+text = "[center]The undead have taken your town!
 
-Kill zombies to get a chance for new materials.
+Survive and kill zombies to get a chance for new materials.
 
-Defeat the boss to win![/center]
+Defeat the boss and take your revenge to win![/center]
 "
 fit_content = true
 

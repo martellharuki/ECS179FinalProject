@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=133 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
 [ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://Assets/utility/scrap.png" id="25_gtthi"]
+[ext_resource type="Texture2D" uid="uid://c5p3w5qjk7spw" path="res://background_v3.png" id="28_mnkyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -2648,7 +2649,6 @@ text = "Craft
 "
 
 [node name="TitleScreen" type="Control" parent="HUD"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2657,7 +2657,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_kva58")
 
+[node name="TextureRect" type="TextureRect" parent="HUD/TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_mnkyj")
+expand_mode = 2
+
 [node name="Background" type="ColorRect" parent="HUD/TitleScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2682,6 +2693,7 @@ text = "Revenge of Zissors
 vertical_alignment = 1
 
 [node name="HowToPlayPanel" type="Control" parent="HUD/TitleScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2816,6 +2828,7 @@ text = "Quit
 
 [node name="ItemSpawner" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("19_cvq6i")
 _total_spawn_points = 91
 _gun_spawn_chance = 0.8

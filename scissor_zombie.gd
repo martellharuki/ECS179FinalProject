@@ -31,27 +31,50 @@ func _ready() -> void:
 	_recover_timer.timeout.connect(_on_recover_timeout)
 
 func _take_damage(amount: int) -> void:
-	health -= amount
+	if _dying:
+		return
 	
-	if health <= 0:
-		var hud = get_tree().get_first_node_in_group("hud")
-		if hud and hud.has_method("add_score"):
-			hud.add_score(200)
+	health -= amount
+	print("Boss took damage: ", amount, " | health now: ", health)
+	
+	if health > 0:
+		return
+	
+	_dying = true
+	velocity = Vector2.ZERO
+	$Physic_CollisionShape2D.disabled = true
+	_hitbox.monitoring = false
+	
+	#
+	var hud = get_tree().get_first_node_in_group("hud")
+	if hud and hud.has_method("add_score"):
+		hud.add_score(200)
 		
-		ScreenManager.show_win_screen()
+	#ScreenManager.show_win_screen()
 		
-		if _item_spawner:
-			_item_spawner.handle_scrap_spawn(global_position)
+	if _item_spawner:
+		_item_spawner.handle_scrap_spawn(global_position)
+	
+	if _sprite:
+		_sprite.play("death")
+		_sprite.animation_finished.connect(_on_boss_death_finished, CONNECT_ONE_SHOT)
+	else:
+		_on_boss_death_finished()
 		
-		queue_free()
+	#queue_free()
+
+func _on_boss_death_finished() -> void:
+	ScreenManager.show_win_screen()
+	queue_free()
 
 func _physics_process(delta: float) -> void:
-	if not _boss_active:
+	if not _boss_active or _dying:
 		return
 		
 	if stunned or _player == null:
 		velocity = Vector2.ZERO
 		move_and_slide()
+		_update_boss_animation()
 		return
 	
 	match _state:
@@ -70,6 +93,8 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.length() > 0.1:
 		rotation = velocity.angle() + PI / 2.0
+	
+	_update_boss_animation()
 
 func _do_chase() -> void:
 	_nav_agent.target_position = _player.global_position
@@ -111,3 +136,21 @@ func _check_charge_attack() -> void:
 			_attack_player()
 			_end_charge()
 			break
+
+func _update_boss_animation() -> void:
+	if _dying or stunned or _sprite == null:
+		return
+	
+	match _state:
+		State.CHASE:
+			if velocity.length() > 10.0 and _sprite.animation != "walk":
+				_sprite.play("walk")
+		State.WINDUP:
+			if _sprite.animation != "charging":
+				_sprite.play("charging")
+		State.CHARGE:
+			if _sprite.animation != "attack":
+				_sprite.play("attack")
+		State.RECOVER:
+			_sprite.stop()
+			_sprite.frame = 0

@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	# Check if zombie collided with the player
-	for i in get_slide_collision_count():
+	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is Player and can_attack:
 			_attack_player()

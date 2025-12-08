@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=55 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -16,11 +16,12 @@
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
-[ext_resource type="Script" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
+[ext_resource type="Script" uid="uid://hmdcpvlp8o13" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://bxo6vmdd470oq" path="res://zombie.tscn" id="18_sjtuv"]
 [ext_resource type="Script" uid="uid://dqwcpjv1vku3l" path="res://Scripts/Enemy/zombie_spawner.gd" id="19_6tx0c"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
+[ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -3309,3 +3310,5 @@ script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]
+
+[node name="scissor_zombie" parent="." instance=ExtResource("22_5j71u")]

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var _weapon: WeaponHandler = $Weapon
 @onready var _crafting_handler: CraftingHandler = $CraftingHandler
 @onready var _animation_handler: AnimationHandler = $AnimationHandler
+@onready var _audio_handler: Audio_Handler = $AudioHandler
 @onready var _hud_handler:HUDHandler = %HUD
 
 var facing_direction: Vector2
@@ -48,6 +49,10 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("left_click"):
 		_handle_weapon_cmd()
 		_animation_handler.make_player_shoot()
+		_audio_handler.play_gunshot_sound()
+	else:
+		_audio_handler.stop_gunshot_sound()
+	
 	
 	# Normalize so diagonal movement isn't faster
 	input_direction = input_direction.normalized()

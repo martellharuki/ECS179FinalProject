@@ -159,7 +159,6 @@ func _update_animation() -> void:
 		return
 		
 	if velocity.length() > 10.0:
-		print("over 10")
 		if _sprite.animation != "walk":
 			_sprite.play("walk")
 	else:

@@ -37,6 +37,7 @@ func _handle_item_spawning() -> void:
 	if len(_open_indecies) == 0:
 		return
 	
+	print("rolling!")
 	var roll = randf()
 	if roll <= _gun_spawn_chance:
 		var random_index:int = randi_range(0, len(_open_indecies) - 1)
@@ -60,10 +61,14 @@ func _handle_item_spawning() -> void:
 		_item_container.add_child(gun)
 		gun.set_time_lifespan(_life_duration)
 		gun.set_index_and_location(random_point, _spawn_location, self)
+		print("added at: " + str(_spawn_location))
+		print("player at: " + str(%Player.global_position))
+		
 
 func handle_scrap_spawn(position:Vector2) -> void:
 	var total_chance = _zombie_scrap_drop + _zombie_bandage_drop
 	var roll = randf()
+	print("Spawning")
 	if roll < total_chance and roll >= _zombie_scrap_drop:
 		print("Spawn bandage!")
 	elif roll < total_chance:

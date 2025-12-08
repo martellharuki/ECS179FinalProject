@@ -31,6 +31,7 @@ func set_velocity_range_direction(bullet_spec:BulletSpec, _direction:Vector2, _b
 	rotation = direction.angle() + PI / 2
 
 func handle_bullet_collision(_body:Node) -> void:
+	print("Handling hit")
 	if _body.is_in_group("player"):
 		return
 	elif _body.is_in_group("item"):

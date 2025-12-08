@@ -11,14 +11,8 @@ var locking_player_movement:bool = false
 var _scrap_count:int = 0
 var _craft_progress:float = 0
 
-var _player:Player
-
-func _ready() -> void:
-	_player = get_parent()
-
 func pick_up_scrap() -> void:
 	_scrap_count += 1
-	_player.set_scrap(_scrap_count)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,8 +30,8 @@ func _process(delta: float) -> void:
 		locking_player_movement = false
 	
 	if _craft_progress >= _craft_time:
+		print("Crafting!")
 		_scrap_count -= _scrap_needed_to_craft
-		_player.set_scrap(_scrap_count)
 		_upgrade_spec.upgrade_random()
 		
 		_craft_progress = 0

@@ -8,7 +8,6 @@ extends CharacterBody2D
 @onready var _weapon: WeaponHandler = $Weapon
 @onready var _crafting_handler: CraftingHandler = $CraftingHandler
 @onready var _animation_handler: AnimationHandler = $AnimationHandler
-@onready var _hud_handler:HUDHandler = %HUD
 
 var facing_direction: Vector2
 var current_health: float
@@ -88,11 +87,6 @@ func heal(amount: float):
 	if hp_bar and hp_bar.has_method("update_player_health"):
 		hp_bar.update_player_health(current_health, max_health)
 
-func set_bandage(count: int):
-	_hud_handler.set_bandage_count(count)
-
-func set_scrap(count:int):
-	_hud_handler.set_scrap_count(count)
 
 func take_damage(amount: float):
 	current_health = max(0, current_health - amount)

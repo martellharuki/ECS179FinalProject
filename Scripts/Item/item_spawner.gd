@@ -70,6 +70,7 @@ func handle_scrap_spawn(position:Vector2) -> void:
 		_item_container.add_child(bandage)
 		bandage.set_time_lifespan(_life_duration)
 		bandage.set_index_and_location(-1, position, self)
+		print("Spawn bandage!")
 	elif roll < total_chance:
 		var scrap:ItemBase = _scrap_scene.instantiate()
 		_item_container.add_child(scrap)

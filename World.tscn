@@ -2108,10 +2108,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1v5b"]
-size = Vector2(128, 130)
+size = Vector2(67, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5c0m"]
-size = Vector2(125.00002, 132.50003)
+size = Vector2(99.00003, 70.00003)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn8l5"]
 
@@ -2302,6 +2302,7 @@ tile_set = SubResource("TileSet_f5c0m")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
+texture_filter = 1
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("2_js7pq")
@@ -2315,6 +2316,7 @@ sprite_frames = SubResource("SpriteFrames_5j71u")
 animation = &"pistol_heal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_p1v5b")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2346,6 +2348,7 @@ collision_mask = 2
 script = ExtResource("8_gn8l5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ItemPickUpHandler/Area2D"]
+position = Vector2(1.5000014, 4.000002)
 scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_f5c0m")
 
@@ -3101,3 +3104,4 @@ zombie_scene = ExtResource("18_sjtuv")
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]
 
 [node name="scissor_zombie" parent="." instance=ExtResource("22_5j71u")]
+position = Vector2(-426.99997, -34.999996)

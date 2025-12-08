@@ -18,18 +18,20 @@ extends Node2D
 @export var spawn_interval_start: float = 5.0  # seconds
 @export var spawn_interval_min: float = 1.5
 @export var spawn_interval_decay: float = 0.99  # multiply each wave
-@export var zombies_per_wave_start: int = 3
+@export var zombies_per_wave_start: int = 2
 @export var zombies_per_wave_increment: int = 1
 
-@export var base_zombie_health: int = 30
-@export var health_increment_per_wave: int = 1
+@export var base_zombie_health: int = 20
+@export var health_increment_per_wave: int = 5
 
-@export var max_zombies_alive: int = 30
+@export var max_zombies_alive: int = 15
+@export var max_zombies_alive_increment: int = 1
 
 var _current_zombie_health: int
 
 var _current_interval: float
 var _current_zombies_per_wave: int
+var _current_max_zombies_alive: int
 
 @onready var _timer: Timer = $SpawnTimer
 @onready var _player: Player = %Player
@@ -39,6 +41,7 @@ func _ready() -> void:
 	_current_interval = spawn_interval_start
 	_current_zombies_per_wave = zombies_per_wave_start
 	_current_zombie_health = base_zombie_health
+	_current_max_zombies_alive = max_zombies_alive
 
 	_timer.wait_time = _current_interval
 	_timer.timeout.connect(_on_spawn_timer_timeout)
@@ -65,6 +68,7 @@ func _on_spawn_timer_timeout() -> void:
 	_current_zombies_per_wave += zombies_per_wave_increment
 	_current_interval = max(spawn_interval_min, _current_interval * spawn_interval_decay)
 	_current_zombie_health += health_increment_per_wave
+	_current_max_zombies_alive += max_zombies_alive_increment
 	
 	_timer.wait_time = _current_interval
 	_timer.start()

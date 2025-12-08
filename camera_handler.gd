@@ -3,6 +3,7 @@ extends Camera2D
 @export var lead_speed: float = 800.0
 @export var leash_distance: float = 160.0
 @export var max_dist: float = 220.0
+@export var max_speed: float = 300.0
 
 const MIN_SPEED_FACTOR: float = 0.45
 
@@ -52,11 +53,24 @@ func _physics_process(delta: float) -> void:
 	else:
 		current_offset = desired_offset
 
-	# HARD TETHER: drag camera if player would get too far away
+	# Max leash distance
 	var hard_radius : float = max(max_dist, 0.001)
 	var offset_len := current_offset.length()
 	if offset_len > hard_radius:
 		current_offset = current_offset / offset_len * hard_radius
 
-	global_position = player_pos + current_offset
+	var desired_camera_pos := player_pos + current_offset
+
+	var displacement := desired_camera_pos - global_position
+	var distance := displacement.length()
+
+	# Max camera speed
+	if distance > 0.001:
+		var max_move := max_speed * delta
+		if distance > max_move:
+			displacement = displacement / distance * max_move
+		global_position += displacement
+	else:
+		global_position = desired_camera_pos
+
 	global_rotation = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=133 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -20,11 +20,12 @@
 [ext_resource type="Script" path="res://camera_handler.gd" id="9_d7dfr"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
-[ext_resource type="Script" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
+[ext_resource type="Script" uid="uid://hmdcpvlp8o13" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://bxo6vmdd470oq" path="res://zombie.tscn" id="18_sjtuv"]
 [ext_resource type="Script" uid="uid://dqwcpjv1vku3l" path="res://Scripts/Enemy/zombie_spawner.gd" id="19_6tx0c"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
+[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
 [ext_resource type="PackedScene" path="res://scissor_zombie.tscn" id="22_5j71u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
@@ -1486,6 +1487,7 @@ script = ExtResource("5_wygdx")
 script = ExtResource("6_p1v5b")
 
 [node name="HUD" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 script = ExtResource("14_sjtuv")
 
 [node name="Hp Bar" type="MarginContainer" parent="HUD"]
@@ -1548,11 +1550,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bah7m")
 
 [node name="Label" type="Label" parent="HUD/Hotbar/WeaponSlot1"]
 layout_mode = 0
-offset_left = 66.0
+offset_left = 48.0
 offset_top = 55.0
-offset_right = 106.0
+offset_right = 88.0
 offset_bottom = 78.0
-text = "1"
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bandage" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot1"]
+position = Vector2(40, 36)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("21_c2gv2")
 
 [node name="WeaponSlot2" type="Panel" parent="HUD/Hotbar"]
 custom_minimum_size = Vector2(80, 80)
@@ -1561,15 +1570,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bah7m")
 
 [node name="Label" type="Label" parent="HUD/Hotbar/WeaponSlot2"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 55.0
-offset_right = 105.0
-offset_bottom = 104.0
-text = "2
-"
+offset_left = 46.0
+offset_top = 56.0
+offset_right = 86.0
+offset_bottom = 79.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bandage" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
+position = Vector2(37, 34)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("21_c2gv2")
 
 [node name="PauseScreen" type="ColorRect" parent="HUD"]
 process_mode = 2
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1706,6 +1722,7 @@ text = "Craft
 "
 
 [node name="TitleScreen" type="Control" parent="HUD"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1870,7 +1887,9 @@ text = "Quit
 unique_name_in_owner = true
 script = ExtResource("19_cvq6i")
 _total_spawn_points = 29
-_zombie_scrap_drop = 0.4
+_gun_spawn_chance = 0.2
+_zombie_scrap_drop = 0.3
+_zombie_bandage_drop = 0.1
 
 [node name="ItemSpawnLocationContainer" type="Node2D" parent="ItemSpawner"]
 
@@ -1970,6 +1989,7 @@ position = Vector2(28976, 8783)
 [node name="NevigationRegion" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="NevigationRegion"]
+position = Vector2(-8, -25)
 navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 
 [node name="Table_change_to_node" type="Polygon2D" parent="NevigationRegion/NavigationRegion2D"]

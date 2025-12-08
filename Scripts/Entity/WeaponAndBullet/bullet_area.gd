@@ -8,6 +8,5 @@ func _ready() -> void:
 	body_entered.connect(_on_bullet_entered)
 	
 func _on_bullet_entered(body) -> void:
-	print("bullet hit!")
 	if parent_bullet:
 		parent_bullet.handle_bullet_collision(body)

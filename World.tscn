@@ -2107,8 +2107,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1v5b"]
-size = Vector2(67, 42)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bun23"]
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5c0m"]
 size = Vector2(99.00003, 70.00003)
@@ -2320,11 +2320,11 @@ script = ExtResource("4_aj1ai")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5j71u")
-animation = &"pistol_shoot"
+animation = &"sniper_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0.5, 6)
-shape = SubResource("RectangleShape2D_p1v5b")
+shape = SubResource("CircleShape2D_bun23")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 script = ExtResource("9_d7dfr")
@@ -3093,9 +3093,6 @@ position = Vector2(23052, -20362)
 
 [node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
 
-[node name="basic_zombie" parent="." instance=ExtResource("18_sjtuv")]
-position = Vector2(390.99997, -169.99998)
-
 [node name="NevigationRegion" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="NevigationRegion"]
@@ -3105,8 +3102,6 @@ navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 [node name="ZombieSpawner" type="Node2D" parent="."]
 script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
+scissor_zombie_scene = ExtResource("22_5j71u")
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]
-
-[node name="scissor_zombie" parent="." instance=ExtResource("22_5j71u")]
-position = Vector2(-426.99997, -34.999996)

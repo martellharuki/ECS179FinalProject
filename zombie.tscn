@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roy8y"]
 size = Vector2(280, 130)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
-size = Vector2(281, 279)
+[sub_resource type="CircleShape2D" id="CircleShape2D_roy8y"]
+radius = 170.0
 
 [node name="basic_zombie" type="CharacterBody2D" groups=["zombies"]]
 scale = Vector2(0.2, 0.2)
@@ -34,7 +34,7 @@ one_shot = true
 
 [node name="Physic_CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_jmu02")
+shape = SubResource("CircleShape2D_roy8y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

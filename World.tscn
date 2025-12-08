@@ -13,15 +13,15 @@
 [ext_resource type="TileSet" uid="uid://bh52o4d1ct3ga" path="res://Assets/tilemap_and_assets/tilesets/details.tres" id="5_mnkyj"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://Assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
-[ext_resource type="Script" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
-[ext_resource type="Script" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Script" uid="uid://d1q0r6xl10wds" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://cmav5hl1jsdsp" path="res://Scripts/Item/item_pickup.gd" id="7_b2ar6"]
 [ext_resource type="Texture2D" uid="uid://borvploikmcoq" path="res://Assets/baisc_animation/player_with_weapons/player_sniper_rifle.png" id="7_d7dfr"]
 [ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
-[ext_resource type="Script" path="res://crafting_handler.gd" id="9_6w02q"]
-[ext_resource type="Script" path="res://camera_handler.gd" id="9_d7dfr"]
-[ext_resource type="Script" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
+[ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
+[ext_resource type="Script" uid="uid://3tve28n8ylau" path="res://camera_handler.gd" id="9_d7dfr"]
+[ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 [ext_resource type="Script" uid="uid://hmdcpvlp8o13" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
@@ -2458,10 +2458,15 @@ theme_override_font_sizes/font_size = 24
 text = "Score: 0"
 
 [node name="Hotbar" type="HBoxContainer" parent="HUD"]
-offset_left = 972.0
-offset_top = 558.0
-offset_right = 1142.0
-offset_bottom = 638.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="WeaponSlot1" type="Panel" parent="HUD/Hotbar"]
@@ -2662,11 +2667,15 @@ grow_vertical = 2
 color = Color(0.050980393, 0.06666667, 0.09019608, 1)
 
 [node name="TitleLabel" type="Label" parent="HUD/TitleScreen"]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 94.5
-offset_right = 786.0
-offset_bottom = 161.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.45
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = 137.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 text = "Revenge of Zissors
 "

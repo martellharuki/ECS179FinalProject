@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
 [ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
-[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="25_gtthi"]
+[ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://Assets/utility/scrap.png" id="25_gtthi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -2499,9 +2499,9 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bandage" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
-position = Vector2(37, 34)
-scale = Vector2(0.45, 0.45)
+[node name="Scrap" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
+position = Vector2(41.599976, 37.6)
+scale = Vector2(2.0874984, 2.0249999)
 texture = ExtResource("25_gtthi")
 
 [node name="PauseScreen" type="ColorRect" parent="HUD"]
@@ -3105,5 +3105,10 @@ navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
 scissor_zombie_scene = ExtResource("22_5j71u")
+spawn_interval_start = 8.0
+spawn_interval_min = 3.0
+spawn_interval_decay = 0.98
+base_zombie_health = 40
+health_increment_per_wave = 3
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]

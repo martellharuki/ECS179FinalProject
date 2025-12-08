@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chomirhuxyilx"]
 
-[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="1_5chpn"]
 [ext_resource type="Script" uid="uid://bjeo0x60qfv4s" path="res://Scripts/Item/item_base.gd" id="1_er5kq"]
+[ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://Assets/utility/scrap.png" id="2_er5kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1exl5"]
 size = Vector2(128, 129)
@@ -12,7 +12,8 @@ script = ExtResource("1_er5kq")
 item_type = 1
 
 [node name="VisualSprite" type="Sprite2D" parent="." groups=["item"]]
-texture = ExtResource("1_5chpn")
+scale = Vector2(4, 4)
+texture = ExtResource("2_er5kq")
 
 [node name="Area2D" type="Area2D" parent="." groups=["item"]]
 collision_layer = 2

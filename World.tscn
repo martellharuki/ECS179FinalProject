@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=132 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
 [ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
+[ext_resource type="Texture2D" uid="uid://466bs5hc3c1d" path="res://icon.svg" id="25_gtthi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -2500,8 +2501,8 @@ vertical_alignment = 1
 
 [node name="Bandage" type="Sprite2D" parent="HUD/Hotbar/WeaponSlot2"]
 position = Vector2(37, 34)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("21_c2gv2")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("25_gtthi")
 
 [node name="PauseScreen" type="ColorRect" parent="HUD"]
 process_mode = 2

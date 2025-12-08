@@ -21,7 +21,6 @@ var can_attack: bool = true
 @onready var _item_spawner: ItemSpawner = %ItemSpawner
 
 var _player: Player
-var _item_spawner:ItemSpawner
 
 func _ready() -> void:
 	health = max_health

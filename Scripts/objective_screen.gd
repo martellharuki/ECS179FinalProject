@@ -4,8 +4,8 @@ var can_dismiss = false
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS  # Process even when paused
-	layer = 10  # Make sure it's on top
-	get_tree().paused = true  # YES - Game is paused while objective is shown
+	layer = 10 
+	get_tree().paused = true  
 	
 	# Hide system cursor and show crosshair during objective screen
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

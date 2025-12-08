@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgu4lfoqnexvn"]
 
-[ext_resource type="Script" uid="uid://bp62ulfm1fjoj" path="res://scissor_zombie.gd" id="1_rh58c"]
+[ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://scissor_zombie.gd" id="1_rh58c"]
 [ext_resource type="Texture2D" uid="uid://blmcxejmeyuj7" path="res://assets/basic_assets/zombies/scissor_zombie.png" id="2_rh58c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roy8y"]

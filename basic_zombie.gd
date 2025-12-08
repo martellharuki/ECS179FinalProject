@@ -85,6 +85,10 @@ func _take_damage(amount: int) -> void:
 	health -= amount
 	print("Zombie took damage: ", amount, " | health now: ", health)
 	if health <= 0:
+		var hud = get_tree().get_first_node_in_group("hud")
+		if hud and hud.has_method("add_score"):
+			hud.add_score(10)
+		
 		_item_spawner.handle_scrap_spawn(global_position)
 		queue_free()
 

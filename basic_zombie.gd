@@ -33,8 +33,9 @@ func _ready() -> void:
 	_attack_timer.one_shot = true
 	_attack_timer.timeout.connect(_on_attack_timer_timeout)
 	
-	_sprite.speed_scale = 1.0
-	_sprite.play("walk")
+	if _sprite:
+		_sprite.speed_scale = 1.0
+		_sprite.play("walk")
 
 func _physics_process(delta: float) -> void:
 	if stunned or _player == null or _dying:
@@ -154,18 +155,14 @@ func set_item_spawner(_item_spawner_ref: ItemSpawner) -> void:
 	_item_spawner = _item_spawner_ref
 
 func _update_animation() -> void:
-	if _dying:
+	if _dying or stunned or _sprite == null:
 		return
-	if stunned:
-		return
+		
 	if velocity.length() > 10.0:
 		print("over 10")
 		if _sprite.animation != "walk":
 			_sprite.play("walk")
-			print("over 10")
-		else:
-			if _sprite.animation != "walk":
-				_sprite.play("walk")
-			_sprite.stop()
-			_sprite.frame = 0
+	else:
+		_sprite.stop()
+		_sprite.frame = 0
 			

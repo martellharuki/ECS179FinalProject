@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=132 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://djw725o703p86" path="res://Assets/Placeholder_Tilemap/tilemap.png" id="2_eu7l1"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7cr7vpllu6rw" path="res://Assets/baisc_animation/player_with_weapons/player_pistol.png" id="4_0to5b"]
 [ext_resource type="Script" uid="uid://cc7jgrx58xg2h" path="res://animation_handler.gd" id="4_aj1ai"]
 [ext_resource type="Texture2D" uid="uid://b1ct4j27hvvs8" path="res://Assets/baisc_animation/player_with_weapons/player_assault_rifle.png" id="4_ydbc3"]
-[ext_resource type="Script" path="res://bandage_handler.gd" id="5_6tx0c"]
 [ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
 [ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://Assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
+[ext_resource type="Script" path="res://camera_handler.gd" id="9_d7dfr"]
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="10_1fphk"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 [ext_resource type="Script" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bxo6vmdd470oq" path="res://zombie.tscn" id="18_sjtuv"]
 [ext_resource type="Script" uid="uid://dqwcpjv1vku3l" path="res://Scripts/Enemy/zombie_spawner.gd" id="19_6tx0c"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
-[ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
+[ext_resource type="PackedScene" path="res://scissor_zombie.tscn" id="22_5j71u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1v5b"]
 resource_name = "Placeholder"
@@ -3326,6 +3326,7 @@ script = ExtResource("2_js7pq")
 script = ExtResource("4_aj1ai")
 
 [node name="PlayerAnimations" type="AnimatedSprite2D" parent="Player/AnimationHandler"]
+texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5j71u")
 animation = &"pistol_shoot"
@@ -3334,7 +3335,7 @@ animation = &"pistol_shoot"
 shape = SubResource("RectangleShape2D_p1v5b")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-script = ExtResource("5_6tx0c")
+script = ExtResource("9_d7dfr")
 
 [node name="Flashlight" type="Node2D" parent="Player"]
 
@@ -3796,6 +3797,7 @@ text = "Quit
 unique_name_in_owner = true
 script = ExtResource("19_cvq6i")
 _total_spawn_points = 29
+_zombie_scrap_drop = 0.4
 
 [node name="ItemSpawnLocationContainer" type="Node2D" parent="ItemSpawner"]
 

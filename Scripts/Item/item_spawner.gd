@@ -68,13 +68,15 @@ func _handle_item_spawning() -> void:
 func handle_scrap_spawn(position:Vector2) -> void:
 	var total_chance = _zombie_scrap_drop + _zombie_bandage_drop
 	var roll = randf()
+	print("Spawning")
 	if roll < total_chance and roll >= _zombie_scrap_drop:
 		print("Spawn bandage!")
 	elif roll < total_chance:
 		var scrap:ItemBase = _scrap_scene.instantiate()
+		_item_container.add_child(scrap)
 		scrap.set_time_lifespan(_life_duration)
 		scrap.set_index_and_location(-1, position, self)
-	
+		
 	
 func notify_deleted_item(index:int) -> void:
 	print("notified!!")

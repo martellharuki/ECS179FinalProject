@@ -2,6 +2,7 @@ class_name ItemSpawner
 extends Node2D
 #I change onready to export for testing
 @onready var _scrap_scene := preload("res://Scenes/Items/Scrap.tscn")
+@onready var _bandage_scene := preload("res://Scenes/Items/Bandage.tscn")
 @onready var _smg_scene := preload("res://Scenes/Items/Smg.tscn")
 @onready var _assault_scene := preload("res://Scenes/Items/Assault.tscn")
 @onready var _sniper_scene := preload("res://Scenes/Items/Sniper.tscn")
@@ -65,6 +66,10 @@ func handle_scrap_spawn(position:Vector2) -> void:
 	var total_chance = _zombie_scrap_drop + _zombie_bandage_drop
 	var roll = randf()
 	if roll < total_chance and roll >= _zombie_scrap_drop:
+		var bandage:ItemBase = _bandage_scene.instantiate()
+		_item_container.add_child(bandage)
+		bandage.set_time_lifespan(_life_duration)
+		bandage.set_index_and_location(-1, position, self)
 		print("Spawn bandage!")
 	elif roll < total_chance:
 		var scrap:ItemBase = _scrap_scene.instantiate()

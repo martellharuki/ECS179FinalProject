@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2mlvkkhmhuki"
-path="res://.godot/imported/lump_zombie.png-b519a1a4b72cdea2b081b08d20e6d091.ctex"
+path="res://.godot/imported/lump_zombie.png-0a5557ea0d66987c556946ba3a79f956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/basic_assets/zombies/lump_zombie.png"
-dest_files=["res://.godot/imported/lump_zombie.png-b519a1a4b72cdea2b081b08d20e6d091.ctex"]
+source_file="res://assets/basic_assets/zombies/lump_zombie.png"
+dest_files=["res://.godot/imported/lump_zombie.png-0a5557ea0d66987c556946ba3a79f956.ctex"]
 
 [params]
 

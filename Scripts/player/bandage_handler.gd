@@ -41,8 +41,9 @@ func use_bandage() -> void:
 	if _player == null or not _player.has_method("heal"):
 		push_warning("BandageHandler: Player missing or does not have heal(amount).")
 		return
-
-	_player.heal(heal_amount)
+		
 	bandage_count -= 1
+	_player.heal(heal_amount)
+	_player.set_bandage(bandage_count)
 	bandage_count_changed.emit(bandage_count)
 	print("Used bandage. bandage_count = ", bandage_count)

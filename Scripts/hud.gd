@@ -1,10 +1,13 @@
+class_name HUDHandler
 extends CanvasLayer
 
 @onready var title_screen = $TitleScreen
 @onready var pause_screen = $PauseScreen
 #@onready var _item_spawner:ItemSpawner = %ItemSpawner
 @onready var player = get_parent().get_node("Player")
-@onready var crosshair_layer = get_parent().get_node("CanvasLayer2") 
+@onready var crosshair_layer = get_parent().get_node("CanvasLayer2")
+@onready var _bandage_text:Label = $"Hotbar/WeaponSlot1/Label"
+@onready var _scrap_text:Label = $"Hotbar/WeaponSlot2/Label"
 
 var is_paused = false
 var game_started = false
@@ -85,3 +88,9 @@ func return_to_title_screen():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if crosshair_layer:
 		crosshair_layer.visible = false
+		
+func set_bandage_count(amount:int) -> void:
+	_bandage_text.text = str(amount)
+	
+func set_scrap_count(amount:int) -> void:
+	_scrap_text.text = str(amount)

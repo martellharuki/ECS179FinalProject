@@ -48,12 +48,10 @@ func _physics_process(delta: float) -> void:
 		var dir: Vector2 = (next_point - global_position).normalized()
 		velocity = dir * speed
 	else:
-		# close enough, don't keep ramming into the player
 		velocity = Vector2.ZERO
 
 	move_and_slide()
 
-	# --- ATTACK: distance-based, so we still hit when standing close ---
 	if dist <= attack_range and can_attack:
 		_attack_player()
 
@@ -82,6 +80,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		return
 	
 	_take_damage(int(bullet.damage))
+	_sprite.modulate = Color(1.0, 0.3, 0.3)
+	
 	_stun()
 	_spawn_hit_particles(bullet.global_position)
 	
@@ -94,6 +94,7 @@ func _stun() -> void:
 
 func _on_stun_timer_timeout() -> void:
 	stunned = false
+	_sprite.modulate = Color(1.0, 1.0, 1.0)
 
 func _take_damage(amount: int) -> void:
 	health -= amount

@@ -1,0 +1,345 @@
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://bh52o4d1ct3ga"]
+
+[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://Assets/tilemap_and_assets/tileset_v2.png" id="1_c2num"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_c2gv2"]
+tile_data = PackedInt32Array(131072, 327681, 1073741836, 196608, 327681, 1073741836, 393216, 327681, 1073741836, 655360, 327681, 1610612748, 786432, 327681, 1610612748, 131075, 327681, 1342177292, 196611, 327681, 1342177292, 262147, 327681, 1342177292, 393219, 327681, 1342177292, 524291, 327681, 1342177292, 655363, 327681, 1879048204, 720899, 327681, 1879048204, 5, 327681, 12, 196613, 327681, 805306380, 262149, 327681, 12, 458757, 327681, 805306380, 524293, 327681, 12, 720901, 327681, 536870924, 196614, 327681, 805306380, 262150, 327681, 12, 524294, 327681, 12, 720902, 327681, 536870924, 7, 327681, 12, 458759, 327681, 805306380, 524295, 327681, 12, 393225, 327681, 1610612748, 524297, 327681, 1610612748, 655369, 327681, 1610612748, 720905, 327681, 1610612748, 786442, 327681, 16, 393228, 327681, 1342177292, 458764, 327681, 1879048204, 589836, 327681, 1342177292, 655372, 327681, 16, 393229, 327681, 16, 589837, 327681, 16, 720909, 327681, 16, 786445, 327681, 16, 851981, 327681, 16, 917517, 327681, 1610612748, 262158, 327693, 1342177295, 327694, 393229, 1879048207, 393230, 393229, 1342177295, 458766, 393229, 1879048207, 524302, 393229, 1342177295, 589838, 393229, 1879048207, 655374, 393229, 1342177295, 720910, 393229, 1879048207, 786446, 393229, 1342177295, 851982, 393229, 1879048207, 917518, 393229, 1342177295, 983054, 458765, 1342177295, 262159, 327693, 1342177294, 327695, 393229, 1342177294, 393231, 393229, 1879048206, 458767, 393229, 1342177294, 524303, 393229, 1879048206, 589839, 393229, 1342177294, 655375, 393229, 1879048206, 720911, 393229, 1342177294, 786447, 393229, 1879048206, 851983, 393229, 1342177294, 917519, 393229, 1879048206, 983055, 458765, 1342177294, 131089, 262145, 16, 983058, 262145, 18, 19, 262145, 12, 65555, 262145, 1610612748, 655379, 327681, 18, 851987, 262145, 19, 983059, 262145, 1342177298)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_bun23"]
+tile_data = PackedInt32Array(2, 262145, 12, 65538, 262145, 1610612748)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sjtuv"]
+resource_name = "TilesInThisLayer (DONT USE)"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 384)
+texture_region_size = Vector2i(32, 32)
+4:0/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+6:6/0 = 0
+6:7/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+4:19/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+8:4/0 = 0
+8:6/0 = 0
+6:8/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+15:1/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+9:14/0 = 0
+9:15/0 = 0
+6:14/0 = 0
+6:15/0 = 0
+7:14/0 = 0
+7:15/0 = 0
+8:14/0 = 0
+8:15/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:4/0 = 0
+9:5/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+3:6/0 = 0
+3:7/0 = 0
+3:8/0 = 0
+3:9/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+16:1/0 = 0
+11:1/0 = 0
+11:2/0 = 0
+12:1/0 = 0
+12:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ydbc3"]
+resource_name = "Small Tables/chairs + general"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 384)
+4:0/0 = 0
+8:0/0 = 0
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, -7, 7, 8, 7, 8, -8)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 7, -8, 7, 7, -8, 7)
+8:1/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -6, 8, -6, 8, 8, -7, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, -7, 8, 8, 8, 8, -8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, 8, -8, 8, 8, -7, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, -7, 6, 8, 6, 8, -8)
+4:12/0 = 0
+5:12/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:17/0 = 0
+6:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, 8, -6, -6, -4, -8, 8, -8, 8, -3, 0, -3, -1, -2, -1, 8)
+7:17/0 = 0
+7:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5, -8, 7, -6, 7, 8, 2, 8, 2, -1.5, 1, -3, -8, -3)
+4:18/0 = 0
+5:18/0 = 0
+4:19/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -4, -6, 6, 7, 6, 7, -4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bun23"]
+resource_name = "Bench"
+texture = ExtResource("1_c2num")
+margins = Vector2i(4, 384)
+16:0/0 = 0
+16:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtthi"]
+resource_name = "MediumBoxThingie?"
+texture = ExtResource("1_c2num")
+margins = Vector2i(1, 386)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5, -8, 5, 8, -8, 8)
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4, 5, -4, 5, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnkyj"]
+resource_name = "MediumLongTable"
+texture = ExtResource("1_c2num")
+margins = Vector2i(8, 397)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, 8, -8, 8, 8, -5, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6, -8, 6, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6, -8, 6, 8, -8, 8)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, 8, -8, 8, 5, -5, 5)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, 8, -8, 8, 8, -5, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, 8, -8, 8, 8, -5, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5, -8, 5)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6, -8, 6, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6, -8, 6, 5, -8, 5)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 8, -5, -4, 8, -4, 8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 6, -4, 6, 8, -8, 8)
+1:5/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fif40"]
+resource_name = "Counter"
+texture = ExtResource("1_c2num")
+margins = Vector2i(15, 383)
+6:14/0 = 0
+6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, 8, -3, 8, 8, -8, 8)
+7:14/0 = 0
+7:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, 2, -3, 2, 8, -8, 8)
+7:15/0 = 0
+7:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2, -8, 2, -2, -8, -2)
+6:15/0 = 0
+6:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+5:14/0 = 0
+5:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -3, 8, -3, 8, 8, -2, 8)
+5:15/0 = 0
+5:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -8, 8, -8, 8, -2, -2, -2)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xgc5"]
+resource_name = "SmallishBrownRectangle?"
+texture = ExtResource("1_c2num")
+margins = Vector2i(15, 390)
+8:14/0 = 0
+8:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, 7, -8, 7, 8, -6, 8)
+8:15/0 = 0
+8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, -6, -7, 7, -7, 7, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vv3x"]
+resource_name = "LongRectangle Thingie"
+texture = ExtResource("1_c2num")
+margins = Vector2i(13, 367)
+6:17/0 = 0
+6:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5, 8, -5, 8, 8, -8, 8)
+7:17/0 = 0
+7:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5, 2, -5, 2, 8, -8, 8)
+5:17/0 = 0
+5:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -5, 8, -5, 8, 8, -2, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fsfaj"]
+resource_name = "Small Sink"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 385)
+12:14/0 = 0
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -7, 8, -7, 8, 6, -4, 6)
+13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7, 3, -7, 3, 6, -8, 6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yktx5"]
+resource_name = "SmallClutterCounter"
+texture = ExtResource("1_c2num")
+margins = Vector2i(16, 385)
+14:14/0 = 0
+14:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3, -8, 3, 5, -8, 5)
+13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 8, -8, 8, 5, -4, 5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88f54"]
+resource_name = "SmallStovetop"
+texture = ExtResource("1_c2num")
+margins = Vector2i(14, 385)
+12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4, -8, 4, 5, -8, 5)
+11:15/0 = 0
+11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, 5, -3, -8, 8, -8, 8, 5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj1ai"]
+resource_name = "BathroomSink"
+texture = ExtResource("1_c2num")
+margins = Vector2i(15, 385)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, 5, 8, 5, 8, -8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 5, 5, 5, 5, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3rcb"]
+resource_name = "StoveTopExtendableCorner"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 387)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, 8, -8, 8, 8, -6, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ios8"]
+resource_name = "Prob aTV"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 398)
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7dfr"]
+resource_name = "SmallSink"
+texture = ExtResource("1_c2num")
+margins = Vector2i(0, 386)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, -7, 3, 7, 3, 7, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2gv2"]
+resource_name = "SmallToilet"
+texture = ExtResource("1_c2num")
+margins = Vector2i(1, 386)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, -5, -3, -2, 4, 2, 4, 5, -3, 5, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rp4qs"]
+resource_name = "BigToilet"
+texture = ExtResource("1_c2num")
+margins = Vector2i(15, 392)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -8, -5, -3, -5, 5, -3, 8, 3, 8, 5, 5, 5, 1, 5, -3, 5, -8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -8, -2, -7, 2, -7, 2, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhl3w"]
+resource_name = "CoffeeTable"
+texture = ExtResource("1_c2num")
+margins = Vector2i(15, 390)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5, -8, -2, -7, 2, -3, 3, -1, 3, 4, 2, 6, 0, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -5, -5, -5, -2, -6, -1, -7, -1, -8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 4, -8, 1, -7, -3, -3, -4, -1, -4, 4, -3, 6, -1, 8, 8, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 0, -7, 1, -6, 4, -5, 8, -5, 8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf24g"]
+resource_name = "WierdSeat/ImprovisedFridge"
+texture = ExtResource("1_c2num")
+margins = Vector2i(13, 384)
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -6, -2, -6, -2, 8, 8, 8)
+14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -8, -2, 6, 8, 6, 8, -8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_sjtuv")
+sources/1 = SubResource("TileSetAtlasSource_ydbc3")
+sources/2 = SubResource("TileSetAtlasSource_aj1ai")
+sources/5 = SubResource("TileSetAtlasSource_rp4qs")
+sources/7 = SubResource("TileSetAtlasSource_rhl3w")
+sources/8 = SubResource("TileSetAtlasSource_wf24g")
+sources/3 = SubResource("TileSetAtlasSource_d7dfr")
+sources/4 = SubResource("TileSetAtlasSource_c2gv2")
+sources/10 = SubResource("TileSetAtlasSource_bun23")
+sources/11 = SubResource("TileSetAtlasSource_gtthi")
+sources/12 = SubResource("TileSetAtlasSource_mnkyj")
+sources/13 = SubResource("TileSetAtlasSource_fif40")
+sources/14 = SubResource("TileSetAtlasSource_6xgc5")
+sources/15 = SubResource("TileSetAtlasSource_0vv3x")
+sources/16 = SubResource("TileSetAtlasSource_fsfaj")
+sources/17 = SubResource("TileSetAtlasSource_yktx5")
+sources/18 = SubResource("TileSetAtlasSource_88f54")
+sources/20 = SubResource("TileSetAtlasSource_s3rcb")
+sources/23 = SubResource("TileSetAtlasSource_8ios8")
+pattern_0 = SubResource("TileMapPattern_c2gv2")
+pattern_1 = SubResource("TileMapPattern_bun23")

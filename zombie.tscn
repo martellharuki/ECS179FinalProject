@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://bxo6vmdd470oq"]
 
-[ext_resource type="Texture2D" uid="uid://ckccmnxj55sys" path="res://assets/zombies/basic_zombie-export.png" id="2_jmu02"]
+[ext_resource type="Texture2D" uid="uid://j76wh1qryp7y" path="res://Assets/zombies/basic_zombie-export.png" id="2_jmu02"]
 [ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://basic_zombie.gd" id="2_roy8y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]

@@ -2,7 +2,7 @@ extends Camera2D
 
 @export var lead_speed: float = 800.0
 @export var leash_distance: float = 160.0
-@export var max_dist: float = 220.0
+@export var max_dist: float = 300.0
 @export var max_speed: float = 300.0
 
 const MIN_SPEED_FACTOR: float = 0.45
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	var to_mouse := mouse_pos - player_pos
 	var desired_offset := Vector2.ZERO
 
-	var lead_limit : float = min(leash_distance, max_dist)  # prevents conflict if max_dist < leash_distance
+	var lead_limit : float = min(leash_distance, max_dist)
 	if to_mouse.length_squared() > 0.001:
 		desired_offset = to_mouse
 		var desired_len := desired_offset.length()
@@ -72,5 +72,11 @@ func _physics_process(delta: float) -> void:
 		global_position += displacement
 	else:
 		global_position = desired_camera_pos
+
+	var actual_offset := global_position - player_pos
+	var actual_distance := actual_offset.length()
+
+	if actual_distance > max_dist and actual_distance > 0.001:
+		global_position = player_pos + (actual_offset / actual_distance) * max_dist
 
 	global_rotation = 0.0

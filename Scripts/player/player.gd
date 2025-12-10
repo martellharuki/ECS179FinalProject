@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var max_health = 100.0
 
+@export var dash_speed: float = 1800.0
+@export var dash_duration: float = 0.1
+@export var dash_cooldown: float = 2.0
+
 @onready var _weapon: WeaponHandler = $Weapon
 @onready var _crafting_handler: CraftingHandler = $CraftingHandler
 @onready var _animation_handler: AnimationHandler = $AnimationHandler
@@ -13,6 +17,9 @@ extends CharacterBody2D
 
 var facing_direction: Vector2
 var current_health: float
+var _dash_time_left: float = 0
+var _dash_cooldown_left: float = 0
+var _dash_direction: Vector2 = Vector2.RIGHT
 
 func pick_up_gun(weapon_type:WeaponHandler.WeaponType):
 	_weapon.set_weapon(weapon_type)
@@ -57,10 +64,30 @@ func _physics_process(_delta):
 	# Normalize so diagonal movement isn't faster
 	input_direction = input_direction.normalized()
 	
-	if not _crafting_handler.locking_player_movement:
-		velocity = input_direction * speed
+	if _dash_cooldown_left > 0.0:
+		_dash_cooldown_left = max(0.0, _dash_cooldown_left - _delta)
+	
+	if Input.is_action_just_pressed("dash") and _dash_cooldown_left <= 0.0 and _dash_time_left <= 0.0:
+		print("Dash !")
+		_dash_direction = input_direction
+		if _dash_direction == Vector2.ZERO:
+			_dash_direction = (get_global_mouse_position() - global_position).normalized()
+			if _dash_direction == Vector2.ZERO:
+				_dash_direction = Vector2.RIGHT
+
+		_dash_time_left = dash_duration
+		_dash_cooldown_left = dash_cooldown
+
+	if _dash_time_left > 0.0:
+		_dash_time_left = max(0.0, _dash_time_left - _delta)
+	
+	if _crafting_handler.locking_player_movement:
+		velocity = Vector2.ZERO
 	else:
-		velocity = Vector2(0, 0)
+		if _dash_time_left > 0.0:
+			velocity = _dash_direction * dash_speed
+		else:
+			velocity = input_direction * speed
 	
 	_face_mouse()
 	

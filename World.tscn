@@ -3218,56 +3218,56 @@ position = Vector2(65456, -20503)
 [node name="ItemSpawnPoint46" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(57215, -1827)
 
+[node name="ItemSpawnPoint76" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(47261, -22971)
+
+[node name="ItemSpawnPoint77" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-13354, -20484)
+
+[node name="ItemSpawnPoint78" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-25491, -4422)
+
+[node name="ItemSpawnPoint79" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-10103, -4965)
+
+[node name="ItemSpawnPoint80" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-21721, 11319)
+
+[node name="ItemSpawnPoint81" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-30156, 6790)
+
+[node name="ItemSpawnPoint82" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-17766, -6108)
+
+[node name="ItemSpawnPoint83" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-6392, -9936)
+
+[node name="ItemSpawnPoint84" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-90212, -1344)
+
+[node name="ItemSpawnPoint85" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-114109, -4331)
+
+[node name="ItemSpawnPoint86" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-23228, -12930)
+
+[node name="ItemSpawnPoint87" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-27483, -16823)
+
+[node name="ItemSpawnPoint88" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-2079, -11052)
+
+[node name="ItemSpawnPoint89" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-16346, -26545)
+
+[node name="ItemSpawnPoint90" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(-11460, 5368)
+
+[node name="ItemSpawnPoint91" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
+position = Vector2(1027, -23405)
+
 [node name="ItemSpawnPoint47" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(74527, -4615)
-
-[node name="ItemSpawnPoint28" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-27266, -18356)
-
-[node name="ItemSpawnPoint29" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-87881, -15869)
-
-[node name="ItemSpawnPoint30" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-100018, 193)
-
-[node name="ItemSpawnPoint31" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-84630, -350)
-
-[node name="ItemSpawnPoint32" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-96248, 15934)
-
-[node name="ItemSpawnPoint33" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-104683, 11405)
-
-[node name="ItemSpawnPoint34" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-92293, -1493)
-
-[node name="ItemSpawnPoint35" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-80919, -5321)
-
-[node name="ItemSpawnPoint36" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-164739, 3271)
-
-[node name="ItemSpawnPoint37" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-188636, 284)
-
-[node name="ItemSpawnPoint38" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-97755, -8315)
-
-[node name="ItemSpawnPoint39" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-102010, -12208)
-
-[node name="ItemSpawnPoint40" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-76606, -6437)
-
-[node name="ItemSpawnPoint41" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-90873, -21930)
-
-[node name="ItemSpawnPoint42" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-85987, 9983)
-
-[node name="ItemSpawnPoint43" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer/ItemSpawnPoint47"]
-position = Vector2(-73500, -18790)
 
 [node name="ItemSpawnPoint48" type="Node2D" parent="ItemSpawner/ItemSpawnLocationContainer"]
 position = Vector2(63551, 5415)

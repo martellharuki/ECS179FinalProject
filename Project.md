@@ -2,7 +2,7 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+Our game, "Revenge of Zissors", is a top-down zombie shooter. Players will get a birds eye view of the map and use a gun to kill zombies. The game features 4 guns pistol, smg, assault rifle, and sniper rifle have fire rate, accuracy, damage, and bullet velocity stats associated with them.
 
 ## Project Resources
 
@@ -28,25 +28,24 @@ If you used tutorials or other intellectual guidance to create aspects of your p
 
 This section be repeated once for each team member. Each team member should provide their name and GitHub user information.
 
-The general structures is 
-```
-Team Member 1
-  Main Role
-    Documentation for main role.
-  Sub-Role
-    Documentation for Sub-Role
-  Other contribtions
-    Documentation for contributions to the project outside of the main and sub roles.
 
-Team Member 2
-  Main Role
-    Documentation for main role.
-  Sub-Role
-    Documentation for Sub-Role
-  Other contribtions
-    Documentation for contributions to the project outside of the main and sub roles.
-...
-```
+# Bill
+
+# Patrick
+
+# Kaylie
+
+# Haruki Martell
+## Github: martellharuki
+
+## Main Role: Systems and Tools Engineer
+
+## Sub Role: Build and Release Manager
+
+# Hao
+
+# Joseph
+
 
 For each team member, you shoudl work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
 

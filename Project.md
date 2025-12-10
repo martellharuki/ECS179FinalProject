@@ -66,4 +66,3 @@ Add addition contributions int he Other Contributions section.
 ## Sub-Roles ##
 
 ## Other Contributions ##
-**Document what you added to and how you tweaked your game to improve its game feel.**

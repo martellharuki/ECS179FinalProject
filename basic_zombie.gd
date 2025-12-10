@@ -13,6 +13,7 @@ var health: int
 var stunned: bool = false
 var can_attack: bool = true
 var _dying: bool = false
+var _attacking: bool = false
 
 @onready var _hitbox: Area2D = $Sprite2D/Hitbox
 @onready var _stun_timer: Timer = $Sprite2D/Stun_Timer
@@ -36,6 +37,7 @@ func _ready() -> void:
 	if _sprite:
 		_sprite.speed_scale = 1.0
 		_sprite.play("walk")
+		_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
 	if stunned or _player == null or _dying:
@@ -75,14 +77,26 @@ func _physics_process(delta: float) -> void:
 
 func _attack_player() -> void:
 	if _player and can_attack and not _dying:
+		can_attack = false
+		_attacking = true
+		
 		if _sprite:
 			_sprite.play("attack")
+		
 		_player.take_damage(damage)
-		can_attack = false
 		_attack_timer.start()
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true
+	
+func _on_animation_finished() -> void:
+	if _sprite == null:
+		return
+	
+	if _sprite.animation == "attack":
+		_attacking = false
+	elif _sprite.animation == "death":
+		queue_free()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if _dying:
@@ -120,6 +134,7 @@ func _take_damage(amount: int) -> void:
 		return
 		
 	_dying = true
+	_attacking = false
 	velocity = Vector2.ZERO
 	$Physic_CollisionShape2D.disabled = true
 	_hitbox.monitoring = false
@@ -156,6 +171,9 @@ func set_item_spawner(_item_spawner_ref: ItemSpawner) -> void:
 
 func _update_animation() -> void:
 	if _dying or stunned or _sprite == null:
+		return
+		
+	if _attacking or _sprite.animation == "death":
 		return
 		
 	if velocity.length() > 10.0:

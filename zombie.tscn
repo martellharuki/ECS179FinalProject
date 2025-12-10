@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://bxo6vmdd470oq"]
 
-[ext_resource type="Texture2D" uid="uid://j76wh1qryp7y" path="res://Assets/zombies/basic_zombie-export.png" id="2_jmu02"]
+[ext_resource type="Texture2D" uid="uid://j76wh1qryp7y" path="res://assets/zombies/basic_zombie-export.png" id="2_jmu02"]
 [ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://basic_zombie.gd" id="2_roy8y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]
@@ -154,7 +154,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fpxwj")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -251,7 +251,7 @@ script = ExtResource("2_roy8y")
 texture_filter = 1
 scale = Vector2(18, 18)
 sprite_frames = SubResource("SpriteFrames_5w78j")
-animation = &"walk"
+animation = &"attack"
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 4

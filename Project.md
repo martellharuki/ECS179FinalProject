@@ -270,6 +270,7 @@ I created basic player asset and animations for walking, attacking, dashing, and
 | :------------: |
 |  ![Player Animation](https://github.com/martellharuki/ECS179FinalProject/blob/9e8f0a734a63027c5324394c050cf803d172cc00/projectDocumentationAnimatoinandVisuals/player_animated.gif)  |
 | Walk Dash Bandage Attack |
+
 | Pistol | SMG | Assault Rifle | Sniper Rifle |
 | :------------: | :------------: | :------------: | :------------: | 
 | ![Player with pistol](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_pistol.gif) | ![Player with SMG](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_smg.gif) | ![Player with assault rifle](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_assault_rifle.gif) | ![Player with sniper rifle](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_sniper_rifle.gif) |
@@ -293,8 +294,9 @@ I made all the tilesets and assets in the map with the help of Kaylie. She basic
 | ![Tileset](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/tileset_v1.png) |
 * #### Title, UI Designs, Background
 Since our game has an overall casual feeling, so to match with that, I made the title and menu icons light with the colors that were used in creating zombies. Since my lack of creativity, I made the background image for the main menu with ChatGPT with the following prompt: 'These are the assets that my game contains. generate a background image that represent the characteristics of the game. make it in 2d pixel art'. As it can be seen from this prompt, in this prompt, I also included the zombie assets I created.
-
-
+| Main Menu |
+| :------------: |
+| ![Main Menu](https://github.com/martellharuki/ECS179FinalProject/blob/efd31cc120f8fb64d8b2cce32af21e9b00bc2059/projectDocumentationAnimatoinandVisuals/main_menu.png) |
 
 For each team member, you shoudl work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
 

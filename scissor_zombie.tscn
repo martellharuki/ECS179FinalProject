@@ -1,8 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://bgu4lfoqnexvn"]
+[gd_scene load_steps=38 format=3 uid="uid://bgu4lfoqnexvn"]
 
 [ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://scissor_zombie.gd" id="1_rh58c"]
 [ext_resource type="Texture2D" uid="uid://bts105igm5nco" path="res://assets/zombies/scissor_zombie-export.png" id="2_rh58c"]
-[ext_resource type="Texture2D" uid="uid://ca7jr7d8t8cex" path="res://assets/zombies/scissor_zombie_v2.png" id="3_yjxdy"]
+[ext_resource type="Texture2D" uid="uid://bxcrvctqcfvon" path="res://assets/zombies/scissor_zombie_v2.png" id="3_yjxdy"]
+[ext_resource type="AudioStream" uid="uid://drr5cpqsqifb6" path="res://assets/Audio/hurt2-zombie.mp3" id="4_eqj6j"]
+[ext_resource type="AudioStream" uid="uid://btybyrael8qm7" path="res://assets/Audio/death-zombie.mp3" id="5_yn66x"]
+[ext_resource type="AudioStream" uid="uid://dndfpfd1hnb70" path="res://assets/Audio/2.mp3" id="6_yn66x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjxdy"]
 atlas = ExtResource("2_rh58c")
@@ -278,6 +281,7 @@ position = Vector2(-0.5, -10.5)
 shape = SubResource("CircleShape2D_rh58c")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 800.0
 
 [node name="WindupTimer" type="Timer" parent="."]
 one_shot = true
@@ -286,6 +290,17 @@ one_shot = true
 one_shot = true
 
 [node name="RecoverTimer" type="Timer" parent="."]
+
+[node name="Zombie_Audio" type="Node2D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Zombie_Audio"]
+stream = ExtResource("4_eqj6j")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Zombie_Audio"]
+stream = ExtResource("5_yn66x")
+
+[node name="Roar" type="AudioStreamPlayer2D" parent="Zombie_Audio"]
+stream = ExtResource("6_yn66x")
 
 [connection signal="area_entered" from="Sprite2D/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Sprite2D/Stun_Timer" to="." method="_on_stun_timer_timeout"]

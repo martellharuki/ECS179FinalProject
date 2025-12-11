@@ -3,6 +3,11 @@ extends Node2D
 
 @export var zombie_scene: PackedScene
 @export var scissor_zombie_scene: PackedScene
+@export var lump_zombie_scene: PackedScene
+
+@export var spawn_bounds: Rect2 = Rect2(Vector2(-6747.0, -6614.0), Vector2(31315, 15951))
+
+@export_flags_2d_physics var environment_mask: int
 
 @export var spawn_radius: float = 900.0        # distance from player
 # Wave management
@@ -22,6 +27,9 @@ extends Node2D
 @export var boss_wave: int = 10 
 @export var boss_spawn_time: float = -1.0 # seconds this method currently disabled
 
+@export var lump_spawn_chance: float = 0.33
+@export var lump_start_wave: int = 2
+
 var _current_zombie_health: int
 
 var _current_interval: float
@@ -37,6 +45,8 @@ var _elapsed_time: float = 0.0
 @onready var _item_spawner:ItemSpawner = %ItemSpawner
 
 func _ready() -> void:
+	randomize()
+	
 	_current_interval = spawn_interval_start
 	_current_zombies_per_wave = zombies_per_wave_start
 	_current_zombie_health = base_zombie_health
@@ -63,12 +73,29 @@ func _on_spawn_timer_timeout() -> void:
 		return
 
 	for i in range(_current_zombies_per_wave):
-		var zombie := zombie_scene.instantiate() as BasicZombie
+		#var zombie := zombie_scene.instantiate() as BasicZombie
+		#get_tree().current_scene.add_child(zombie)
+		#zombie.global_position = _get_spawn_position_around_player()
+		var spawn_pos = _get_spawn_position_around_player()
+		var zombie: BasicZombie
+		var use_lump := false
+		if _wave_index >= lump_start_wave and lump_zombie_scene:
+			use_lump = randf() < lump_spawn_chance
+		
+		if use_lump:
+			zombie = lump_zombie_scene.instantiate() as BasicZombie
+		else:
+			zombie = zombie_scene.instantiate() as BasicZombie
+		
+		if zombie == null:
+			continue
+		
 		get_tree().current_scene.add_child(zombie)
-		zombie.global_position = _get_spawn_position_around_player()
+		zombie.global_position = spawn_pos
+		if zombie.has_method("set_item_spawner"):
 		# I will not change this since it's about item spawning
 		# does it also need if statement? like: if zombie.has_method("set_item_spawner"):
-		zombie.set_item_spawner(_item_spawner)
+			zombie.set_item_spawner(_item_spawner)
 		if zombie.has_method("set_stats"):
 			zombie.set_stats(_current_zombie_health)
 	
@@ -100,7 +127,27 @@ func _spawn_boss() -> void:
 	_boss_spawned = true
 
 func _get_spawn_position_around_player() -> Vector2:
-	# pick a random angle around the player
-	var angle := randf() * TAU
-	var offset := Vector2(cos(angle), sin(angle)) * spawn_radius
-	return _player.global_position + offset
+	var space_state := get_world_2d().direct_space_state
+	
+	for i in range(16):
+		# pick a random angle around the player
+		var angle := randf() * TAU
+		var offset := Vector2(cos(angle), sin(angle)) * spawn_radius
+		#return _player.global_position + offset
+		var pos := _player.global_position + offset
+		
+		pos.x = clampf(pos.x, spawn_bounds.position.x, spawn_bounds.position.x + spawn_bounds.size.x)
+		pos.y = clampf(pos.y, spawn_bounds.position.y, spawn_bounds.position.y + spawn_bounds.size.y)
+		
+		var params := PhysicsPointQueryParameters2D.new()
+		params.position = pos
+		params.collision_mask = environment_mask
+		params.collide_with_areas = true
+		params.collide_with_bodies = true
+		
+		var result: Array = space_state.intersect_point(params, 8)
+		
+		if result.is_empty():
+			return pos
+		
+	return _player.global_position

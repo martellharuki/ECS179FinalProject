@@ -22,6 +22,9 @@ var _attacking: bool = false
 @onready var _attack_timer: Timer = Timer.new()
 @onready var _item_spawner: ItemSpawner = %ItemSpawner
 
+@onready var _audio_hurt: AudioStreamPlayer2D = $Zombie_Audio/Hurt
+@onready var _audio_death: AudioStreamPlayer2D = $Zombie_Audio/Death
+
 var _player: Player
 
 func _ready() -> void:
@@ -128,6 +131,10 @@ func _take_damage(amount: int) -> void:
 		return
 	
 	health -= amount
+	
+	if _audio_hurt:
+		_audio_hurt.play()
+	
 	print("Zombie took damage: ", amount, " | health now: ", health)
 	
 	if health > 0:
@@ -147,6 +154,8 @@ func _take_damage(amount: int) -> void:
 	_item_spawner.handle_scrap_spawn(global_position)
 	
 	if _sprite:
+		if _audio_death:
+			_audio_death.play()
 		_sprite.play("death")
 		_sprite.animation_finished.connect(_on_death_animation_finished, CONNECT_ONE_SHOT)
 	else:

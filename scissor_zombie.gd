@@ -19,6 +19,8 @@ var _boss_active: bool = true   # boss now active immediately
 @onready var _windup_timer: Timer = $WindupTimer
 @onready var _charge_timer: Timer = $ChargeTimer
 @onready var _recover_timer: Timer = $RecoverTimer
+@onready var _roar_audio: AudioStreamPlayer2D = $Zombie_Audio/Roar
+var _charge_count: int = 0
 
 func _ready() -> void:
 	max_health = boss_max_health
@@ -64,6 +66,8 @@ func _take_damage(amount: int) -> void:
 	#queue_free()
 
 func _on_boss_death_finished() -> void:
+	if _roar_audio and _roar_audio.playing:
+		_roar_audio.stop()
 	ScreenManager.show_win_screen()
 	queue_free()
 
@@ -111,6 +115,13 @@ func _start_windup() -> void:
 	_state = State.WINDUP
 	_charge_dir = (_player.global_position - global_position).normalized()
 	_windup_timer.start(windup_time)
+	
+	_charge_count += 1 #lol control audio :P
+	if _roar_audio and _charge_count % 2 == 1:
+		if _roar_audio.playing:
+			_roar_audio.stop()
+		_roar_audio.pitch_scale = 1.0 + randf_range (-0.05, 0.05)
+		_roar_audio.play()
 
 func _on_windup_timeout() -> void:
 	_state = State.CHARGE

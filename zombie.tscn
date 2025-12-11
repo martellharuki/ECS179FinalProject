@@ -1,7 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxo6vmdd470oq"]
+[gd_scene load_steps=36 format=3 uid="uid://bxo6vmdd470oq"]
 
 [ext_resource type="Texture2D" uid="uid://j76wh1qryp7y" path="res://assets/zombies/basic_zombie-export.png" id="2_jmu02"]
 [ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://basic_zombie.gd" id="2_roy8y"]
+[ext_resource type="AudioStream" uid="uid://drr5cpqsqifb6" path="res://assets/Audio/hurt2-zombie.mp3" id="3_eseir"]
+[ext_resource type="AudioStream" uid="uid://btybyrael8qm7" path="res://assets/Audio/death-zombie.mp3" id="4_7nqyo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]
 atlas = ExtResource("2_jmu02")
@@ -272,6 +274,14 @@ shape = SubResource("CircleShape2D_roy8y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 800.0
+
+[node name="Zombie_Audio" type="Node2D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Zombie_Audio"]
+stream = ExtResource("3_eseir")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Zombie_Audio"]
+stream = ExtResource("4_7nqyo")
 
 [connection signal="area_entered" from="Sprite2D/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Sprite2D/Stun_Timer" to="." method="_on_stun_timer_timeout"]

@@ -99,9 +99,9 @@ Add addition contributions int he Other Contributions section.
 
 # Team Member 5
 
-## Main Roles ##
+## Main Roles: UI and Input ##
 
-## Sub-Roles ##
+## Sub-Roles: Accessibility and Usability Design	 ##
 
 ## Other Contributions ##
 **Document what you added to and how you tweaked your game to improve its game feel.**

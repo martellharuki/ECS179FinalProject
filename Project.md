@@ -28,6 +28,49 @@ This section be repeated once for each team member. Each team member should prov
 
 
 # Bill
+## Github: Koumbabill
+## Main Role: Game Logic
+* #### Player Aiming / Facing Mouse Cursor
+  Implemented mouse-based aiming so the player character always faces the mouse cursor using `look_at(get_global_mouse_position())`. Added a sprite-facing offset (ex: rotation += deg_to_rad(90)) to compensate for art orientation (sprite facing “up” while Godot’s forward axis is +X). [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/player/player.gd)
+
+* #### Custom Aiming Cursor
+  Replaced the default mouse cursor with a custom aiming reticle drawn in-engine. It is implemented as a **CanvasLayer** tracking the mouse so it stays stable regardless of camera movement.
+  Designed the reticle to be parameterized, including a adjustable `gap_radius` (distance from center to bars), `bar_thickness`, `bar_length`, and optional center dot. [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/mouse_cursor.gd)
+
+* #### Flashlight cone lighting
+  Used a **PointLight2D** object with procedurally generated cone texture that does not require a texture asset. The texture was made manually in real-time through code. It bein a child node of the player scene, there was no redirection necessary. Its properties are modifiable like the angle, the power, and the range. [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/flashlight.gd)
+
+* #### Dynamic Camera Lead System
+  This cursor-led camera with leash was inspired by our Exercise 2 Stage 4 on camera controls. Similarly, it is a Camera2D object that a `lead_speed` for how quickly the camera catches to the cursor and a `leash_distance` which is the maximum distance of the camera from the cursor. In opposition to the Exercise 2 implementation, the camera is led by the cursor, so there is an additional `max_dist` variable so that the player does not exit the camera's sight. [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/camera_handler.gd)
+* #### Dash Mechanic with Cooldown
+  Implemented a player dash action. When dashing, the player character has a burst of velocity at `dash_speed` for `dash_duration`, the dash has a 2 second cooldown before it can be reused and the dash direction defaults to movement direction, or mouse direction if standing still. [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/player/player.gd)
+* #### Consumable Bandage Healing
+  Implemented a consumable healing system of bandage. When using the bandage input Q, it will verify if the player has missing health. If there is no missing health, bandage will not be consumed, otherwise bandage is used to heal by a `heal_amount` without exceeding the player `max_health` and remove one from the `bandage_count`. The player starts with 3 bandages for balance purpose. [Related Files](https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/player/bandage_handler.gd)
+
+## Sub Role: Gameplay Testing
+#### Link to Game Testing Reports
+[Report Folder](https://drive.google.com/drive/folders/1VcvKhtboJzChzymfOTVz2D2E3f3ab_U-?usp=drive_link)
+#### Main questions asked during Testing
+1. What was your favorite part about the game?
+2. What didn’t you like about the game?
+3. What was confusing or not explained enough?
+4. Did the game feel too long, too short, or just about right?
+5. How did the controls feel? Were the camera movements optimal?
+6. If you were to suggest that one change be made to the game, what would it be?
+
+#### Key findings
+* Better Sound Design - Outside from the background music and the shooting sounds, there is no other sound effects
+* Clearer Boss UI - There is no visual nor audio cue that the boss has spawned, and no health bar to give a better assertion of the fight
+* Improved enemy behavior - It is too common to find multiple enemies stuck behind obstacles including the boss, it also leads to some zombies 
+ especially since the map has many elements blocking both the player and the zombies
+
+#### What has been achieved before final version
+* Increased sound design with heal, and damage sound effects on the player, and damage, attack and death sound effects for the zombies
+
+## Other Contributions
+* Maintainability Improvements - Added modifieable variables to help tuning and balancing of the gameplay overall
+* Performance & Responsiveness Checks -  Ensured that the game stayed responsive and that previously implemented features remained after new additions
+
 
 # Patrick
 ## Github: Chunkio

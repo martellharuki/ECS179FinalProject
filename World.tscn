@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=148 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
@@ -33,6 +33,8 @@
 [ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="21_gtthi"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
 [ext_resource type="AudioStream" uid="uid://ck5aiy2aif2ii" path="res://assets/Audio/356-8-bit-chiptune-game-music-357518.mp3" id="22_6xgc5"]
+[ext_resource type="AudioStream" uid="uid://bc783tq8yxgda" path="res://assets/Audio/player-hurt.mp3" id="23_8ios8"]
+[ext_resource type="AudioStream" uid="uid://8slh51lwranw" path="res://assets/Audio/heal.mp3" id="24_s1hef"]
 [ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://assets/utility/scrap.png" id="25_gtthi"]
 [ext_resource type="Texture2D" uid="uid://c5p3w5qjk7spw" path="res://background_v3.png" id="31_0vv3x"]
 [ext_resource type="Texture2D" uid="uid://dvoj804av82j3" path="res://assets/ui/title.png" id="32_fsfaj"]
@@ -2537,7 +2539,7 @@ script = ExtResource("4_aj1ai")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5j71u")
-animation = &"sniper_idle"
+animation = &"pistol_shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0.5, 6)
@@ -2600,6 +2602,12 @@ stream = ExtResource("21_fif40")
 stream = ExtResource("22_6xgc5")
 autoplay = true
 parameters/looping = true
+
+[node name="PlayerHurt" type="AudioStreamPlayer2D" parent="Player/AudioHandler"]
+stream = ExtResource("23_8ios8")
+
+[node name="PlayerHeal" type="AudioStreamPlayer2D" parent="Player/AudioHandler"]
+stream = ExtResource("24_s1hef")
 
 [node name="ActionItem" type="Node2D" parent="."]
 unique_name_in_owner = true

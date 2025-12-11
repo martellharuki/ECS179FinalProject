@@ -115,6 +115,10 @@ func _handle_weapon_cmd() -> void:
 func heal(amount: float):
 	current_health = min(max_health, current_health + amount)
 	_animation_handler.make_player_heal()
+	
+	if _audio_handler:
+		_audio_handler.play_player_heal_sound()
+	
 	# Find HP bar and update it
 	var hp_bar = get_tree().get_first_node_in_group("hp_bar")
 	if hp_bar and hp_bar.has_method("update_player_health"):
@@ -128,6 +132,9 @@ func set_scrap(count:int):
 
 func take_damage(amount: float):
 	current_health = max(0, current_health - amount)
+	
+	if _audio_handler:
+		_audio_handler.play_player_hurt_sound()
 	
 	# Find HP bar and update it
 	var hp_bar = get_tree().get_first_node_in_group("hp_bar")

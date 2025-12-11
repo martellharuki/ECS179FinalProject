@@ -74,7 +74,7 @@ This section be repeated once for each team member. Each team member should prov
 
 # Patrick
 ## Github: Chunkio
-## Main Role: Systems and Tools Engineer
+## Main Role: User Interface and Input
 I made all the menus and screens for the game, and set up how players control their character.
 
 UI Manager System - Created a UI manager that controls all the different menus and screens in one place. This includes the pause menu, title screen, health bar, and hotbar. The manager keeps everything organized and makes it easy to show or hide different UI elements when needed. 

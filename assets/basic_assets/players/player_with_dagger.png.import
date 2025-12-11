@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkjly5magjxkv"
-path="res://.godot/imported/player_with_dagger.png-34b6bcfb450926fefff63f350e28e743.ctex"
+path="res://.godot/imported/player_with_dagger.png-ebfbff39cbb9c1924101f1a5c3a089ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/basic_assets/players/player_with_dagger.png"
-dest_files=["res://.godot/imported/player_with_dagger.png-34b6bcfb450926fefff63f350e28e743.ctex"]
+source_file="res://Assets/basic_assets/players/player_with_dagger.png"
+dest_files=["res://.godot/imported/player_with_dagger.png-ebfbff39cbb9c1924101f1a5c3a089ee.ctex"]
 
 [params]
 

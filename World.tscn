@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=149 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://ddegtyr8t1q0l" path="res://assets/ui/start.png" id="33_s3rcb"]
 [ext_resource type="Texture2D" uid="uid://brfk8jv7xyj77" path="res://assets/ui/howtoplay.png" id="33_yktx5"]
 [ext_resource type="Texture2D" uid="uid://di4wjjib1xfkl" path="res://assets/ui/quit.png" id="34_88f54"]
+[ext_resource type="PackedScene" uid="uid://c6s8asm2g51wr" path="res://lump_zombie.tscn" id="42_s1hef"]
 
 [sub_resource type="TileSet" id="TileSet_cmany"]
 
@@ -3367,6 +3368,9 @@ navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
 scissor_zombie_scene = ExtResource("22_5j71u")
+lump_zombie_scene = ExtResource("42_s1hef")
 environment_mask = 1
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]
+
+[node name="lump_zombie" parent="." instance=ExtResource("42_s1hef")]

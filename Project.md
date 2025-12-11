@@ -30,6 +30,53 @@ This section be repeated once for each team member. Each team member should prov
 # Bill
 
 # Patrick
+## Github: Chunkio
+## Main Role: Systems and Tools Engineer
+I made all the menus and screens for the game, and set up how players control their character.
+
+UI Manager System - Created a UI manager that controls all the different menus and screens in one place. This includes the pause menu, title screen, health bar, and hotbar. The manager keeps everything organized and makes it easy to show or hide different UI elements when needed. 
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/hud.gd
+
+Pause Menu System - Implemented a fully functional pause screen with resume and return-to-title functionality. This system halts game state while maintaining UI responsiveness. The pause system uses Godot's process pausing and implements the State Pattern to ensure clean transitions between play and pause states. 
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/scripts/pause_screen.gd
+
+Main Menu - Created the title screen with three core buttons (Start, How to Play, Quit) that serve as the game's entry point. This implements scene management and UI navigation hierarchies, ensuring smooth transitions between game states. 
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/title_screen.gd
+
+Health Bar - Developed a responsive HP bar that updates in real-time as the player takes damage. The UI subscribes to health change events from the player controller. The visual feedback provides crucial game feel elements that communicate player state clearly and immediately.
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/health_bar.gd
+
+Player Controls - Set up the basic WASD movement controls so players can move around in the game.
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/player/player.gd
+
+## Sub Role: Accessibility and Usability Design
+In this role, I focused on making the game more accessible and improving the overall user experience through iterative design and testing features. This connects to the Usability Engineering and Iterative Design principles emphasized throughout the course.
+
+Testing Buttons - Created a comprehensive set of testing inputs (heal button, damage button, instant win) to facilitate rapid iteration and debugging of UI systems. These testing features allowed for quick validation of visual feedback systems without requiring full gameplay loops.  
+https://github.com/martellharuki/ECS179FinalProject/blob/fc74ab76b2a36d901162826293c1c640809269a2/Scripts/player/player.gd#L96-L98
+
+Hotbar UI - Designed and implemented the hotbar interface structure that serves as the foundation for the inventory system.
+
+Win and Lose Screens - Developed win screen, lose screen, and objective screen to clearly communicate game state to players. The objective screen appears immediately after game start, providing clear player goals ("Survive"). These screens implement feedback systems and ensure players always understand their current objective and performance.
+
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/lose_screen.tscn
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/win_screen.tscn
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/objective_screen.tscn
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/win_screen.gd
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/lose_screen.gd
+https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/objective_screen.gd
+
+Score System - Added a score counter in HUD.gd that tracks how many enemies you kill. The score shows up on the win/lose screens at the end so you can see how well you did. 
+
+## Other Contributions:
+Visual Setup - Assisted with the visual polish of the game by integrating graphical assets including title graphics, background images, and button icons into their appropriate UI screens. 
+
+Removed Features - Developed and later removed an inventory screen system after determining it added unnecessary complexity to the core gameplay loop.
 
 # Kaylie
 

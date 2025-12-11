@@ -6,8 +6,8 @@ Our game, "Revenge of Zissors", is a top-down zombie shooter; the setting is a z
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1qwWCpMwKJGOLQ-rRJt8G8zisCa2XHFhv6zSWars0eWM/edit?usp=sharing)  
+[Web-playable version of your game.](https://martellharuki.itch.io/revenge-of-zissors)  
+[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1SG45SkCJg-_YqTW3saoH2T0eArfKZdetLfeUSvTiIBg/edit?tab=t.0#heading=h.i3tv2mxf7h7z)  
 
 ## Gameplay Explanation ##
 

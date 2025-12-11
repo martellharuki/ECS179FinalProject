@@ -97,43 +97,14 @@ Add addition contributions int he Other Contributions section.
 ## Other Contributions ##
 **Document what you added to and how you tweaked your game to improve its game feel.**
 
-# Team Member 5: Patrick Wang (Github: Chunkio)
+# Team Member 5
 
 ## Main Roles: UI and Input ##
-I made all the menus and screens for the game, and set up how players control their character.
-
-UI Manager System - Created a UI manager that controls all the different menus and screens in one place. This includes the pause menu, title screen, health bar, and hotbar. The manager keeps everything organized and makes it easy to show or hide different UI elements when needed. https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/hud.gd
-
-Pause Menu System - Made a pause screen that stops the game. It has two buttons: one to resume playing and one to go back to the main menu. The game freezes when you pause but the buttons still work. https://github.com/martellharuki/ECS179FinalProject/blob/main/scripts/pause_screen.gd
-
-Main Menu - Created the title screen with three buttons: Start Game, How to Play, and Quit. This is the first thing players see when they open the game. Each button works and takes you to the right place. https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/title_screen.gd
-
-Health Bar - Built the HP bar that shows the player's health. It updates whenever the player takes damage so you can always see how much health you have left. The bar shrinks as you lose health. https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/health_bar.gd
-
-Player Controls - Set up the basic WASD movement controls so players can move around in the game. https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/player/player.gd
 
 ## Sub-Roles: Accessibility and Usability Design	 ##
-I worked on making the game easier to use and test.
-
-Testing Buttons - Made special testing buttons (heal, damage, instant win) so we could quickly check if the UI was working right without having to play through the whole game. This made it way faster to test if things looked correct. 
-https://github.com/martellharuki/ECS179FinalProject/blob/fc74ab76b2a36d901162826293c1c640809269a2/Scripts/player/player.gd#L96-L98
-
-
-Hotbar UI - Created the hotbar interface that shows at the bottom of the screen.
-
-Win and Lose Screens - Made the screens that show up when you beat the boss or die. Also made an objective screen that appears right after you start the game and tells you to survive. https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/lose_screen.tscn
-https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/win_screen.tscn
-https://github.com/martellharuki/ECS179FinalProject/blob/main/Scenes/objective_screen.tscn
-https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/win_screen.gd
-https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/lose_screen.gd
-https://github.com/martellharuki/ECS179FinalProject/blob/main/Scripts/objective_screen.gd
-
-Score System - Added a score counter in HUD.gd that tracks how many enemies you kill. The score shows up on the win/lose screens at the end so you can see how well you did. 
 
 ## Other Contributions ##
-Visual Setup - Helped put the visual parts of the UI together, like placing the title image, adding the background to the title screen, and putting button icons in the right spots.
-
-Removed Features - Made an inventory screen and script but ended up removing it because it made the game too complicated.
+**Document what you added to and how you tweaked your game to improve its game feel.**
 
 # Team Member 6: Kaylie Lam (Github: Kalam721)
 

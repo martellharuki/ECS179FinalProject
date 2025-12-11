@@ -225,8 +225,8 @@ Post-Game demo, I cleaned up the playable map and added borders.
 * #### In this role I focused on the core gameplay loop the enemy behavior which include wave progression, enemy spawning, Nevigation to avoid objects on the map.
 
 #### Central Zombie spawn control--I implemented the overall wave progression and game state logic. A central “Game Master” controller tracks the current wave, how many zombies are alive, when to start the next wave, and when to spawn the boss Zissors. It also ramps up difficulty over time by increasing zombie count and health each wave.
- **Linked to Course content:** game loops, state management, and difficulty tuning
- **Commits:** [spawn_zombie]https://github.com/martellharuki/ECS179FinalProject/blob/ad57a6bb49a1f8a0fee7f1e6e3857aa439778a70/Scripts/Enemy/zombie_spawner.gd
+**Linked to Course content:** game loops, state management, and difficulty tuning
+**Commits:** [spawn_zombie]https://github.com/martellharuki/ECS179FinalProject/blob/ad57a6bb49a1f8a0fee7f1e6e3857aa439778a70/Scripts/Enemy/zombie_spawner.gd
 
 #### Zombie AI and Combat Behavior--I implemented the base zombie behavior: zombies detect the player and move toward them, dealing contact damage when close enough. The zombie logic effectively works as a simple state machine (idle/search → chase → attack → death). I integrated this with health and damage systems so that zombies react to bullets and can die, add particle effect to make the game feel more interactive for the player.
 **Linked to Course content:** enemy AI, combat mechanics 
@@ -256,6 +256,9 @@ Player-centric sounds (taking damage, being attacked, and other key events) that
 **Linked to Course content:** game feel, feedback systems, audiovisual signaling of state, and using sound to communicate danger and impact
  **Links:** [audio]https://github.com/martellharuki/ECS179FinalProject/tree/51622f908638377ad5a4482ccd28fc66c53f198e/assets/Audio
  [web]www.101soundboards.com/sounds [death-zombie](https://www.101soundboards.com/sounds/294190-death-zombie)[hurt-zombie](https://www.101soundboards.com/sounds/294747-hurt2-zombie)
+
+## Other Contributions
+#### Change animation from Sprite2D into AnimatedSprite2D, imply animation for three different enermies[link](https://github.com/martellharuki/ECS179FinalProject/blob/027165fdae471876e8d305c1021774a61c18e8cb/ProjectDocumentationPhotos/Hao_animation.png)
 
 # Joseph Lee
 ## Github: jhblee

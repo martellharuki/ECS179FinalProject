@@ -9,13 +9,13 @@ const MIN_SPEED_FACTOR: float = 0.45
 
 @onready var player: Node2D = get_parent() as Node2D
 
+
 func _ready() -> void:
 	set_as_top_level(true)
 
 	if player:
 		global_position = player.global_position
-	global_rotation = 0.0
-	
+	global_rotation = 0.0	
 
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	var player_pos := player.global_position
 	var mouse_pos := get_global_mouse_position()
 
-	# Lead target: player -> mouse (clamped so it never exceeds leash)
 	var to_mouse := mouse_pos - player_pos
 	var desired_offset := Vector2.ZERO
 
@@ -35,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		if desired_len > lead_limit:
 			desired_offset = desired_offset / desired_len * lead_limit
 
-	# Current offset: player -> camera
 	var current_offset := global_position - player_pos
 
 	# Camera slows as it gets farther from player, until leash_distance

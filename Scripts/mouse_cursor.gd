@@ -3,7 +3,6 @@ extends Node2D
 ## Cross cursor that replaces the mouse.
 ##
 
-@export_group("Appearance")
 @export var color: Color = Color.WHITE
 @export var bar_thickness: float = 3.0
 @export var bar_length: float = 12.0
@@ -14,8 +13,6 @@ extends Node2D
 
 @export var hide_system_cursor: bool = true
 @export var follow_in_ui_space: bool = true
-# If true (default): the crosshair lives in the UI layer and ignores camera zoom/offset.
-# If false: it will follow the mouse in WORLD space (scales with camera zoom).
 
 
 func _ready() -> void:

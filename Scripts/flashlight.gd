@@ -1,11 +1,9 @@
 extends PointLight2D
 
-
 const TEXTURE_SIZE_PX: int = 256
 const FLASHLIGHT_ANGLE_DEG: float = 25.0
 const EDGE_SOFTNESS_DEG: float = 12.0
 const FALLOFF_POWER: float = 1
-
 
 const ORIGIN_FORWARD_DISTANCE: float = 16.0
 

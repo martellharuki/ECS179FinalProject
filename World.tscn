@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=152 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://ddegtyr8t1q0l" path="res://assets/ui/start.png" id="33_s3rcb"]
 [ext_resource type="Texture2D" uid="uid://brfk8jv7xyj77" path="res://assets/ui/howtoplay.png" id="33_yktx5"]
 [ext_resource type="Texture2D" uid="uid://di4wjjib1xfkl" path="res://assets/ui/quit.png" id="34_88f54"]
+[ext_resource type="Texture2D" uid="uid://cajr71a2ahv0f" path="res://assets/ui/start1.png" id="35_s1hef"]
 
 [sub_resource type="TileSet" id="TileSet_cmany"]
 
@@ -2456,9 +2457,18 @@ corner_radius_bottom_left = 8
 bg_color = Color(0.14509805, 0.3882353, 0.92156863, 1)
 border_color = Color(0.3764706, 0.64705884, 0.98039216, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msfih"]
+texture = ExtResource("35_s1hef")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf24g"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1hef"]
+texture = ExtResource("33_yktx5")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3rcb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyibe"]
+texture = ExtResource("34_88f54")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ios8"]
 
@@ -3031,10 +3041,8 @@ theme_override_constants/separation = 20
 [node name="StartButton" type="Button" parent="HUD/TitleScreen/VBoxContainer"]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
 theme_override_font_sizes/font_size = 28
+theme_override_styles/pressed = SubResource("StyleBoxTexture_msfih")
 theme_override_styles/focus = SubResource("StyleBoxTexture_wf24g")
 icon = ExtResource("33_s3rcb")
 flat = true
@@ -3048,6 +3056,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
 theme_override_font_sizes/font_size = 28
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s1hef")
 theme_override_styles/focus = SubResource("StyleBoxTexture_s3rcb")
 icon = ExtResource("33_yktx5")
 flat = true
@@ -3061,6 +3070,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.6, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8666667, 0, 1)
 theme_override_font_sizes/font_size = 28
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gyibe")
 theme_override_styles/focus = SubResource("StyleBoxTexture_8ios8")
 icon = ExtResource("34_88f54")
 flat = true
@@ -3360,7 +3370,7 @@ position = Vector2(23052, -20362)
 [node name="NevigationRegion" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="NevigationRegion"]
-position = Vector2(-8, -25)
+position = Vector2(-105, -135)
 navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 
 [node name="ZombieSpawner" type="Node2D" parent="."]

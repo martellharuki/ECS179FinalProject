@@ -164,7 +164,15 @@ Post-Game demo, I cleaned up the playable map and added borders.
   **Relation to Course Content:** Game feel, Component, Command
 # Hao
 
-# Joseph
+# Joseph Lee
+## Github: jhblee
+## Main Role: Animation and Visuals
+## SUb Role: Game Feel
+* #### Player Animation
+* #### Zombie Animation
+* #### Weapon Assets
+* #### Tileset
+* #### Title, UI Designs, Background
 
 
 For each team member, you shoudl work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.

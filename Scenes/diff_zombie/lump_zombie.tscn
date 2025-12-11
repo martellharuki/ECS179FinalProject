@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://c6s8asm2g51wr"]
 
-[ext_resource type="Script" uid="uid://d2dyo4t6bitdg" path="res://lump_zombie.gd" id="1_mdvsg"]
+[ext_resource type="Script" uid="uid://d2dyo4t6bitdg" path="res://Scripts/Enemy/lump_zombie.gd" id="1_mdvsg"]
 [ext_resource type="Texture2D" uid="uid://jy7twm0fb4j8" path="res://assets/zombies/lump_zombie-export.png" id="2_bawa4"]
 [ext_resource type="AudioStream" uid="uid://drr5cpqsqifb6" path="res://assets/Audio/hurt2-zombie.mp3" id="3_bawa4"]
 [ext_resource type="AudioStream" uid="uid://btybyrael8qm7" path="res://assets/Audio/death-zombie.mp3" id="4_hhrid"]

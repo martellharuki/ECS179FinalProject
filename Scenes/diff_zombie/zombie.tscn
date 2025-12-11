@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://bxo6vmdd470oq"]
 
 [ext_resource type="Texture2D" uid="uid://j76wh1qryp7y" path="res://assets/zombies/basic_zombie-export.png" id="2_jmu02"]
-[ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://basic_zombie.gd" id="2_roy8y"]
+[ext_resource type="Script" uid="uid://blr7s7qn25hfy" path="res://Scripts/Enemy/basic_zombie.gd" id="2_roy8y"]
 [ext_resource type="AudioStream" uid="uid://drr5cpqsqifb6" path="res://assets/Audio/hurt2-zombie.mp3" id="3_eseir"]
 [ext_resource type="AudioStream" uid="uid://btybyrael8qm7" path="res://assets/Audio/death-zombie.mp3" id="4_7nqyo"]
 

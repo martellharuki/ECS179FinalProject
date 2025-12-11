@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://bgu4lfoqnexvn"]
 
-[ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://scissor_zombie.gd" id="1_rh58c"]
+[ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://Scripts/Enemy/scissor_zombie.gd" id="1_rh58c"]
 [ext_resource type="Texture2D" uid="uid://bts105igm5nco" path="res://assets/zombies/scissor_zombie-export.png" id="2_rh58c"]
 [ext_resource type="Texture2D" uid="uid://bxcrvctqcfvon" path="res://assets/zombies/scissor_zombie_v2.png" id="3_yjxdy"]
 [ext_resource type="AudioStream" uid="uid://drr5cpqsqifb6" path="res://assets/Audio/hurt2-zombie.mp3" id="4_eqj6j"]

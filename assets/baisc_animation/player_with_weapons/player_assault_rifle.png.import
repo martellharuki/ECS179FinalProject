@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1ct4j27hvvs8"
-path="res://.godot/imported/player_assault_rifle.png-821eda35725f335a1c256e03a37030ef.ctex"
+path="res://.godot/imported/player_assault_rifle.png-29cfa0362060731b0facefe87e3d697c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/baisc_animation/player_with_weapons/player_assault_rifle.png"
-dest_files=["res://.godot/imported/player_assault_rifle.png-821eda35725f335a1c256e03a37030ef.ctex"]
+source_file="res://assets/baisc_animation/player_with_weapons/player_assault_rifle.png"
+dest_files=["res://.godot/imported/player_assault_rifle.png-29cfa0362060731b0facefe87e3d697c.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://60e81qvubl62"
-path="res://.godot/imported/gun-fire-346766-[AudioTrimmer.com].wav-d388734b1b59b888acafe43baa6e86b9.sample"
+path="res://.godot/imported/gun-fire-346766-[AudioTrimmer.com].wav-6ecc7fd1274cbbd1da8e98e84ea26bf8.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/gun-fire-346766-[AudioTrimmer.com].wav"
-dest_files=["res://.godot/imported/gun-fire-346766-[AudioTrimmer.com].wav-d388734b1b59b888acafe43baa6e86b9.sample"]
+source_file="res://assets/Audio/gun-fire-346766-[AudioTrimmer.com].wav"
+dest_files=["res://.godot/imported/gun-fire-346766-[AudioTrimmer.com].wav-6ecc7fd1274cbbd1da8e98e84ea26bf8.sample"]
 
 [params]
 

@@ -1,25 +1,25 @@
 [gd_scene load_steps=142 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
-[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://Assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
+[ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
 [ext_resource type="Script" uid="uid://dhgvqea0g4u4m" path="res://Scripts/player/player.gd" id="2_js7pq"]
-[ext_resource type="TileSet" uid="uid://cugv87ls0wu6o" path="res://Assets/tilemap_and_assets/tilesets/floor.tres" id="3_bun23"]
-[ext_resource type="Texture2D" uid="uid://c7cr7vpllu6rw" path="res://Assets/baisc_animation/player_with_weapons/player_pistol.png" id="4_0to5b"]
+[ext_resource type="TileSet" uid="uid://cugv87ls0wu6o" path="res://assets/tilemap_and_assets/tilesets/floor.tres" id="3_bun23"]
+[ext_resource type="Texture2D" uid="uid://c7cr7vpllu6rw" path="res://assets/baisc_animation/player_with_weapons/player_pistol.png" id="4_0to5b"]
 [ext_resource type="Script" uid="uid://cc7jgrx58xg2h" path="res://Scripts/animation_handler.gd" id="4_aj1ai"]
-[ext_resource type="TileSet" uid="uid://dlno4hi6ihrxh" path="res://Assets/tilemap_and_assets/tilesets/furniture.tres" id="4_gtthi"]
-[ext_resource type="Texture2D" uid="uid://b1ct4j27hvvs8" path="res://Assets/baisc_animation/player_with_weapons/player_assault_rifle.png" id="4_ydbc3"]
+[ext_resource type="TileSet" uid="uid://dlno4hi6ihrxh" path="res://assets/tilemap_and_assets/tilesets/furniture.tres" id="4_gtthi"]
+[ext_resource type="Texture2D" uid="uid://b1ct4j27hvvs8" path="res://assets/baisc_animation/player_with_weapons/player_assault_rifle.png" id="4_ydbc3"]
 [ext_resource type="Script" uid="uid://bl2dpburhvghe" path="res://Scripts/flashlight.gd" id="5_fvag4"]
-[ext_resource type="TileSet" uid="uid://bh52o4d1ct3ga" path="res://Assets/tilemap_and_assets/tilesets/details.tres" id="5_mnkyj"]
+[ext_resource type="TileSet" uid="uid://bh52o4d1ct3ga" path="res://assets/tilemap_and_assets/tilesets/details.tres" id="5_mnkyj"]
 [ext_resource type="Script" uid="uid://ba6ktqnhg4b7v" path="res://Scripts/player/weapon_handler.gd" id="5_wygdx"]
-[ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://Assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
+[ext_resource type="Texture2D" uid="uid://d4cf5a4t6n0x1" path="res://assets/baisc_animation/player_with_weapons/player_smg.png" id="6_aj1ai"]
 [ext_resource type="Script" uid="uid://d1q0r6xl10wds" path="res://Scripts/player/action_item.gd" id="6_f5c0m"]
-[ext_resource type="Texture2D" uid="uid://bnuylrjouaaqv" path="res://Assets/tilemap_and_assets/roof.png" id="6_gtthi"]
-[ext_resource type="Script" path="res://scripts/mouse_cursor.gd" id="6_p1v5b"]
+[ext_resource type="Texture2D" uid="uid://bnuylrjouaaqv" path="res://assets/tilemap_and_assets/roof.png" id="6_gtthi"]
+[ext_resource type="Script" uid="uid://dk4fjwtkhqerk" path="res://Scripts/mouse_cursor.gd" id="6_p1v5b"]
 [ext_resource type="Script" uid="uid://cmav5hl1jsdsp" path="res://Scripts/Item/item_pickup.gd" id="7_b2ar6"]
-[ext_resource type="Texture2D" uid="uid://borvploikmcoq" path="res://Assets/baisc_animation/player_with_weapons/player_sniper_rifle.png" id="7_d7dfr"]
+[ext_resource type="Texture2D" uid="uid://borvploikmcoq" path="res://assets/baisc_animation/player_with_weapons/player_sniper_rifle.png" id="7_d7dfr"]
 [ext_resource type="Script" uid="uid://b3bqjy0xk1v7" path="res://Scripts/health_bar.gd" id="8_bah7m"]
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
-[ext_resource type="Script" path="res://crafting_handler.gd" id="9_6w02q"]
+[ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://3tve28n8ylau" path="res://camera_handler.gd" id="9_d7dfr"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 [ext_resource type="Script" uid="uid://hmdcpvlp8o13" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
@@ -28,12 +28,12 @@
 [ext_resource type="Script" uid="uid://dqwcpjv1vku3l" path="res://Scripts/Enemy/zombie_spawner.gd" id="19_6tx0c"]
 [ext_resource type="Script" uid="uid://cf12lr2tsy12a" path="res://Scripts/Item/item_spawner.gd" id="19_cvq6i"]
 [ext_resource type="Script" uid="uid://f0krfjno8ply" path="res://Scripts/player/audio_handler.gd" id="20_mnkyj"]
-[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://Assets/utility/bandage.png" id="21_c2gv2"]
-[ext_resource type="AudioStream" uid="uid://60e81qvubl62" path="res://Assets/Audio/gun-fire-346766-[AudioTrimmer.com].wav" id="21_fif40"]
-[ext_resource type="Script" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="21_gtthi"]
+[ext_resource type="Texture2D" uid="uid://dg8abksj1xxvj" path="res://assets/utility/bandage.png" id="21_c2gv2"]
+[ext_resource type="AudioStream" uid="uid://60e81qvubl62" path="res://assets/Audio/gun-fire-346766-[AudioTrimmer.com].wav" id="21_fif40"]
+[ext_resource type="Script" uid="uid://btymcw2hxheho" path="res://Scripts/Entity/WeaponAndBullet/upgrade_spec.gd" id="21_gtthi"]
 [ext_resource type="PackedScene" uid="uid://bgu4lfoqnexvn" path="res://scissor_zombie.tscn" id="22_5j71u"]
-[ext_resource type="AudioStream" uid="uid://ck5aiy2aif2ii" path="res://Assets/Audio/356-8-bit-chiptune-game-music-357518.mp3" id="22_6xgc5"]
-[ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://Assets/utility/scrap.png" id="25_gtthi"]
+[ext_resource type="AudioStream" uid="uid://ck5aiy2aif2ii" path="res://assets/Audio/356-8-bit-chiptune-game-music-357518.mp3" id="22_6xgc5"]
+[ext_resource type="Texture2D" uid="uid://81j1kqvwywvi" path="res://assets/utility/scrap.png" id="25_gtthi"]
 [ext_resource type="Texture2D" uid="uid://c5p3w5qjk7spw" path="res://background_v3.png" id="31_0vv3x"]
 
 [sub_resource type="TileSet" id="TileSet_cmany"]
@@ -2990,17 +2990,18 @@ bbcode_enabled = true
 text = "[center][b]CONTROLS[/b][/center]
 
 [b]MOVEMENT[/b]
-- WASD or Arrow Keys - Move around
+- WASD or Arrow Keys: Move around
+- Shift or Spacebar: Dash
 
 [b]COMBAT[/b]
-- Left Click - Shoot
+- Left Click: Shoot
 
 [b]ACTIONS[/b]
-- E - Open crafting menu
-- Q - Use bandage (healing)
+- E: Upgrade weapons using scraps
+- Q: Use bandage (healing)
 
 [b]SYSTEM[/b]
-- ESC - Pause/Unpause game
+- ESC: Pause/Unpause game
 
 [center]Good luck, soldier![/center]"
 

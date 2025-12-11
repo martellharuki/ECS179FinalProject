@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnuylrjouaaqv"
-path="res://.godot/imported/roof.png-f1ceeaf86f3d26aa01a24b55b4e4061f.ctex"
+path="res://.godot/imported/roof.png-8238417a7692ad9e69208a1bcd1ab603.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilemap_and_assets/roof.png"
-dest_files=["res://.godot/imported/roof.png-f1ceeaf86f3d26aa01a24b55b4e4061f.ctex"]
+source_file="res://assets/tilemap_and_assets/roof.png"
+dest_files=["res://.godot/imported/roof.png-8238417a7692ad9e69208a1bcd1ab603.ctex"]
 
 [params]
 

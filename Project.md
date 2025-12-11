@@ -1,4 +1,4 @@
-# The title of your game #
+# Revenge of Zissors #
 
 ## Summary ##
 
@@ -78,7 +78,34 @@ Visual Setup - Assisted with the visual polish of the game by integrating graphi
 
 Removed Features - Developed and later removed an inventory screen system after determining it added unnecessary complexity to the core gameplay loop.
 
-# Kaylie
+# Kaylie Lam (Github: Kalam721)
+
+## Main Role: Level and World Designer ##
+I originally wanted to create a small town set in the modern day. The town would have been an old mining town that is run down and long abandoned by the time the player is in town. The town would have been the central part of the map. But I also drafted areas connected to the town so that those areas' borders like cliffs and the sea served as a natural border on the overall map. Additional notes in these drawings were gamefeel notes that could be implemented if the original map was approved and finalized. These maps were created around the intial plans stage. After speaking with Joseph (our asset designer) on the feasibility of creating the map, we settled to only focus on creating the town area.
+
+
+
+This new town would be a bigger town than the original drafts. I created maps for the houses, stores, resturants, parks, and parking lot (the parking lot was discarded in the final build due to asset limitations and time constraints). These buildings had 2 variations to them (and a third for corner places for stores and resturants only) to make them look more diverse. One variation of the house map intends a family to live there while the other variation likely would have a single or a couple living at the household. The resturant variations also have slightly different purposes to them as well. The first variation is intended to  be more of an open kitchen/pizzaria/diner look to it while the other variation of the map is a more traditional resturant layout. The general store variation layouts are similar to what I think the layouts at a Walgreens or 7-11 are. The overall town was going to be centered around a big park with business becoming increasingly sparce the further away the building was from the park.
+
+## Sub-Role: Narrative Design ##
+Due to time constraints and my prioritizing of my main role, this role was unfortunately mostly sidelined.
+
+Original plans were to play the game on a timer and escape from the town after surviving. But with our game name chosen, I shifted the story to fit the game. Zissors, the zombie boss, took over the player's town. The town now abandoned by people, the player seeks to reclaim the town by killing zombies. Surviving long enough allows the player to lure out and have a chance to take their revenge on Zissors. Hints of this story are in the objectives screen.
+
+## Other Contributions ##
+Implementing world tilemaps and subsequent tile layers according to the maps I have made.
+Each item in the tileset was isolated and I placed collision upon items that needed them.
+
+The base Tilemap has nothing on it. The first layer is a grass layer. The furniture layer contains bigger items (~32x32 pixels) on the map and their collision (eg. tables, cars). The details layer has the smaller items (~16x16 pixels) and their collision (and some bigger items that can't fit on the 32x32 grid due to the asset's constraints). The borders and walls are separated between the details, walls, and house/store borders layers to make sure that previous layers' tiles on the map aren't overriden. The InvisWalls layer is just an invisible wall to prevent the player from going outside the map. The roof layer is an extra layer that places roofs on top of the houses and stores that are outside of the map. It also serves as a secondary indication that the house is unable to be entered. All of the buildings besides the ones on the outside ring of the map do have detail within them but the current game implementation of the zombies and time constraints in other roles limit the map size severely.
+
+The original map was supposed to be much bigger in accordance to my town layout map. By the Sunday before the demo, I had around 2.5x the size of the map that is currently placed but unfortunately that save was corrupted and lost right before commiting to the github (It was around 3x3 city blocks before commiting instead of the 2x2 that it is today). 
+
+Outside details, like the cars were somewhat intentionally placed (random bad parking jobs, only placed on sidewalks or house driveways, street laws followed). House and building variations were created as intended. But the park didn't quite follow the map due to time constraints and in hopes of giving the boss a big area to fight on.
+
+Post-Game demo, I cleaned up the playable map and added borders.
+
+
+
 
 # Haruki Martell
 ## Github: martellharuki

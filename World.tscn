@@ -2613,6 +2613,7 @@ unique_name_in_owner = true
 script = ExtResource("21_gtthi")
 
 [node name="BandageHandler" type="Node" parent="Player"]
+unique_name_in_owner = true
 script = ExtResource("12_0to5b")
 
 [node name="AudioHandler" type="Node2D" parent="Player"]

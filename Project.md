@@ -43,12 +43,51 @@ This section be repeated once for each team member. Each team member should prov
 
 * #### Bullets and Base Weapon:
   By extending the Live Entity class, we make a bullet object which dies after a certain life span. The bullet also has an Area 2D which detects a collision, dying on rigid objects and ignoring the player. Given a velocity and direction, the bullet object also updates each frame to move. The bullet is fired by a weapon handler in the player node. The weapon handler is a factory which instanties the bullet scenes, and gives the bullet a velocity, direction, and damage. These values are determined by a weapon spec, which represents the players current weapon. On click, the player commands the weapon to fire. The weapon checks to see if it can fire based on fire rate (also part of spec) and builds the bullet if it can.
-  **Relation to Course Content:** This ties into the factory pattern since weapon handler is a factory. Additionally, the weapon is a component of the player and gets commanded by said player (component and command pattern). The bullet and weapon specs fall under the mechanics/rules of our game and builds to gun system.
-  
+  **Relation to Course Content:** Factory, Component, Command, Mechanics (Weapon spec)
+  **Commits:** [Base Bullet Scene](https://github.com/martellharuki/ECS179FinalProject/commit/d8f97fe6202c1b169f241070a819d2a430346fbe) | [Weapon Spec and Bullet Logic](https://github.com/martellharuki/ECS179FinalProject/commit/026e796080583bf0e4d7aabdbedd5ac573448217)
+
+* #### Action Display:
+  This is a node (named Action Item) that other handlers use to depict an action being taken. Specifically, it features a progress bar, used in crafting and item pick up as well as text, which tells the player the buff they crafted. Other controllers access this node through its unique name, and they have an option to set the bar or the text. The Action Handler then takes care of the specifics, including: hiding text after a set time, prioritizing crafting progress over item pick up, and resetting the bar. The intent is to convey action information. 
+**Relation to Course Content:** Command pattern, Components, and Mechanics
+**Commits:** [Action Item (Look for action_item.gd)](https://github.com/martellharuki/ECS179FinalProject/commit/8db35cda48a6c008784f684feb0411ecf990dde6)
+
+* #### Item Pick Up:
+  We once again extend the Live Entity to create items, which can drop for 20 seconds. The item scene also contians an enum of the item type and its grouped under "item". The player then contains an Item Pickup Handler. The handler consists of the handler and then a child area 2D. The child area is responsible for telling the handler if an item is hovered and which item that is. The handler is responsible for keeping track of progress, telling the Action Display what to depict, and manages item pick up by deleting the item and commanding the proper containers (gun, scrap, and bandage). The intent is to allow players to pick up items while making them work for it (stand ontop for a set time).
+  **Relation to Course Content:** Command Pattern, Components, and Mechanics
+  **Commits:**  [Item Pickup Collider and Handler](https://github.com/martellharuki/ECS179FinalProject/commit/8db35cda48a6c008784f684feb0411ecf990dde6) | [More Types for Item Pickup Handler](https://github.com/martellharuki/ECS179FinalProject/commit/684ca384a042d73789059ef3112342fcc5352513#diff-bfd5490bc6c085f12d45d1b61a5447b1932d388cdd862dfa2c26206c3c3dba3f) | [Enables Players to Hover Over Multiple Items and Updates the Hud](https://github.com/martellharuki/ECS179FinalProject/commit/2f422c9853a9df2e85c21d84458e12a43544fa1d)
+
+* #### Gun Spawning and Pickup: 
+  Extending the item scene, we add another enum depicting what kind of gun it is. Each gun then gets its own scene. On gun pickup, the Item Pickup System commands the Weapon Handler to switch to a new gun, passing in the enum. The weapon handler then gets its gun by using a static function that holds each base weapon spec. The weapon handler also commands the player animator to change animations (more on this later). Item spawning uses the Item Spawning Handler, which contains possible spawn locations and has a chance to instantiate them every second. The intent is adding gun drops randomly around the world. The gun is a live entity, so it deletes after a delay
+**Relation to Course Content**: Command Pattern, Factory
+**Commits:** [Item Spawner (used to spawn scrap, refactored for guns)](https://github.com/martellharuki/ECS179FinalProject/commit/35c6e4e907b9b6d1d42c350e23ab0ba475fd4bcd) | [Adding Gun Scenes To Item Spawner](https://github.com/martellharuki/ECS179FinalProject/commit/684ca384a042d73789059ef3112342fcc5352513#diff-bfd5490bc6c085f12d45d1b61a5447b1932d388cdd862dfa2c26206c3c3dba3f)
+
+* #### Crafting
+  Added a crafting handler that handles crafting when E is pressed. It commands the ActionItem node to display the progress. When completing crafting, it commands its child, UpgradeSpec to randomly upgrade a gun value, which can either be a base increase or an increase to a multiplier. The intent is to reward taking to time to pick up scrap while adding an element of RNG to it. The crafting handler also locks player movement. The weapon handler instantiates bullets by taking (gun_spec + upgrade_spec_base) * upgrade_spec_mult
+  **Relation to Course Content:** Component, Command, Mechanics
+  **Commits:** [Crafting and Upgrade Spec](https://github.com/martellharuki/ECS179FinalProject/commit/8db35cda48a6c008784f684feb0411ecf990dde6#diff-3adcf11f7abf00c3186f15d21a9bafd37b3d47830020eeb470f381cefb754d7a)
+
+* #### Zombie Item Drops:
+  Added zombie item drops by having zombies command the item spawner to roll for a chance to drop an item. Zombies pass their location. Should the roll succeed, the spawner will spawn an item at the passed location. The intent is to reward players for killing zombies.
+  **Relation to Course Content:** Command, Mechanics
+  **Commits:** [Zombie Drops Scrap](https://github.com/martellharuki/ECS179FinalProject/commit/684ca384a042d73789059ef3112342fcc5352513#diff-7c2affd6258b13da46a6094e8a596d55de9758511f1a8ba15294ce3f64689eb6) | [Zombie Scrap Drop Additions](https://github.com/martellharuki/ECS179FinalProject/commit/9c5d126799a899725850e253f7d121119fef43ec#diff-78f6ba713faf4d8fda8490938d6e8db139b5864aa41b708a25a7c4c74ab0017d) | [Zombie Drops Bandage](https://github.com/martellharuki/ECS179FinalProject/commit/518c9199071563baa00e28fb91ac32ba37f758a3#diff-7c2affd6258b13da46a6094e8a596d55de9758511f1a8ba15294ce3f64689eb6) 
 ## Sub Role: Build and Release Manager
-
+* #### Built and Pushed Webversion
+  I was in charge of uploading the game to itch.io
+* #### Helped Teammates Merge Changes:
+  I helped our team merge their changes in. Here are some exmaples:
+  * Helped Hao merge zombie changes in on call
+  * Kaylie's tile map changes was corrupting our World.tscn and deleting progress, so I merged the branches correctly. ![alt text](image.png)
+  * Me and another teammate both pushed bandage dropping logic, so I reverted the duplicate changes. ![alt text](image-1.png)
 ## Other Contributions:
+* #### Animation Handling:
+  Imported the player animation and created an animation handler where the player can command different animations. The animation handler will account for the equipted gun when determining animations.
+  **Relation to Course Content:** Component design pattern
+  **Commits:** [Animations](https://github.com/martellharuki/ECS179FinalProject/commit/684ca384a042d73789059ef3112342fcc5352513)
 
+* #### Audio Handling
+  Implemented some sounds before the demo since the audio person was busy. Made an audio handler that gets commanded to play certain sounds. All sounds found online for free. Trimmed gunshot to fit our game. Intent was to add some audio since a silent game is bad.
+  **Links to Sounds**: [Gunshot](https://pixabay.com/sound-effects/gun-fire-346766/) | [Music](https://pixabay.com/music/video-games-356-8-bit-chiptune-game-music-357518/)
+  **Relation to Course Content:** Game feel, Component, Command
 # Hao
 
 # Joseph

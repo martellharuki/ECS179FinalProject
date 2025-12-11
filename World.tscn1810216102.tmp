@@ -3368,6 +3368,5 @@ navigation_polygon = SubResource("NavigationPolygon_sjtuv")
 script = ExtResource("19_6tx0c")
 zombie_scene = ExtResource("18_sjtuv")
 scissor_zombie_scene = ExtResource("22_5j71u")
-environment_mask = 1
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawner"]

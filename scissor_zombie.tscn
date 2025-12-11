@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv80nic4c0o8s" path="res://scissor_zombie.gd" id="1_rh58c"]
 [ext_resource type="Texture2D" uid="uid://bts105igm5nco" path="res://assets/zombies/scissor_zombie-export.png" id="2_rh58c"]
-[ext_resource type="Texture2D" uid="uid://ca7jr7d8t8cex" path="res://assets/zombies/scissor_zombie_v2.png" id="3_yjxdy"]
+[ext_resource type="Texture2D" uid="uid://bxcrvctqcfvon" path="res://assets/zombies/scissor_zombie_v2.png" id="3_yjxdy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjxdy"]
 atlas = ExtResource("2_rh58c")
@@ -278,6 +278,7 @@ position = Vector2(-0.5, -10.5)
 shape = SubResource("CircleShape2D_rh58c")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 800.0
 
 [node name="WindupTimer" type="Timer" parent="."]
 one_shot = true

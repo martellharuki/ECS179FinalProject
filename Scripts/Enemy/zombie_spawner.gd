@@ -4,6 +4,10 @@ extends Node2D
 @export var zombie_scene: PackedScene
 @export var scissor_zombie_scene: PackedScene
 
+@export var spawn_bounds: Rect2 = Rect2(Vector2(-6747.0, -6614.0), Vector2(31315, 15951))
+
+@export_flags_2d_physics var environment_mask: int
+
 @export var spawn_radius: float = 900.0        # distance from player
 # Wave management
 @export var spawn_interval_start: float = 5.0  # seconds
@@ -100,7 +104,27 @@ func _spawn_boss() -> void:
 	_boss_spawned = true
 
 func _get_spawn_position_around_player() -> Vector2:
-	# pick a random angle around the player
-	var angle := randf() * TAU
-	var offset := Vector2(cos(angle), sin(angle)) * spawn_radius
-	return _player.global_position + offset
+	var space_state := get_world_2d().direct_space_state
+	
+	for i in range(16):
+		# pick a random angle around the player
+		var angle := randf() * TAU
+		var offset := Vector2(cos(angle), sin(angle)) * spawn_radius
+		#return _player.global_position + offset
+		var pos := _player.global_position + offset
+		
+		pos.x = clampf(pos.x, spawn_bounds.position.x, spawn_bounds.position.x + spawn_bounds.size.x)
+		pos.y = clampf(pos.y, spawn_bounds.position.y, spawn_bounds.position.y + spawn_bounds.size.y)
+		
+		var params := PhysicsPointQueryParameters2D.new()
+		params.position = pos
+		params.collision_mask = environment_mask
+		params.collide_with_areas = true
+		params.collide_with_bodies = true
+		
+		var result: Array = space_state.intersect_point(params, 8)
+		
+		if result.is_empty():
+			return pos
+		
+	return _player.global_position

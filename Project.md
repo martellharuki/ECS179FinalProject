@@ -270,14 +270,27 @@ I created basic player asset and animations for walking, attacking, dashing, and
 | :------------: |
 |  ![Player Animation](https://github.com/martellharuki/ECS179FinalProject/blob/9e8f0a734a63027c5324394c050cf803d172cc00/projectDocumentationAnimatoinandVisuals/player_animated.gif)  |
 | Walk Dash Bandage Attack |
+| Pistol | SMG | Assault Rifle | Sniper Rifle |
+| :------------: | :------------: | :------------: | :------------: | 
+| ![Player with pistol](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_pistol.gif) | ![Player with SMG](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_smg.gif) | ![Player with assault rifle](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_assault_rifle.gif) | ![Player with sniper rifle](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/player_sniper_rifle.gif) |
 * #### Zombie Animation
 I created total of 3 types of zombies: basic zombie, lump zombie, and scissor zombie. I wanted the zombie designs to feel unique and creative, so I didn’t use any assets from other games as reference. All the zombies have walking, dying, and two types of attacking animation. Since zombie moves unnaturally, I made the zombies not swing their arms when walking. For the attack animation, I thought single animation could be boring, so I made two types of attack animation. I tried to make them as unique as possible while keeping it from being too unrealistic. For the dying animation, I made them as if they disappear from the world by making their dead body particles scattering. 
+| Basic Zombie | Lump Zombie | Scissor Zombie |
+| :------------: | :------------: | :------------: |
+|  ![Basic Zombie](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/basic_zombie.gif)  | ![Lump Zombie](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/lump_zombie.gif) | ![Scissor Zombie](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/scissor_zombie.gif) |
 * #### Weapon Assets
 For the weapon assets, since it took so much time to draw them, yet I didn't like the result, I bought the asseets from [here](https://timirytochca93.itch.io/pixelarsenal) with a license to use it for commercial or non-commercial projects for 3 dollars. 
+
 - #### Utiility Assets
 I created bandage, scrap, and pick up animation. I created the pick up animation by using the 'Black Hole' animation from [here](https://ranitaya-studios.itch.io/ranitayas-massive-dungeon-pack) which I received for free as reference. I modified the animation and colors of the 'Black Hole' animation to make the pick up animation.
+| Bandage | Scrap | Pick Up Animation |
+| :------------: | :------------: | :------------: |
+| ![Bandage](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/bandage.png) | ![Scrap](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/scrap.png) | ![Pick Up Animation](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/pick_up.gif) |
 * #### Tileset
 I made all the tilesets and assets in the map with the help of Kaylie. She basically drew out all of the layouts for the assets and I drew them with Aseprite again. The design of all the tiles are on me.
+| Tileset |
+| :------------: |
+| ![Tileset](https://github.com/martellharuki/ECS179FinalProject/blob/f357963bd7613652cd66eeaaa1383d68a4f96b34/projectDocumentationAnimatoinandVisuals/tileset_v1.png) |
 * #### Title, UI Designs, Background
 Since our game has an overall casual feeling, so to match with that, I made the title and menu icons light with the colors that were used in creating zombies. Since my lack of creativity, I made the background image for the main menu with ChatGPT with the following prompt: 'These are the assets that my game contains. generate a background image that represent the characteristics of the game. make it in 2d pixel art'. As it can be seen from this prompt, in this prompt, I also included the zombie assets I created.
 

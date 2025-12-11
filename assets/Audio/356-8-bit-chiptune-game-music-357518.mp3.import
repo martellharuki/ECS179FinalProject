@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ck5aiy2aif2ii"
-path="res://.godot/imported/356-8-bit-chiptune-game-music-357518.mp3-f7b6385d3dd06d85261b5e2673a6cf8d.mp3str"
+path="res://.godot/imported/356-8-bit-chiptune-game-music-357518.mp3-17909d6d278b325af04a7fc2fee4e972.mp3str"
 
 [deps]
 
-source_file="res://assets/Audio/356-8-bit-chiptune-game-music-357518.mp3"
-dest_files=["res://.godot/imported/356-8-bit-chiptune-game-music-357518.mp3-f7b6385d3dd06d85261b5e2673a6cf8d.mp3str"]
+source_file="res://Assets/Audio/356-8-bit-chiptune-game-music-357518.mp3"
+dest_files=["res://.godot/imported/356-8-bit-chiptune-game-music-357518.mp3-17909d6d278b325af04a7fc2fee4e972.mp3str"]
 
 [params]
 

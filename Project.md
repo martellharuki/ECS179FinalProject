@@ -220,6 +220,42 @@ Post-Game demo, I cleaned up the playable map and added borders.
   **Links to Sounds**: [Gunshot](https://pixabay.com/sound-effects/gun-fire-346766/) | [Music](https://pixabay.com/music/video-games-356-8-bit-chiptune-game-music-357518/)
   **Relation to Course Content:** Game feel, Component, Command
 # Hao
+## Github: Edward-Fraus-Lu
+## Main Role: AI and Behavior Designer
+* #### In this role I focused on the core gameplay loop the enemy behavior which include wave progression, enemy spawning, Nevigation to avoid objects on the map.
+
+### Central Zombie spawn control--I implemented the overall wave progression and game state logic. A central “Game Master” controller tracks the current wave, how many zombies are alive, when to start the next wave, and when to spawn the boss Zissors. It also ramps up difficulty over time by increasing zombie count and health each wave.
+ **Linked to Course content:** game loops, state management, and difficulty tuning
+ **Commits:** [spawn_zombie]https://github.com/martellharuki/ECS179FinalProject/blob/ad57a6bb49a1f8a0fee7f1e6e3857aa439778a70/Scripts/Enemy/zombie_spawner.gd
+
+### Zombie AI and Combat Behavior--I implemented the base zombie behavior: zombies detect the player and move toward them, dealing contact damage when close enough. The zombie logic effectively works as a simple state machine (idle/search → chase → attack → death). I integrated this with health and damage systems so that zombies react to bullets and can die, add particle effect to make the game feel more interactive for the player.
+**Linked to Course content:** enemy AI, combat mechanics 
+**Commits:** [basic_zombie]https://github.com/martellharuki/ECS179FinalProject/blob/4f90d9212746d90afd2457f6c41e766b622721ef/Scripts/Enemy/basic_zombie.gd
+[lump_zombie]https://github.com/martellharuki/ECS179FinalProject/blob/4f90d9212746d90afd2457f6c41e766b622721ef/Scripts/Enemy/lump_zombie.gd
+
+### Boss "Zissors"--I designed and implemented the boss variant, Zissors. Compared to basic zombies, Zissors has significantly more health, unique movement/attack patterns, and acts as the final objective of the run. Zissors is spawned by the Game Master once the game reaches a specified point in the wave progression, and defeating it triggers the win condition and win screen.
+**Linked to Course content:** boss/encounter design, pacing and climax, and structuring the game loop
+**Commits:** [Boss]https://github.com/martellharuki/ECS179FinalProject/blob/4f90d9212746d90afd2457f6c41e766b622721ef/Scripts/Enemy/scissor_zombie.gd
+
+### Collision and Pathfinding--I set up and tuned collision for enemies so zombies properly interact with the map, props, and the player, instead of sliding through walls or overlapping in unreadable ways. This included configuring collision layers/masks so bullets reliably hit zombies and stop on solid environment, while avoiding unintended collisions with the player and other zombies.
+
+On the movement side, I adjusted zombie navigation so they move toward the player while reacting to obstacles in the level, allowing them to “flow” around corners and objects instead of getting stuck. This creates the feeling of being chased and potentially surrounded, which is important for our survival-style gameplay. 
+**Linked to Course content:** physics and collision systems, spatial reasoning, navigation around obstacles, and level-informed enemy movement
+**Commits:** [pathfinding]https://github.com/martellharuki/ECS179FinalProject/tree/49c70bc193923364226202e6efadde8710ae282e/Scenes/diff_zombie
+
+## Sub Role: Audio 
+* #### In this role I focused on enemy and combat-related sounds that support feedback and game feel.
+
+### Enemy and Player Audio Feedback--I worked on finalizing the audio hooks and behaviors for both zombies and the player. This includes:
+
+Zombie sounds (vocalizations, hits, and death cues) that make enemy presence and danger more noticeable, even when they’re off-screen or in the player’s blind spots.
+
+Player-centric sounds (taking damage, being attacked, and other key events) that give immediate audio feedback when the player is in danger.
+
+### The goal was to make the world feel more alive, tense, and satisfying to play, tying into course topics on game feel, feedback systems, and audio as an important channel for conveying state and danger to the player.
+**Linked to Course content:** game feel, feedback systems, audiovisual signaling of state, and using sound to communicate danger and impact
+ **Links:** [audio]https://github.com/martellharuki/ECS179FinalProject/tree/51622f908638377ad5a4482ccd28fc66c53f198e/assets/Audio
+ [web]www.101soundboards.com/sounds [death-zombie](https://www.101soundboards.com/sounds/294190-death-zombie)[hurt-zombie](https://www.101soundboards.com/sounds/294747-hurt2-zombie)
 
 # Joseph Lee
 ## Github: jhblee

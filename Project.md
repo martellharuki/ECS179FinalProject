@@ -263,7 +263,6 @@ Player-centric sounds (taking damage, being attacked, and other key events) that
 # Joseph Lee
 ## Github: jhblee
 ## Main Role: Animation and Visuals
-## Sub Role: Game Feel
 * #### Player Animation
 I created basic player asset and animations for walking, attacking, dashing, and bandaging. Since our game is a true top-down game, I made them flat as if the user view it from a vertical, overhaed perpective. To give a realistic feeling to the animation, in the walk animation, I made it so that the player not only moves its feet, but also swing its arms as it walks. For the dash animation, the player extend the arms and legs as far as possible and then bring them back together as it dashes forward. Also, I made an attack animation for the player in case, the player doesn't have weapon. In this animation, the player charges a punch by pulling the right arm back, and throws a big pucnh through. To make the punch looks more satisfying, when the punch reaches its maximum length, it gets unrealistically bigger. For the bandage animation, I wanted to make it feel like some sort of energy is absorbed to the player. So the animation starts with many particles around the player and eventually the particles get connected to the player with brighter color. Finally, I also created player animations with each gun. We have a total of 4 guns, pistol, smg, assault rifle, and sniper rifle. So I had to make every animation for each gun. For the walking of the player holding gun animation, the player doesn't swing its arms as it does with the player without gun animation since the player holds gun, I thought it makes more sense. For the fire animation, they have 4 frames each except the sniper rifle. The fire animation starts with flame coming out of the muzzle of a gun. As the frame proceeds, the flame slowly disappears leaving the ashes scattered.
 | Player Animation |
@@ -300,6 +299,9 @@ Since our game has an overall casual feeling, so to match with that, I made the 
 | Main Menu |
 | :------------: |
 | ![Main Menu](https://github.com/martellharuki/ECS179FinalProject/blob/efd31cc120f8fb64d8b2cce32af21e9b00bc2059/projectDocumentationAnimatoinandVisuals/main_menu.png) |
+## Sub Role: Game Feel
+* #### Game Feel
+For my subrole, I incorporated similar colors to the animation and visuals so that the assets I created match the tone of the game and enhance the mood of the game. Also, I made the animation of the zombies in this game grotesque and exaggerated so that the user feel more motivated in killing them.
 
 For each team member, you shoudl work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
 

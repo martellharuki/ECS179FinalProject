@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chiheeevtxuf5"
-path="res://.godot/imported/door_animation.png-4b022c34631297a9b7d139ad1bdeb780.ctex"
+path="res://.godot/imported/door_animation.png-5d31469c949608591cd2c6d03021200f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilemap_and_assets/door_animation.png"
-dest_files=["res://.godot/imported/door_animation.png-4b022c34631297a9b7d139ad1bdeb780.ctex"]
+source_file="res://assets/tilemap_and_assets/door_animation.png"
+dest_files=["res://.godot/imported/door_animation.png-5d31469c949608591cd2c6d03021200f.ctex"]
 
 [params]
 

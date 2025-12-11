@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8slh51lwranw"
-path="res://.godot/imported/heal.mp3-dbd87136af6b884bfbdb5777f6cd69ba.mp3str"
+path="res://.godot/imported/heal.mp3-a6e2e33d48789488a1faa41cbdb98424.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/heal.mp3"
-dest_files=["res://.godot/imported/heal.mp3-dbd87136af6b884bfbdb5777f6cd69ba.mp3str"]
+source_file="res://assets/Audio/heal.mp3"
+dest_files=["res://.godot/imported/heal.mp3-a6e2e33d48789488a1faa41cbdb98424.mp3str"]
 
 [params]
 

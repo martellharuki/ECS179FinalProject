@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4cf5a4t6n0x1"
-path="res://.godot/imported/player_smg.png-d2eee4ce245672bddebf6f12eb1c705b.ctex"
+path="res://.godot/imported/player_smg.png-c13c90500a2e3a20c0b2b9d1cb702805.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/baisc_animation/player_with_weapons/player_smg.png"
-dest_files=["res://.godot/imported/player_smg.png-d2eee4ce245672bddebf6f12eb1c705b.ctex"]
+source_file="res://assets/baisc_animation/player_with_weapons/player_smg.png"
+dest_files=["res://.godot/imported/player_smg.png-c13c90500a2e3a20c0b2b9d1cb702805.ctex"]
 
 [params]
 

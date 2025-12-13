@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=4 uid="uid://diq6ejgh7kdaw"]
+[gd_scene load_steps=162 format=4 uid="uid://diq6ejgh7kdaw"]
 
 [ext_resource type="Script" uid="uid://bmssl16hsg18h" path="res://Scripts/pause_screen.gd" id="1_c6gwx"]
 [ext_resource type="Texture2D" uid="uid://nfchjo0ak1nd" path="res://assets/tilemap_and_assets/tileset_v2.png" id="2_f5c0m"]
@@ -21,7 +21,6 @@
 [ext_resource type="Script" uid="uid://bpx7eqkpsdiy1" path="res://Scripts/Item/item_collision.gd" id="8_gn8l5"]
 [ext_resource type="Script" uid="uid://bjfe1enupc2ps" path="res://crafting_handler.gd" id="9_6w02q"]
 [ext_resource type="Script" uid="uid://3tve28n8ylau" path="res://camera_handler.gd" id="9_d7dfr"]
-[ext_resource type="Texture2D" uid="uid://bjvhvd41msv7c" path="res://assets/baisc_animation/player/player_animated.png" id="9_gyibe"]
 [ext_resource type="Script" uid="uid://dh3frcmoujpp3" path="res://Scripts/title_screen.gd" id="10_kva58"]
 [ext_resource type="Script" uid="uid://hmdcpvlp8o13" path="res://Scripts/player/bandage_handler.gd" id="12_0to5b"]
 [ext_resource type="Script" uid="uid://htukdcs4imks" path="res://Scripts/hud.gd" id="14_sjtuv"]
@@ -1825,38 +1824,6 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("4_ydbc3")
 region = Rect2(448, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yp71y"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpw4f"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6fgup"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8xu2"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(704, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3k5od"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(768, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xq1iw"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(832, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oi2wb"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(896, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvno0"]
-atlas = ExtResource("9_gyibe")
-region = Rect2(960, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f43k2"]
 atlas = ExtResource("4_0to5b")
 region = Rect2(768, 0, 64, 64)
@@ -2117,7 +2084,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yktx5")
 }],
-"loop": false,
+"loop": true,
 "name": &"assault_shoot",
 "speed": 30.0
 }, {
@@ -2149,35 +2116,6 @@ animations = [{
 "loop": true,
 "name": &"assault_walk",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yp71y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gpw4f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6fgup")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8xu2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3k5od")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xq1iw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oi2wb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvno0")
-}],
-"loop": false,
-"name": &"dash",
-"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2217,9 +2155,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s3kwu")
 }],
-"loop": false,
+"loop": true,
 "name": &"pistol_shoot",
-"speed": 20.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2288,9 +2226,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i3ffs")
 }],
-"loop": false,
+"loop": true,
 "name": &"smg_shoot",
-"speed": 60.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2371,9 +2309,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s6h7x")
 }],
-"loop": false,
+"loop": true,
 "name": &"sniper_shoot",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2470,7 +2408,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ymcl6")
 }],
-"loop": false,
+"loop": true,
 "name": &"pick_up",
 "speed": 5.0
 }]
@@ -2675,7 +2613,7 @@ script = ExtResource("4_aj1ai")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5j71u")
-animation = &"assault_shoot"
+animation = &"pistol_shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0.5, 6)
@@ -2715,12 +2653,11 @@ scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_f5c0m")
 
 [node name="PickUpAnimation" type="AnimatedSprite2D" parent="Player/ItemPickUpHandler"]
-visibility_layer = 1023
-z_index = 10
 texture_filter = 1
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yp71y")
 animation = &"pick_up"
+frame = 7
+frame_progress = 0.28955078
 
 [node name="CraftingHandler" type="Node" parent="Player"]
 unique_name_in_owner = true
